@@ -8,10 +8,6 @@ Data can exist in many different formats, either as the generic universal types 
 In this chapter, we will first discuss how to read data using functions in Base-R (when possible), and then we will discuss alternative packages, such as the multitude of packages in the [Tidyverse](https://www.tidyverse.org), and highlight their advantages over Base-R functions. 
 
 
-![tidyverse](https://raw.githubusercontent.com/tidyverse/tidyverse/master/man/figures/logo.png)
-![readr](https://raw.githubusercontent.com/tidyverse/readr/master/docs/logo.png)
-![haven](https://raw.githubusercontent.com/tidyverse/haven/master/man/figures/logo.png)
-
 
 ## Generic Formats
 

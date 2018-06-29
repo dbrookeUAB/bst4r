@@ -3,7 +3,6 @@ title: "Biostatistics using R"
 author: "Dewey Brooke"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
-documentclass: krantz
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
@@ -14,9 +13,9 @@ fontsize: 12pt
 monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 github-repo: dbrooke/bst4r
+always_allow_html: yes
 site: bookdown::bookdown_site
 description: ""
-cover-image: images/cover.jpg
 ---
 
 ```{r setup, include=FALSE}
