@@ -1,0 +1,128 @@
+# Reading Data Files into R {-}
+
+
+The first step in every analysis requires data to be read into the environment, and learning how to do this is the first hurdle a person needs to overcome to begin learning to use R. 
+
+Data can exist in many different formats, either as the generic universal types (e.g. csv, tsv, .json, etc) or software specific types (e.g. `.xlsx`, `` )
+
+In this chapter, we will first discuss how to read data using functions in Base-R (when possible), and then we will discuss alternative packages, such as the multitude of packages in the [Tidyverse](https://www.tidyverse.org), and highlight their advantages over Base-R functions. 
+
+
+![tidyverse](https://raw.githubusercontent.com/tidyverse/tidyverse/master/man/figures/logo.png)
+![readr](https://raw.githubusercontent.com/tidyverse/readr/master/docs/logo.png)
+![haven](https://raw.githubusercontent.com/tidyverse/haven/master/man/figures/logo.png)
+
+
+## Generic Formats
+
+
+### CSV- Comma Separated Values
+The fields are separated by a comma `,` and are typically used for loading into spreadsheets.
+
+For example:
+
+
+```{r}
+csv_example_path <- "data/ASCII-comma/FEV.DAT.txt"
+
+readLines(csv_example_path)[1:8]  # reads each line of the file
+
+# Note: readLines(csv_example_path) is the same as
+# readLines("data/ASCII-comma/FEV.DAT.txt")
+
+```
+
+In Base-R, CSV data can be read using the `read.csv()` function. The `read.csv2()` function is used in countires that use a comma as a decimal point and a semicolon as a field separator.  
+
+```{r, comment=NULL}
+csv_example <- read.csv(csv_example_path)
+
+head(csv_example)
+```
+
+
+
+### TSV- Tab Separeted Values
+ The fields are separated by a tabulation <TAB> or \t and are saved as `.txt` files. However, not all `.txt` files contain tab separated values.  
+
+For example:
+
+```{r }
+tsv_example_path <- "data/ASCII-tab/FEV.DAT.txt"
+
+readLines(tsv_example_path)[1:8]
+
+```
+
+```{r, comment=NULL}
+tsv_example <- read.delim("data/ASCII-tab/FEV.DAT.txt")
+head(tsv_example)
+```
+
+## Excel
+
+```{r}
+library(readxl)
+
+
+```
+
+
+
+## Software Specific Formats
+
+R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaboraters will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the `haven` R-package can both read and write any of these file formats. 
+
+
+```{r}
+library(haven)
+```
+
+
+### SAS(`.sas7bdat`), SPSS(`.sav`,`.por`, `.xpt`), Stata (`.dta`)
+
+```{r read SAS}
+sas <- read_sas("data/SAS/FEV.sas7bdat")
+
+head(sas)
+```
+
+
+```{r read SPSS}
+
+spss <- read_spss("data/SPSS/FEV.DAT.sav")
+head(spss)
+
+```
+
+
+
+```{r read Stata}
+
+stata <- read_stata("data/Stata/FEV.DAT.dta")
+head(stata)
+
+```
+
+The `foreign` package included in Base-R can also be used to Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka',and for reading and writing some 'dBase' files.
+
+
+
+#### RDS
+
+```{r}
+rds_example <- readRDS("data/RDS/BETACAR.DAT.rds")
+head(rds_example)
+```
+
+#### `rdata` 
+The `.rdata` format is R's specific format. Instead of using a `read.{something}` function, `.rdata` is read into the environment using `load(filename.rdata)` and retains the original name it had when it was last saved. 
+
+```{r}
+load("data/R/BETACAR.DAT.rdata")  #named betacar when it was last saved
+head(betacar)
+```
+
+
+
+   

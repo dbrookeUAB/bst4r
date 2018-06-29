@@ -1,0 +1,248 @@
+# Chapter 2: Descriptive Statistics
+
+## Introduction
+
+```{r, echo=FALSE}
+library(DT)
+datatable(ChickWeight, rownames = FALSE)
+```
+
+
+## Measures of Location using Base R
+
+```{r, message=FALSE, comment=NULL}
+head(ChickWeight)
+```
+
+### The Arithmetic Mean
+
+The arithmetic mean is the sum of all the observations divided by the number of observations. It is written in statistical terms as 
+
+$$\overline{x} = \frac{1}{n}\sum^n_{i=1}x_i$$
+
+```{r}
+y= rbeta(10000,1,12,6)
+hist(y, # histogram
+ col = "lightblue", # column color
+ border = "black", 
+ prob = TRUE, # show densities instead of frequencies
+ xlab = "x",
+ ylim = c(0,3.5),
+ main = "Skewed Dataset"
+ )
+
+lines(density(y), col='black', lwd=3)
+abline(v = mean(y),
+ col = "royalblue",
+ lwd = 2)
+
+abline(v = median(y),
+ col = "red",
+ lwd = 2)
+
+abline(v = exp(mean(log(y))),
+ col = "green",
+ lwd = 2)
+
+
+
+legend(x = "topright", # location of legend within plot area
+ c("Mean", "Median", "Geometric Mean"),
+ col = c( "royalblue", "red", "green"),
+ lwd = c(2, 2, 2))
+
+```
+
+
+```{r}
+mean(ChickWeight$weight)
+```
+
+
+### The Median
+
+```{r}
+median(ChickWeight$weight)
+```
+
+### The Mode
+
+The mode is the most frequently occuring value among all observations in the sample. Although it is infrequently used, it is very useful for categorical and discrete data.
+
+Since there isn't a built in R-function for mode, we learn how to write a function to return the mode through a few examples. 
+
+
+#### Functions
+
+---
+
+##### Base R Example
+
+The most simple function begins by assigning the output of `function()` to some character string (e.g. `simple_fun`)
+
+All statements after the `function()` are referred as the body of the function. 
+
+```{r}
+function_name <- function(arg1, arg2,...) {
+  #statements
+  
+  return("some output")
+}
+function_name() # returns NULL
+```
+
+Use `return()` to output the result of the function.
+```{r}
+return_value <- function(x,y) {
+  z=x-y  
+  z=x+y
+  return(z)
+}
+return_value(4,5) 
+```
+
+
+
+Since our goal is to find the most frequently occuring value in our dataset (`ChickWeight`), we need to deside the sequence of functions that we need to accomplish this. As you continue to add various R functions to your R toolbelt, you will find many possible combinations for the same solution. 
+
+First, let's assign the weight column from ChickWeight to x to simplify things.  When `x` is called, the weight column from ChickWeight is returned as a vector.
+
+```{r}
+x<-ChickWeight$weight
+head(x)
+```
+
+We can return the size of `x` using the `length` function. `r length(x)`
+
+```{r}
+length(x)
+```
+
+We can reduce x to return only the unique values by using the `unique` function. We'll assign it to y so we can use it later. 
+```{r}
+y <- unique(x)
+length(y)
+```
+
+To more easily watch how the functions are working, we will create two dataframes to watch how we are manipulating both x and y. 
+
+```{r}
+df.x <- data.frame(x)
+df.y <- data.frame(y)
+```
+
+
+Using the unique values from the `x` vector we defined as `y`, we can use the `match` function to return a vector that replaces each value in x with their position in the y vector (1-212).
+
+```{r}
+df.x$position_in_y<-match(x, y)
+head(df.x, n = 30)
+```
+
+The output from match can then be simplified using the tabulate function
+
+```{r}
+df.y$frequency <- tabulate(df.x$position_in_y)
+head(df.y)
+```
+
+`which.max` returns the position of the maximum value. 
+```{r}
+which.max(df.y$frequency)
+```
+
+```{r}
+df.y[43,]  #df.y[row,column]
+```
+
+Putting it all together, we can do this in one line. 
+
+```{r}
+df.y[which.max(tabulate(match(x,y))),] 
+y[which.max(tabulate(match(x,y)))]
+```
+
+Writing this as a function
+
+```{r}
+mode <- function(x){
+  unique_x <- unique(x)
+  result<-unique_x[which.max(tabulate(match(x,unique_x)))]
+  return(result)
+}
+
+mode(x)
+```
+##### Tidyverse Example
+
+As with most problems in R, we can also find a solution using packages from the Tidyverse. We will therefore use this as an opportunity to introduce some of the basic tenants of Tidyverse functions. 
+
+In the `dplyr` package, a typical workflow will combine observations into a single dataframe, aggregate them into groups, manipulate values into new columns, and summarise the dataframe into more simple terms. 
+
+The piping operator `%>%` allows for this to be done seamlessly by literally pipping the result of one function into arguments of another function. 
+
+```{r}
+print("non-piped text")
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+"piped text" %>% print()
+```
+
+To show how this works, we will start with a simple example where we first want to divided the sum of three and some other number (e.g. 2) by seven.  
+
+Because of the order of operations, the sum of two and three would need to be placed with parenthesis to indicate it happens before dividing by seven. 
+```{r}
+(4+3)/7 # correct
+4 + 3 / 7 # incorrect
+```
+
+The piping operator allows the order of operations be explicated dictated with manipulations of starting value reading from the left to right. 
+
+```{r}
+# pipes use the (.) as a placeholder
+4 %>% + 3 %>% {./7} # removing the { } returns an error
+```
+
+Using pipes increases readability of your R-code and it can easily be reused for different starting values. In RStudio, the pipe character can be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,	Mac:Cmd+Shift+M).  
+
+```{r}
+11 %>% + 3 %>% {./7}
+```
+
+Plus, the piped workflow can easily be defined by a function by assigning it to some string with a `.` in the beginning.
+
+```{r}
+op_order <- . %>% +3 %>% {./7}
+op_order(4)
+op_order(11)
+```
+
+###### Determining Mode with `dplyr`
+
+Using the `ChickWeight` dataset as before, we start by outlining the order of operations.
+
+1. Group the data by weights `group_by()`
+2. Tally the number of members within each group and sort by frequency. `tally()`
+3. Select the row with the largest n. `slice()` 
+4. Return the corresponding weight. `.$weight`
+
+```{r}
+ChickWeight %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
+```
+
+As before, this workflow can be written as a function by placing `.` between the assignment opperator `<-` and piping operator `%>%`.
+
+```{r}
+mode_cw<-. %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
+
+mode_cw(ChickWeight)
+```
+
+However, this function will only work on the `ChickWeight` dataset.
+
+```{r, error=TRUE}
+mode_cw(mtcars)
+```
+
