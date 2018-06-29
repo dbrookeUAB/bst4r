@@ -1,0 +1,19 @@
+# hypothesis testing:Categoricaldata
+
+## introduction 
+
+## two-Sample test for Binomial Proportions 
+
+## Fisher’s Exact test 
+
+## two-Sample test for Binomial Proportions for Matched-Pair data (Mcnemar’s test) 
+
+## Estimation of Sample Size and Power for Comparing two Binomial Proportions 
+
+## R × C Contingency tables 
+
+## Chi-Square Goodness-of-Fit test 
+
+## the Kappa Statistic 
+
+## derivation of Selected Formulas 

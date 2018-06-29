@@ -1,0 +1,27 @@
+# Regression and Correlation Methods
+
+## introduction 
+
+## General Concepts 
+
+## Fitting Regression Lines—the Method of Least Squares 
+
+## inferences About Parameters from Regression Lines 
+
+## interval Estimation for Linear Regression 
+
+## Assessing the Goodness of Fit of Regression Lines 
+
+## the Correlation Coefficient 
+
+## Statistical inference for Correlation Coefficients 
+
+## Multiple Regression 
+
+## Partial and Multiple Correlation 
+
+## Rank Correlation 
+
+## interval Estimation for Rank-Correlation Coefficients 
+
+## derivation of Equation 11.26 

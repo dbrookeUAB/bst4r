@@ -1,0 +1,21 @@
+# hypothesis testing: one-Sample inference
+
+## introduction 
+
+## General Concepts 
+
+## one-Sample test for the Mean of a normal distribution: one-Sided Alternatives 
+
+## one-Sample test for the Mean of a normal distribution: two-Sided Alternatives 
+
+## the Relationship Between hypothesis testing and Confidence intervals 
+
+## the Power of a test 
+
+## Sample-Size determination 
+
+## one-Sample χ2 test for the Variance of a normal distribution 
+
+## one-Sample inference for the Binomial distribution 
+
+## one-Sample inference for the Poisson distribution 

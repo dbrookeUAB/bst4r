@@ -183,85 +183,8 @@ install TinyTeX (which includes XeLaTeX):
 
 \section{Introduction}\label{intro}
 
-You can label chapter and section titles using \texttt{\{\#label\}}
-after them, e.g., we can reference Chapter \ref{intro}. If you do not
-manually label them, there will be automatic labels anyway, e.g.,
-Chapter \ref{methods}.
-
-Figures and tables with captions will be placed in \texttt{figure} and
-\texttt{table} environments, respectively.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{bst4r_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Reference a figure by its code chunk label with the \texttt{fig:}
-prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can
-reference tables generated from \texttt{knitr::kable()}, e.g., see Table
-\ref{tab:nice-tab}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\DataTypeTok{caption =} \StringTok{'Here is a nice table!'}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-You can write citations, too. For example, we are using the
-\textbf{bookdown} package \citep{R-bookdown} in this sample book, which
-was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
-
-\section*{Reading Data Files into R}\label{reading-data-files-into-r}
-\addcontentsline{toc}{section}{Reading Data Files into R}
+\subsection*{Reading Data Files into R}\label{reading-data-files-into-r}
+\addcontentsline{toc}{subsection}{Reading Data Files into R}
 
 The first step in every analysis requires data to be read into the
 environment, and learning how to do this is the first hurdle a person
@@ -277,9 +200,9 @@ packages, such as the multitude of packages in the
 \href{https://www.tidyverse.org}{Tidyverse}, and highlight their
 advantages over Base-R functions.
 
-\subsection{Generic Formats}\label{generic-formats}
+\subsubsection{Generic Formats}\label{generic-formats}
 
-\subsubsection{CSV- Comma Separated
+\paragraph{CSV- Comma Separated
 Values}\label{csv--comma-separated-values}
 
 The fields are separated by a comma \texttt{,} and are typically used
@@ -314,7 +237,7 @@ For example:
 \end{Shaded}
 
 In Base-R, CSV data can be read using the \texttt{read.csv()} function.
-The \texttt{read.csv2()} function is used in countires that use a comma
+The \texttt{read.csv2()} function is used in countries that use a comma
 as a decimal point and a semicolon as a field separator.
 
 \begin{Shaded}
@@ -335,8 +258,7 @@ as a decimal point and a semicolon as a field separator.
 6  1701      8  2.336   61.0      0        0
 \end{verbatim}
 
-\subsubsection{TSV- Tab Separeted
-Values}\label{tsv--tab-separeted-values}
+\paragraph{TSV- Tab Separated Values}\label{tsv--tab-separated-values}
 
 The fields are separated by a tabulation or \t and are saved as
 \texttt{.txt} files. However, not all \texttt{.txt} files contain tab
@@ -380,7 +302,7 @@ For example:
 6  1701      8  2.336   61.0      0        0
 \end{verbatim}
 
-\subsection{Excel}\label{excel}
+\subsubsection{Excel}\label{excel}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -388,10 +310,11 @@ For example:
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Software Specific Formats}\label{software-specific-formats}
+\subsubsection{Software Specific
+Formats}\label{software-specific-formats}
 
 R is increasingly recognized as the gold standard for statistical
-computations, yet some of your future collaboraters will exclusively use
+computations, yet some of your future collaborates will exclusively use
 Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical
 computations. Although these individuals are limited by the types of
 files they can read or write, the \texttt{haven} R-package can both read
@@ -403,7 +326,7 @@ and write any of these file formats.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{\texorpdfstring{SAS(\texttt{.sas7bdat}),
+\paragraph{\texorpdfstring{SAS(\texttt{.sas7bdat}),
 SPSS(\texttt{.sav},\texttt{.por}, \texttt{.xpt}), Stata
 (\texttt{.dta})}{SAS(.sas7bdat), SPSS(.sav,.por, .xpt), Stata (.dta)}}\label{sas.sas7bdat-spss.sav.por-.xpt-stata-.dta}
 
@@ -470,7 +393,7 @@ Reading and writing data stored by some versions of `Epi Info',
 `Minitab', `S', `SAS', `SPSS', `Stata', `Systat', `Weka',and for reading
 and writing some `dBase' files.
 
-\paragraph{RDS}\label{rds}
+RDS
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -494,7 +417,7 @@ and writing some `dBase' files.
 #   `'Wk12lvl'` <int>
 \end{verbatim}
 
-\paragraph{\texorpdfstring{\texttt{rdata}}{rdata}}\label{rdata}
+\texttt{rdata}
 
 The \texttt{.rdata} format is R's specific format. Instead of using a
 \texttt{read.\{something\}} function, \texttt{.rdata} is read into the
@@ -525,8 +448,7 @@ name it had when it was last saved.
 6     356
 \end{verbatim}
 
-\section{Chapter 2: Descriptive
-Statistics}\label{chapter-2-descriptive-statistics}
+\section{Descriptive Statistics}\label{descriptive-statistics}
 
 \subsection{Introduction}\label{introduction}
 
@@ -534,7 +456,7 @@ Statistics}\label{chapter-2-descriptive-statistics}
 PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-d155486f8bf8de5b1cac}{}
+\hypertarget{htmlwidget-c17f8236727b8c3f2a17}{}
 
 \subsection{Measures of Location using Base
 R}\label{measures-of-location-using-base-r}
@@ -622,8 +544,8 @@ number of observations. It is written in statistical terms as
 
 \subsubsection{The Mode}\label{the-mode}
 
-The mode is the most frequently occuring value among all observations in
-the sample. Although it is infrequently used, it is very useful for
+The mode is the most frequently occurring value among all observations
+in the sample. Although it is infrequently used, it is very useful for
 categorical and discrete data.
 
 Since there isn't a built in R-function for mode, we learn how to write
@@ -673,10 +595,10 @@ Use \texttt{return()} to output the result of the function.
 [1] 9
 \end{verbatim}
 
-Since our goal is to find the most frequently occuring value in our
-dataset (\texttt{ChickWeight}), we need to deside the sequence of
+Since our goal is to find the most frequently occurring value in our
+data-set (\texttt{ChickWeight}), we need to decide the sequence of
 functions that we need to accomplish this. As you continue to add
-various R functions to your R toolbelt, you will find many possible
+various R functions to your R tool belt, you will find many possible
 combinations for the same solution.
 
 First, let's assign the weight column from ChickWeight to x to simplify
@@ -722,7 +644,7 @@ We can reduce x to return only the unique values by using the
 \end{verbatim}
 
 To more easily watch how the functions are working, we will create two
-dataframes to watch how we are manipulating both x and y.
+data-frames to watch how we are manipulating both x and y.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -867,8 +789,8 @@ from the Tidyverse. We will therefore use this as an opportunity to
 introduce some of the basic tenants of Tidyverse functions.
 
 In the \texttt{dplyr} package, a typical workflow will combine
-observations into a single dataframe, aggregate them into groups,
-manipulate values into new columns, and summarise the dataframe into
+observations into a single data-frame, aggregate them into groups,
+manipulate values into new columns, and summaries the data-frame into
 more simple terms.
 
 The piping operator \texttt{\%\textgreater{}\%} allows for this to be
@@ -940,8 +862,8 @@ right.
 \end{verbatim}
 
 Using pipes increases readability of your R-code and it can easily be
-reused for different starting values. In RStudio, the pipe character can
-be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,
+reused for different starting values. In R Studio, the pipe character
+can be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,
 Mac:Cmd+Shift+M).
 
 \begin{Shaded}
@@ -980,7 +902,7 @@ assigning it to some string with a \texttt{.} in the beginning.
 
 Determining Mode with \texttt{dplyr}
 
-Using the \texttt{ChickWeight} dataset as before, we start by outlining
+Using the \texttt{ChickWeight} data-set as before, we start by outlining
 the order of operations.
 
 \begin{enumerate}
@@ -1008,7 +930,7 @@ the order of operations.
 \end{verbatim}
 
 As before, this workflow can be written as a function by placing
-\texttt{.} between the assignment opperator \texttt{\textless{}-} and
+\texttt{.} between the assignment operator \texttt{\textless{}-} and
 piping operator \texttt{\%\textgreater{}\%}.
 
 \begin{Shaded}
@@ -1024,7 +946,7 @@ piping operator \texttt{\%\textgreater{}\%}.
 \end{verbatim}
 
 However, this function will only work on the \texttt{ChickWeight}
-dataset.
+data-set.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1036,21 +958,402 @@ dataset.
 Error in grouped_df_impl(data, unname(vars), drop): Column `weight` is unknown
 \end{verbatim}
 
-\section{Methods}\label{methods}
+\subsection{Some Properties of the Arithmetic
+Mean}\label{some-properties-of-the-arithmetic-mean}
 
-We describe our methods in this chapter.
+\subsection{Measures of Spread}\label{measures-of-spread}
 
-\section{Applications}\label{applications}
+\subsection{Some Properties of the Variance and Standard
+deviation}\label{some-properties-of-the-variance-and-standard-deviation}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+\subsection{the Coefficient of
+Variation}\label{the-coefficient-of-variation}
 
-\subsection{Example one}\label{example-one}
+\subsection{Grouped data}\label{grouped-data}
 
-\subsection{Example two}\label{example-two}
+\subsection{Graphic Methods}\label{graphic-methods}
 
-\section{Final Words}\label{final-words}
+\section{Probability}\label{probability}
 
-We have finished a nice book.
+\subsection{introduction}\label{introduction-1}
+
+\subsection{definition of Probability}\label{definition-of-probability}
+
+\subsection{Some Useful Probabilistic
+notation}\label{some-useful-probabilistic-notation}
+
+\subsection{the Multiplication Law of
+Probability}\label{the-multiplication-law-of-probability}
+
+\subsection{the Addition Law of
+Probability}\label{the-addition-law-of-probability}
+
+\subsection{Conditional Probability}\label{conditional-probability}
+
+\subsection{Bayes' Rule and Screening
+tests}\label{bayes-rule-and-screening-tests}
+
+\subsection{Bayesian inference}\label{bayesian-inference}
+
+\subsection{RoC Curves}\label{roc-curves}
+
+\subsection{Prevalence and incidence}\label{prevalence-and-incidence}
+
+\section{discrete Probability
+distributions}\label{discrete-probability-distributions}
+
+\subsection{introduction}\label{introduction-2}
+
+\subsection{Random Variables}\label{random-variables}
+
+\subsection{the Probability-Mass Function for a discrete Random
+Variable}\label{the-probability-mass-function-for-a-discrete-random-variable}
+
+\subsection{the Expected Value of a discrete Random
+Variable}\label{the-expected-value-of-a-discrete-random-variable}
+
+\subsection{the Variance of a discrete Random
+Variable}\label{the-variance-of-a-discrete-random-variable}
+
+\subsection{the Cumulative-distribution Function of a discrete Random
+Variable}\label{the-cumulative-distribution-function-of-a-discrete-random-variable}
+
+\subsection{Permutations and
+Combinations}\label{permutations-and-combinations}
+
+\subsection{the Binomial distribution}\label{the-binomial-distribution}
+
+\subsection{Expected Value and Variance of the Binomial
+distribution}\label{expected-value-and-variance-of-the-binomial-distribution}
+
+\subsection{the Poisson distribution}\label{the-poisson-distribution}
+
+\subsection{Computation of Poisson
+Probabilities}\label{computation-of-poisson-probabilities}
+
+\subsection{Expected Value and Variance of the Poisson
+distribution}\label{expected-value-and-variance-of-the-poisson-distribution}
+
+\subsection{Poisson Approximation to the Binomial
+distribution}\label{poisson-approximation-to-the-binomial-distribution}
+
+\section{Continuous Probability
+distributions}\label{continuous-probability-distributions}
+
+\subsection{introduction}\label{introduction-3}
+
+\subsection{General Concepts}\label{general-concepts}
+
+\subsection{the normal distribution}\label{the-normal-distribution}
+
+\subsection{Properties of the Standard normal
+distribution}\label{properties-of-the-standard-normal-distribution}
+
+\subsection{Conversion from an n(μ,σ2) distribution to an n (0,1)
+distribution}\label{conversion-from-an-n2-distribution-to-an-n-01-distribution}
+
+\subsection{Linear Combinations of Random
+Variables}\label{linear-combinations-of-random-variables}
+
+\subsection{normal Approximation to the Binomial
+distribution}\label{normal-approximation-to-the-binomial-distribution}
+
+\subsection{normal Approximation to the Poisson
+distribution}\label{normal-approximation-to-the-poisson-distribution}
+
+\section{Estimation}\label{estimation}
+
+\subsection{introduction}\label{introduction-4}
+
+\subsection{the Relationship Between Population and
+Sample}\label{the-relationship-between-population-and-sample}
+
+\subsection{Random-number tables}\label{random-number-tables}
+
+\subsection{Randomized Clinical
+trials}\label{randomized-clinical-trials}
+
+\subsection{Estimation of the Mean of a
+distribution}\label{estimation-of-the-mean-of-a-distribution}
+
+\subsection{Estimation of the Variance of a
+distribution}\label{estimation-of-the-variance-of-a-distribution}
+
+\subsection{Estimation for the Binomial
+distribution}\label{estimation-for-the-binomial-distribution}
+
+\subsection{Estimation for the Poisson
+distribution}\label{estimation-for-the-poisson-distribution}
+
+\subsection{one-Sided Confidence
+intervals}\label{one-sided-confidence-intervals}
+
+\subsection{the Bootstrap}\label{the-bootstrap}
+
+\section{hypothesis testing: one-Sample
+inference}\label{hypothesis-testing-one-sample-inference}
+
+\subsection{introduction}\label{introduction-5}
+
+\subsection{General Concepts}\label{general-concepts-1}
+
+\subsection{one-Sample test for the Mean of a normal distribution:
+one-Sided
+Alternatives}\label{one-sample-test-for-the-mean-of-a-normal-distribution-one-sided-alternatives}
+
+\subsection{one-Sample test for the Mean of a normal distribution:
+two-Sided
+Alternatives}\label{one-sample-test-for-the-mean-of-a-normal-distribution-two-sided-alternatives}
+
+\subsection{the Relationship Between hypothesis testing and Confidence
+intervals}\label{the-relationship-between-hypothesis-testing-and-confidence-intervals}
+
+\subsection{the Power of a test}\label{the-power-of-a-test}
+
+\subsection{Sample-Size determination}\label{sample-size-determination}
+
+\subsection{one-Sample χ2 test for the Variance of a normal
+distribution}\label{one-sample-2-test-for-the-variance-of-a-normal-distribution}
+
+\subsection{one-Sample inference for the Binomial
+distribution}\label{one-sample-inference-for-the-binomial-distribution}
+
+\subsection{one-Sample inference for the Poisson
+distribution}\label{one-sample-inference-for-the-poisson-distribution}
+
+\section{Hypothesis Testing: two-Sample
+inference}\label{hypothesis-testing-two-sample-inference}
+
+\subsection{introduction}\label{introduction-6}
+
+\subsection{the Paired t test}\label{the-paired-t-test}
+
+\subsection{interval Estimation for the Comparison of Means from two
+Paired
+Samples}\label{interval-estimation-for-the-comparison-of-means-from-two-paired-samples}
+
+\subsection{two-Sample t test for independent Samples with Equal
+Variances}\label{two-sample-t-test-for-independent-samples-with-equal-variances}
+
+\subsection{interval Estimation for the Comparison of Means from two
+independent Samples (Equal Variance
+Case)}\label{interval-estimation-for-the-comparison-of-means-from-two-independent-samples-equal-variance-case}
+
+\subsection{testing for the Equality of two
+Variances}\label{testing-for-the-equality-of-two-variances}
+
+\subsection{two-Sample t test for independent Samples with Unequal
+Variances}\label{two-sample-t-test-for-independent-samples-with-unequal-variances}
+
+\subsection{Estimation of Sample Size and Power for Comparing two
+Means}\label{estimation-of-sample-size-and-power-for-comparing-two-means}
+
+\subsection{the treatment of outliers}\label{the-treatment-of-outliers}
+
+\subsection{derivation of Equation
+8.13}\label{derivation-of-equation-8.13}
+
+\section{Nonparametric Methods}\label{nonparametric-methods}
+
+\subsection{introduction}\label{introduction-7}
+
+\subsection{the Sign test}\label{the-sign-test}
+
+\subsection{the Wilcoxon Signed-Rank
+test}\label{the-wilcoxon-signed-rank-test}
+
+\subsection{the Wilcoxon Rank-Sum
+test}\label{the-wilcoxon-rank-sum-test}
+
+\subsection{Permutation tests}\label{permutation-tests}
+
+\section{hypothesis
+testing:Categoricaldata}\label{hypothesis-testingcategoricaldata}
+
+\subsection{introduction}\label{introduction-8}
+
+\subsection{two-Sample test for Binomial
+Proportions}\label{two-sample-test-for-binomial-proportions}
+
+\subsection{Fisher's Exact test}\label{fishers-exact-test}
+
+\subsection{two-Sample test for Binomial Proportions for Matched-Pair
+data (Mcnemar's
+test)}\label{two-sample-test-for-binomial-proportions-for-matched-pair-data-mcnemars-test}
+
+\subsection{Estimation of Sample Size and Power for Comparing two
+Binomial
+Proportions}\label{estimation-of-sample-size-and-power-for-comparing-two-binomial-proportions}
+
+\subsection{R × C Contingency tables}\label{r-c-contingency-tables}
+
+\subsection{Chi-Square Goodness-of-Fit
+test}\label{chi-square-goodness-of-fit-test}
+
+\subsection{the Kappa Statistic}\label{the-kappa-statistic}
+
+\subsection{derivation of Selected
+Formulas}\label{derivation-of-selected-formulas}
+
+\section{Regression and Correlation
+Methods}\label{regression-and-correlation-methods}
+
+\subsection{introduction}\label{introduction-9}
+
+\subsection{General Concepts}\label{general-concepts-2}
+
+\subsection{Fitting Regression Lines---the Method of Least
+Squares}\label{fitting-regression-linesthe-method-of-least-squares}
+
+\subsection{inferences About Parameters from Regression
+Lines}\label{inferences-about-parameters-from-regression-lines}
+
+\subsection{interval Estimation for Linear
+Regression}\label{interval-estimation-for-linear-regression}
+
+\subsection{Assessing the Goodness of Fit of Regression
+Lines}\label{assessing-the-goodness-of-fit-of-regression-lines}
+
+\subsection{the Correlation
+Coefficient}\label{the-correlation-coefficient}
+
+\subsection{Statistical inference for Correlation
+Coefficients}\label{statistical-inference-for-correlation-coefficients}
+
+\subsection{Multiple Regression}\label{multiple-regression}
+
+\subsection{Partial and Multiple
+Correlation}\label{partial-and-multiple-correlation}
+
+\subsection{Rank Correlation}\label{rank-correlation}
+
+\subsection{interval Estimation for Rank-Correlation
+Coefficients}\label{interval-estimation-for-rank-correlation-coefficients}
+
+\subsection{derivation of Equation
+11.26}\label{derivation-of-equation-11.26}
+
+\section{Multisample inference}\label{multisample-inference}
+
+\subsection{introduction to the one-Way Analysis of
+Variance}\label{introduction-to-the-one-way-analysis-of-variance}
+
+\subsection{one-Way AnoVA---Fixed-Effects
+Model}\label{one-way-anovafixed-effects-model}
+
+\subsection{hypothesis testing in one-Way AnoVA--- Fixed-Effects
+Model}\label{hypothesis-testing-in-one-way-anova-fixed-effects-model}
+
+\subsection{Comparisons of Specific Groups in one- Way
+AnoVA}\label{comparisons-of-specific-groups-in-one--way-anova}
+
+\subsection{two-Way AnoVA}\label{two-way-anova}
+
+\subsection{the Kruskal-Wallis test}\label{the-kruskal-wallis-test}
+
+\subsection{one-Way AnoVA---the Random-Effects
+Model}\label{one-way-anovathe-random-effects-model}
+
+\subsection{the intraclass Correlation
+Coefficient}\label{the-intraclass-correlation-coefficient}
+
+\subsection{Mixed Models}\label{mixed-models}
+
+\subsection{derivation of Equation}\label{derivation-of-equation}
+
+\section{design and Analysis techniques for Epidemiologic
+Studies}\label{design-and-analysis-techniques-for-epidemiologic-studies}
+
+\subsection{introduction}\label{introduction-10}
+
+\subsection{Study design}\label{study-design}
+
+\subsection{Measures of Effect for Categorical
+data}\label{measures-of-effect-for-categorical-data}
+
+\subsection{Attributable Risk}\label{attributable-risk}
+
+\subsection{Confounding and
+Standardization}\label{confounding-and-standardization}
+
+\subsection{Methods of inference for Stratified Categorical data---the
+Mantel-haenszel
+test}\label{methods-of-inference-for-stratified-categorical-datathe-mantel-haenszel-test}
+
+\subsection{Multiple Logistic
+Regression}\label{multiple-logistic-regression}
+
+\subsection{Extensions to Logistic
+Regression}\label{extensions-to-logistic-regression}
+
+\subsection{Sample Size Estimation for Logistic
+Regression}\label{sample-size-estimation-for-logistic-regression}
+
+\subsection{Meta-Analysis}\label{meta-analysis}
+
+\subsection{Equivalence Studies}\label{equivalence-studies}
+
+\subsection{the Cross-over design}\label{the-cross-over-design}
+
+\subsection{Clustered Binary data}\label{clustered-binary-data}
+
+\subsection{Longitudinal data
+Analysis}\label{longitudinal-data-analysis}
+
+\subsection{Measurement-Error Methods}\label{measurement-error-methods}
+
+\subsection{Missing data}\label{missing-data}
+
+\subsection{derivation of 100\% × (1 -- α) Ci for the Risk
+difference}\label{derivation-of-100-1--ci-for-the-risk-difference}
+
+\section{Hypothesis testing: Person-time
+data}\label{hypothesis-testing-person-time-data}
+
+\subsection{Measure of Effect for Person-time
+data}\label{measure-of-effect-for-person-time-data}
+
+\subsection{one-Sample inference for incidence-Rate
+data}\label{one-sample-inference-for-incidence-rate-data}
+
+\subsection{two-Sample inference for incidence-Rate
+data}\label{two-sample-inference-for-incidence-rate-data}
+
+\subsection{Power and Sample-Size Estimation for Person-time
+data}\label{power-and-sample-size-estimation-for-person-time-data}
+
+\subsection{Inference for Stratified Person-Time
+Data}\label{inference-for-stratified-person-time-data}
+
+\subsection{Power and Sample-Size Estimation for Stratified Person-Time
+Data}\label{power-and-sample-size-estimation-for-stratified-person-time-data}
+
+\subsection{Testing for Trend: Incidence-Rate
+Data}\label{testing-for-trend-incidence-rate-data}
+
+\subsection{Introduction to Survival
+Analysis}\label{introduction-to-survival-analysis}
+
+\subsection{Estimation of Survival Curves: The Kaplan-Meier
+Estimator}\label{estimation-of-survival-curves-the-kaplan-meier-estimator}
+
+\subsection{The Log-Rank Test}\label{the-log-rank-test}
+
+\subsection{The Proportional-Hazards
+Model}\label{the-proportional-hazards-model}
+
+\subsection{Power and Sample-Size Estimation under the
+Proportional-Hazards
+Model}\label{power-and-sample-size-estimation-under-the-proportional-hazards-model}
+
+\subsection{Parametric Survival
+Analysis}\label{parametric-survival-analysis}
+
+\subsection{Parametric Regression Models for Survival
+Data}\label{parametric-regression-models-for-survival-data}
+
+\subsection{Derivation of Selected
+Formulas}\label{derivation-of-selected-formulas-1}
 
 \bibliography{book.bib,packages.bib}
 

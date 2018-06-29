@@ -246,3 +246,15 @@ However, this function will only work on the `ChickWeight` data-set.
 mode_cw(mtcars)
 ```
 
+
+## Some Properties of the Arithmetic Mean 
+
+## Measures of Spread 
+
+## Some Properties of the Variance and Standard deviation 
+
+## the Coefficient of Variation 
+
+## Grouped data 
+
+## Graphic Methods 

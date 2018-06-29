@@ -1,0 +1,21 @@
+#Probability
+
+## introduction
+
+## definition of Probability 
+
+## Some Useful Probabilistic notation 
+
+## the Multiplication Law of Probability 
+
+## the Addition Law of Probability 
+
+## Conditional Probability 
+
+## Bayes’ Rule and Screening tests 
+
+## Bayesian inference 
+
+## RoC Curves 
+
+## Prevalence and incidence 

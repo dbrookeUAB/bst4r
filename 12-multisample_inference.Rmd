@@ -1,0 +1,21 @@
+# Multisample inference
+
+## introduction to the one-Way Analysis of Variance 
+
+## one-Way AnoVA—Fixed-Effects Model 
+
+## hypothesis testing in one-Way AnoVA— Fixed-Effects Model 
+
+## Comparisons of Specific Groups in one- Way AnoVA 
+
+## two-Way AnoVA 
+
+## the Kruskal-Wallis test 
+
+## one-Way AnoVA—the Random-Effects Model 
+
+## the intraclass Correlation Coefficient 
+
+## Mixed Models 
+
+## derivation of Equation 

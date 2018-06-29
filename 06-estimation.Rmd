@@ -1,0 +1,21 @@
+#Estimation
+
+## introduction 
+
+## the Relationship Between Population and Sample 
+
+## Random-number tables 
+
+## Randomized Clinical trials 
+
+## Estimation of the Mean of a distribution 
+
+## Estimation of the Variance of a distribution 
+
+## Estimation for the Binomial distribution 
+
+## Estimation for the Poisson distribution 
+
+## one-Sided Confidence intervals 
+
+## the Bootstrap 

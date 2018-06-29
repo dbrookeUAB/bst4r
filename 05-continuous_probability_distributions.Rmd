@@ -1,0 +1,17 @@
+#Continuous Probability distributions
+
+## introduction 
+
+## General Concepts 
+
+## the normal distribution 
+
+## Properties of the Standard normal distribution 
+
+## Conversion from an n(μ,σ2) distribution to an n (0,1) distribution 
+
+## Linear Combinations of Random Variables 
+
+## normal Approximation to the Binomial distribution 
+
+## normal Approximation to the Poisson distribution 

@@ -1,0 +1,11 @@
+# Nonparametric Methods
+
+## introduction 
+
+## the Sign test 
+
+## the Wilcoxon Signed-Rank test 
+
+## the Wilcoxon Rank-Sum test 
+
+## Permutation tests 

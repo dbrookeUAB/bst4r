@@ -1,0 +1,31 @@
+# Hypothesis testing: Person-time data
+
+## Measure of Effect for Person-time data 
+
+## one-Sample inference for incidence-Rate data 
+
+## two-Sample inference for incidence-Rate data 
+
+## Power and Sample-Size Estimation for Person-time data 
+
+## Inference for Stratified Person-Time Data  
+
+## Power and Sample-Size Estimation for  Stratified Person-Time Data  
+
+## Testing for Trend: Incidence-Rate Data  
+
+## Introduction to Survival Analysis  
+
+## Estimation of Survival Curves:   The Kaplan-Meier Estimator  
+
+## The Log-Rank Test  
+
+## The Proportional-Hazards Model  
+
+## Power and Sample-Size Estimation under  the Proportional-Hazards Model  
+
+## Parametric Survival Analysis  
+
+## Parametric Regression Models for Survival  Data  
+
+## Derivation of Selected Formulas  

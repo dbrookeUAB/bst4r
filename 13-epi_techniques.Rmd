@@ -1,0 +1,35 @@
+# design and Analysis techniques for Epidemiologic Studies
+
+## introduction 
+
+## Study design 
+
+## Measures of Effect for Categorical data 
+
+## Attributable Risk 
+
+## Confounding and Standardization 
+
+## Methods of inference for Stratified Categorical data—the Mantel-haenszel test 
+
+## Multiple Logistic Regression 
+
+## Extensions to Logistic Regression 
+
+## Sample Size Estimation for Logistic Regression 
+
+## Meta-Analysis 
+
+## Equivalence Studies 
+
+## the Cross-over design 
+
+## Clustered Binary data 
+
+## Longitudinal data Analysis 
+
+## Measurement-Error Methods 
+
+## Missing data 
+
+## derivation of 100% × (1 – α) Ci for the Risk difference 

@@ -1,0 +1,166 @@
+# descriptive Statistics
+## introduction 
+## Measures of Location 
+## Some Properties of the Arithmetic Mean 
+## Measures of Spread 
+## Some Properties of the Variance and Standard deviation 
+## the Coefficient of Variation 
+## Grouped data 
+## Graphic Methods 
+
+# Probability
+## introduction
+## definition of Probability 
+## Some Useful Probabilistic notation 
+## the Multiplication Law of Probability 
+## the Addition Law of Probability 
+## Conditional Probability 
+## Bayes’ Rule and Screening tests 
+## Bayesian inference 
+## RoC Curves 
+## Prevalence and incidence 
+
+# discrete Probability distributions
+## introduction 
+## Random Variables 
+## the Probability-Mass Function for a discrete Random Variable 
+## the Expected Value of a discrete Random Variable 
+## the Variance of a discrete Random Variable 
+## the Cumulative-distribution Function of a discrete Random Variable 
+## Permutations and Combinations 
+## the Binomial distribution 
+## Expected Value and Variance of the Binomial distribution 
+## the Poisson distribution 
+## Computation of Poisson Probabilities 
+## Expected Value and Variance of the Poisson distribution 
+## Poisson Approximation to the Binomial distribution 
+
+# Continuous Probability distributions
+## introduction 
+## General Concepts 
+## the normal distribution 
+## Properties of the Standard normal distribution 
+## Conversion from an n(μ,σ2) distribution to an n (0,1) distribution 
+## Linear Combinations of Random Variables 
+## normal Approximation to the Binomial distribution 
+## normal Approximation to the Poisson distribution 
+
+# Estimation
+## introduction 
+## the Relationship Between Population and Sample 
+## Random-number tables 
+## Randomized Clinical trials 
+## Estimation of the Mean of a distribution 
+## Estimation of the Variance of a distribution 
+## Estimation for the Binomial distribution 
+## Estimation for the Poisson distribution 
+## one-Sided Confidence intervals 
+## the Bootstrap 
+
+# hypothesis testing: one-Sample inference
+## introduction 
+## General Concepts 
+## one-Sample test for the Mean of a normal distribution: one-Sided Alternatives 
+## one-Sample test for the Mean of a normal distribution: two-Sided Alternatives 
+## the Relationship Between hypothesis testing and Confidence intervals 
+## the Power of a test 
+## Sample-Size determination 
+## one-Sample χ2 test for the Variance of a normal distribution 
+## one-Sample inference for the Binomial distribution 
+## one-Sample inference for the Poisson distribution 
+
+# hypothesis testing: two-Sample inference
+## introduction 
+## the Paired t test 
+## interval Estimation for the Comparison of Means from two Paired Samples 
+## two-Sample t test for independent Samples with Equal Variances 
+## interval Estimation for the Comparison of Means from two independent Samples (Equal Variance Case) 
+## testing for the Equality of two Variances 
+## two-Sample t test for independent Samples with Unequal Variances 
+## Estimation of Sample Size and Power for Comparing two Means 
+## the treatment of outliers 
+## derivation of Equation 8.13 
+
+# nonparametric Methods
+## introduction 
+## the Sign test 
+## the Wilcoxon Signed-Rank test 
+## the Wilcoxon Rank-Sum test 
+## Permutation tests 
+
+# hypothesis testing:Categoricaldata
+## introduction 
+## two-Sample test for Binomial Proportions 
+## Fisher’s Exact test 
+## two-Sample test for Binomial Proportions for Matched-Pair data (Mcnemar’s test) 
+## Estimation of Sample Size and Power for Comparing two Binomial Proportions 
+## R × C Contingency tables 
+## Chi-Square Goodness-of-Fit test 
+## the Kappa Statistic 
+## derivation of Selected Formulas 
+
+
+# Regression and Correlation Methods
+## introduction 
+## General Concepts 
+## Fitting Regression Lines—the Method of Least Squares 
+## inferences About Parameters from Regression Lines 
+## interval Estimation for Linear Regression 
+## Assessing the Goodness of Fit of Regression Lines 
+## the Correlation Coefficient 
+## Statistical inference for Correlation Coefficients 
+## Multiple Regression 
+## Partial and Multiple Correlation 
+## Rank Correlation 
+## interval Estimation for Rank-Correlation Coefficients 
+## derivation of Equation 11.26 
+
+
+# Multisample inference
+## introduction to the one-Way Analysis of Variance 
+## one-Way AnoVA—Fixed-Effects Model 
+## hypothesis testing in one-Way AnoVA— Fixed-Effects Model 
+## Comparisons of Specific Groups in one- Way AnoVA 
+## two-Way AnoVA 
+## the Kruskal-Wallis test 
+## one-Way AnoVA—the Random-Effects Model 
+## the intraclass Correlation Coefficient 
+## Mixed Models 
+## derivation of Equation 
+
+
+# design and Analysis techniques for Epidemiologic Studies
+## introduction 
+## Study design 
+## Measures of Effect for Categorical data 
+## Attributable Risk 
+## Confounding and Standardization 
+## Methods of inference for Stratified Categorical data—the Mantel-haenszel test 
+## Multiple Logistic Regression 
+## Extensions to Logistic Regression 
+## Sample Size Estimation for Logistic Regression 
+## Meta-Analysis 
+## Equivalence Studies 
+## the Cross-over design 
+## Clustered Binary data 
+## Longitudinal data Analysis 
+## Measurement-Error Methods 
+## Missing data 
+## derivation of 100% × (1 – α) Ci for the Risk difference 
+
+# hypothesis testing: Person-time data
+## Measure of Effect for Person-time data 
+## one-Sample inference for incidence-Rate data 
+## two-Sample inference for incidence-Rate data 
+## Power and Sample-Size Estimation for Person-time data 
+## Inference for Stratified Person-Time Data  
+## Power and Sample-Size Estimation for  Stratified Person-Time Data  
+## Testing for Trend: Incidence-Rate Data  
+## Introduction to Survival Analysis  
+## Estimation of Survival Curves:   The Kaplan-Meier Estimator  
+## The Log-Rank Test  
+## The Proportional-Hazards Model  
+## Power and Sample-Size Estimation under  the Proportional-Hazards Model  
+## Parametric Survival Analysis  
+## Parametric Regression Models for Survival  Data  
+## Derivation of Selected Formulas  

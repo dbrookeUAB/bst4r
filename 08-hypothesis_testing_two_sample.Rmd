@@ -1,0 +1,21 @@
+# Hypothesis Testing: two-Sample inference
+
+## introduction 
+
+## the Paired t test 
+
+## interval Estimation for the Comparison of Means from two Paired Samples 
+
+## two-Sample t test for independent Samples with Equal Variances 
+
+## interval Estimation for the Comparison of Means from two independent Samples (Equal Variance Case) 
+
+## testing for the Equality of two Variances 
+
+## two-Sample t test for independent Samples with Unequal Variances 
+
+## Estimation of Sample Size and Power for Comparing two Means 
+
+## the treatment of outliers 
+
+## derivation of Equation 8.13 
