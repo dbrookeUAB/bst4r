@@ -1,27 +1,27 @@
-#discrete Probability distributions
+# Discrete Probability distributions
 
-## introduction 
+## Introduction 
 
 ## Random Variables 
 
-## the Probability-Mass Function for a discrete Random Variable 
+## The Probability-Mass Function for a Discrete Random Variable 
 
-## the Expected Value of a discrete Random Variable 
+## The Expected Value of a discrete Random Variable 
 
-## the Variance of a discrete Random Variable 
+## The Variance of a Discrete Random Variable 
 
-## the Cumulative-distribution Function of a discrete Random Variable 
+## The Cumulative-Distribution Function of a Discrete Random Variable 
 
 ## Permutations and Combinations 
 
-## the Binomial distribution 
+## The Binomial distribution 
 
 ## Expected Value and Variance of the Binomial distribution 
 
-## the Poisson distribution 
+## The Poisson distribution 
 
 ## Computation of Poisson Probabilities 
 
-## Expected Value and Variance of the Poisson distribution 
+## Expected Value and Variance of the Poisson Distribution 
 
-## Poisson Approximation to the Binomial distribution 
+## Poisson Approximation to the Binomial Distribution 

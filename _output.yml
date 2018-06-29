@@ -1,11 +1,33 @@
 bookdown::gitbook:
   css: style.css
+  split_by: "section+number"
+  fig_caption: true 
   config:
     toc:
+      collapse: section
+      scroll_highlight: yes
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Biostatistics Using R</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        toc:
+    toolbar:
+      position: fixed
+    edit : null
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

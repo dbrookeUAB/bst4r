@@ -1,18 +1,18 @@
 #Probability
 
-## introduction
+## Introduction
 
-## definition of Probability 
+## Definition of Probability 
 
 ## Some Useful Probabilistic notation 
 
-## the Multiplication Law of Probability 
+## The Multiplication Law of Probability 
 
-## the Addition Law of Probability 
+## The Addition Law of Probability 
 
 ## Conditional Probability 
 
-## Bayes’ Rule and Screening tests 
+## Bayes’ Rule and Screening Tests 
 
 ## Bayesian inference 
 

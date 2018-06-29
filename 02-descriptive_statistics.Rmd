@@ -253,7 +253,7 @@ mode_cw(mtcars)
 
 ## Some Properties of the Variance and Standard deviation 
 
-## the Coefficient of Variation 
+## The Coefficient of Variation 
 
 ## Grouped data 
 
