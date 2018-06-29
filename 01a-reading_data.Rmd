@@ -28,7 +28,7 @@ readLines(csv_example_path)[1:8]  # reads each line of the file
 
 ```
 
-In Base-R, CSV data can be read using the `read.csv()` function. The `read.csv2()` function is used in countires that use a comma as a decimal point and a semicolon as a field separator.  
+In Base-R, CSV data can be read using the `read.csv()` function. The `read.csv2()` function is used in countries that use a comma as a decimal point and a semicolon as a field separator.  
 
 ```{r, comment=NULL}
 csv_example <- read.csv(csv_example_path)
@@ -38,7 +38,7 @@ head(csv_example)
 
 
 
-### TSV- Tab Separeted Values
+### TSV- Tab Separated Values
  The fields are separated by a tabulation <TAB> or \t and are saved as `.txt` files. However, not all `.txt` files contain tab separated values.  
 
 For example:
@@ -67,7 +67,7 @@ library(readxl)
 
 ## Software Specific Formats
 
-R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaboraters will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the `haven` R-package can both read and write any of these file formats. 
+R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaborates will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the `haven` R-package can both read and write any of these file formats. 
 
 
 ```{r}

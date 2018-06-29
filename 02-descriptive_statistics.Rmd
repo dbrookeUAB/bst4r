@@ -1,4 +1,4 @@
-# Chapter 2: Descriptive Statistics
+# Descriptive Statistics
 
 ## Introduction
 
@@ -67,7 +67,7 @@ median(ChickWeight$weight)
 
 ### The Mode
 
-The mode is the most frequently occuring value among all observations in the sample. Although it is infrequently used, it is very useful for categorical and discrete data.
+The mode is the most frequently occurring value among all observations in the sample. Although it is infrequently used, it is very useful for categorical and discrete data.
 
 Since there isn't a built in R-function for mode, we learn how to write a function to return the mode through a few examples. 
 
@@ -103,7 +103,7 @@ return_value(4,5)
 
 
 
-Since our goal is to find the most frequently occuring value in our dataset (`ChickWeight`), we need to deside the sequence of functions that we need to accomplish this. As you continue to add various R functions to your R toolbelt, you will find many possible combinations for the same solution. 
+Since our goal is to find the most frequently occurring value in our data-set (`ChickWeight`), we need to decide the sequence of functions that we need to accomplish this. As you continue to add various R functions to your R tool belt, you will find many possible combinations for the same solution. 
 
 First, let's assign the weight column from ChickWeight to x to simplify things.  When `x` is called, the weight column from ChickWeight is returned as a vector.
 
@@ -124,7 +124,7 @@ y <- unique(x)
 length(y)
 ```
 
-To more easily watch how the functions are working, we will create two dataframes to watch how we are manipulating both x and y. 
+To more easily watch how the functions are working, we will create two data-frames to watch how we are manipulating both x and y. 
 
 ```{r}
 df.x <- data.frame(x)
@@ -177,7 +177,7 @@ mode(x)
 
 As with most problems in R, we can also find a solution using packages from the Tidyverse. We will therefore use this as an opportunity to introduce some of the basic tenants of Tidyverse functions. 
 
-In the `dplyr` package, a typical workflow will combine observations into a single dataframe, aggregate them into groups, manipulate values into new columns, and summarise the dataframe into more simple terms. 
+In the `dplyr` package, a typical workflow will combine observations into a single data-frame, aggregate them into groups, manipulate values into new columns, and summaries the data-frame into more simple terms. 
 
 The piping operator `%>%` allows for this to be done seamlessly by literally pipping the result of one function into arguments of another function. 
 
@@ -205,7 +205,7 @@ The piping operator allows the order of operations be explicated dictated with m
 4 %>% + 3 %>% {./7} # removing the { } returns an error
 ```
 
-Using pipes increases readability of your R-code and it can easily be reused for different starting values. In RStudio, the pipe character can be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,	Mac:Cmd+Shift+M).  
+Using pipes increases readability of your R-code and it can easily be reused for different starting values. In R Studio, the pipe character can be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,	Mac:Cmd+Shift+M).  
 
 ```{r}
 11 %>% + 3 %>% {./7}
@@ -221,7 +221,7 @@ op_order(11)
 
 ###### Determining Mode with `dplyr`
 
-Using the `ChickWeight` dataset as before, we start by outlining the order of operations.
+Using the `ChickWeight` data-set as before, we start by outlining the order of operations.
 
 1. Group the data by weights `group_by()`
 2. Tally the number of members within each group and sort by frequency. `tally()`
@@ -232,7 +232,7 @@ Using the `ChickWeight` dataset as before, we start by outlining the order of op
 ChickWeight %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
 ```
 
-As before, this workflow can be written as a function by placing `.` between the assignment opperator `<-` and piping operator `%>%`.
+As before, this workflow can be written as a function by placing `.` between the assignment operator `<-` and piping operator `%>%`.
 
 ```{r}
 mode_cw<-. %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
@@ -240,7 +240,7 @@ mode_cw<-. %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
 mode_cw(ChickWeight)
 ```
 
-However, this function will only work on the `ChickWeight` dataset.
+However, this function will only work on the `ChickWeight` data-set.
 
 ```{r, error=TRUE}
 mode_cw(mtcars)
