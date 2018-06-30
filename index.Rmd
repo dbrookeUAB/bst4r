@@ -24,7 +24,7 @@ options(
   width = 55, digits = 4, warnPartialMatchAttr = FALSE, warnPartialMatchDollar = FALSE
 )
 
-knitr::opts_chunk$set(comment = NULL)
+knitr::opts_chunk$set(comment = NULL, cache = TRUE)
 
 ```
 

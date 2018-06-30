@@ -2,6 +2,7 @@
 
 ## Introduction 
 
+
 ## The Relationship Between Population and Sample 
 
 ## Random-Number Tables 

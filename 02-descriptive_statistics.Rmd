@@ -1,6 +1,5 @@
 # Descriptive Statistics
 
-## Introduction
 
 ```{r, echo=FALSE}
 library(DT)
@@ -10,17 +9,20 @@ datatable(ChickWeight, rownames = FALSE)
 
 ## Measures of Location using Base R
 
-```{r, message=FALSE, comment=NULL}
-head(ChickWeight)
-```
+>Determining the correct method for measuring the central tendancy of a vector depends on the relationship between the numbers within the vector. Numbers that can be summed in a linear sequence are best represented using the arithmic mean. 
+>
+>If you’re measuring units that add up as reciprocals in a sequence (such as speed or distance / time over a constant distance, capacitance in series, resistance in parallel), then a harmonic mean will give you a meaningful average. For example, the harmonic mean of capacitors in series represents the capacitance that a single capacitor would have if only one capacitor was used instead of the set of capacitors in series.
+>
+>If you’re measuring units that multiply in a sequence (such as growth rates or percentages), then a geometric mean will give you a meaningful average. For example, the geometric mean of a sequence of different annual interest rates over 10 years represents an interest rate that, if applied constantly for ten years, would produce the same amount growth in principal as the sequence of different annual interest rates over ten years did.
+Does an arithmetic mean of interest rates have any significance? As a number, sure. But as an “average” interest rate it seems less intuitive because the principal it produces at the end of ten years is much larger than the geometric mean. Similarly, the harmonic mean of interest rates produces a smaller principal, and so is less intuitive.
+>
+>Now consider areas and volumes as a test of understanding. What mean should we use to report the “average” area or volume in a sequence of areas or volumes? Area is measured in units of length squared. Volume is measured in units of length cubed. In a sequence of areas or volumes, we could either add them up linearly and divide or multiply them and take the roots — which is correct? It depends on what we’re measuring. If these areas or volumes are dependent upon each other (e.g., the size of the same microbe at different times), then a geometric mean probably makes more sense. If these areas or volumes are independent of each other (e.g., the size of a house or pool), then an arithmetic mean probably makes more sense.
+But whatever you decide, when in doubt report that decision. There is nothing worse for a reader than to see an “average” and not know how it was calculated!
+> - [Michael F. Martin,Quora Answer](https://www.quora.com/When-is-it-most-appropriate-to-take-the-arithmetic-mean-vs-geometric-mean-vs-harmonic-mean)
 
-### The Arithmetic Mean
 
-The arithmetic mean is the sum of all the observations divided by the number of observations. It is written in statistical terms as 
 
-$$\overline{x} = \frac{1}{n}\sum^n_{i=1}x_i$$
-
-```{r}
+```{r, echo = FALSE}
 y= rbeta(10000,1,12,6)
 hist(y, # histogram
  col = "lightblue", # column color
@@ -54,12 +56,25 @@ legend(x = "topright", # location of legend within plot area
 ```
 
 
-```{r}
+### The Arithmetic Mean
+
+The arithmetic mean is the sum of all the observations divided by the number of observations. It is written in statistical terms as 
+
+$$\overline{x} = \frac{1}{n}\sum^n_{i=1}x_i$$
+
+```{r, comment=NULL}
 mean(ChickWeight$weight)
 ```
 
 
 ### The Median
+
+The sample median is:
+
+1. If *n* is odd $\rightarrow$ $\Big(\frac{n+1}{2}\Big)\text{th}$ largest observation 
+
+2. If *n* is even $\rightarrow$ $\Big(\frac{n}{2}\Big)\text{th}$ and $\Big(\frac{n}{2}+1\Big)\text{th}$ largest observations 
+
 
 ```{r}
 median(ChickWeight$weight)
@@ -247,14 +262,151 @@ mode_cw(mtcars)
 ```
 
 
-## Some Properties of the Arithmetic Mean 
+### Geometric Mean
+
+The geometric mean is the antilogarithm of $\overline{\log x}$, where
+$$\overline{\log x}= \frac{1}{n}\sum^n_{i=1}\log{x_i}$$
+
+As with mode, there is no function in Base-R for finding the geometric mean. 
+
+```{r}
+# using values 
+gm1 <- function(x){
+  n = length(x)
+  
+  gm = exp((1/n)*sum(log(x)))
+
+  return(gm)
+}
+
+gm2 <- function(x){
+  return(exp(mean(log(x))))
+}
+```
+
+```{r}
+gm1(x)
+gm2(x)
+```
 
 ## Measures of Spread 
 
-## Some Properties of the Variance and Standard deviation 
+
+### Range
+
+The range is the difference between the largest and smallest observations in a sample. 
+
+### Quantiles/Percentiles
+
+The pth percentile is defined by 
+
+1.  The (k+1)th largest sample point if np/100 is not an integer (where k is the largest integer less than np/100).
+
+2.  The average of the (np/100)th and (np/100+1)th largest observations if np/100 is an integer. 
+
+```{r}
+# 10th and 90th percentile
+quantile(x = x, probs = c(0.1,0.9))
+
+```
+
+
+
+### The Variance and Standard Deviation
+
+$$s^2 = \frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}$$
+
+```{r}
+# variance
+var(x)
+```
+
+$$s = \sqrt{\frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}}$$
+
+
+
+```{r}
+# Standard deviation
+sd(x)
+```
+
 
 ## The Coefficient of Variation 
 
-## Grouped data 
+The coefficient of variation (CV) is defined by 
+$$100\%\times\frac{s}{\bar{x}}$$
+
+
+## Grouped data
+
+```{r , message = FALSE, fig.cap= "Frequency Distribution of birthweight data"}
+bwt <- readr::read_csv("data/CSV/Birthweight.csv")
+bwt
+```
+
+Frequency Distribution
+
+```{r}
+# starting dataframe (df)
+bwt %>%                                
+  # sort df by BWT column
+  arrange(BWT) %>%                         
+   # counts values in BWT (n)
+  add_count(BWT) %>%                       
+  # renames n to Frequency
+  rename(Frequency = n) %>%                
+  # creating new columns
+  mutate(                                  
+    Cum_Percent = cume_dist(BWT)     # returns cumulative percent
+  ) %>% 
+  # remove duplicated rows
+  distinct(.) -> freq_tab  
+
+DT::datatable(freq_tab)
+```
+
+
 
 ## Graphic Methods 
+
+### Bar Graphs
+
+Base-R
+
+```{r}
+hist(bwt$BWT)
+```
+
+`ggplot2`
+
+```{r}
+library(ggplot2)
+ ggplot(data = bwt,aes(BWT))+
+  geom_histogram(fill = "white", color = "black",binwidth = 10)+
+  ylab("Count")
+```
+
+
+### Stem-and-Leaf Plots
+
+Base-R
+
+```{r}
+stem(bwt$BWT, scale = 2)
+```
+
+### Box Plots
+
+Base-R
+
+```{r}
+boxplot(bwt$BWT)
+```
+
+
+`ggplot2`
+
+```{r}
+ggplot(bwt, aes(x = "",BWT))+geom_boxplot()
+```
+
