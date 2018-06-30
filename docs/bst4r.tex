@@ -450,32 +450,59 @@ name it had when it was last saved.
 
 \section{Descriptive Statistics}\label{descriptive-statistics}
 
-\subsection{Introduction}\label{introduction}
-
 \begin{verbatim}
 PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
 
-\hypertarget{htmlwidget-eaaa2048f5b3d8835e65}{}
+\hypertarget{htmlwidget-2f1655e457bef4a9b862}{}
 
 \subsection{Measures of Location using Base
 R}\label{measures-of-location-using-base-r}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{head}\NormalTok{(ChickWeight)}
-\end{Highlighting}
-\end{Shaded}
+\begin{quote}
+Determining the correct method for measuring the central tendancy of a
+vector depends on the relationship between the numbers within the
+vector. Numbers that can be summed in a linear sequence are best
+represented using the arithmic mean.
 
-\begin{verbatim}
-  weight Time Chick Diet
-1     42    0     1    1
-2     51    2     1    1
-3     59    4     1    1
-4     64    6     1    1
-5     76    8     1    1
-6     93   10     1    1
-\end{verbatim}
+If you're measuring units that add up as reciprocals in a sequence (such
+as speed or distance / time over a constant distance, capacitance in
+series, resistance in parallel), then a harmonic mean will give you a
+meaningful average. For example, the harmonic mean of capacitors in
+series represents the capacitance that a single capacitor would have if
+only one capacitor was used instead of the set of capacitors in series.
+
+If you're measuring units that multiply in a sequence (such as growth
+rates or percentages), then a geometric mean will give you a meaningful
+average. For example, the geometric mean of a sequence of different
+annual interest rates over 10 years represents an interest rate that, if
+applied constantly for ten years, would produce the same amount growth
+in principal as the sequence of different annual interest rates over ten
+years did. Does an arithmetic mean of interest rates have any
+significance? As a number, sure. But as an ``average'' interest rate it
+seems less intuitive because the principal it produces at the end of ten
+years is much larger than the geometric mean. Similarly, the harmonic
+mean of interest rates produces a smaller principal, and so is less
+intuitive.
+
+Now consider areas and volumes as a test of understanding. What mean
+should we use to report the ``average'' area or volume in a sequence of
+areas or volumes? Area is measured in units of length squared. Volume is
+measured in units of length cubed. In a sequence of areas or volumes, we
+could either add them up linearly and divide or multiply them and take
+the roots --- which is correct? It depends on what we're measuring. If
+these areas or volumes are dependent upon each other (e.g., the size of
+the same microbe at different times), then a geometric mean probably
+makes more sense. If these areas or volumes are independent of each
+other (e.g., the size of a house or pool), then an arithmetic mean
+probably makes more sense. But whatever you decide, when in doubt report
+that decision. There is nothing worse for a reader than to see an
+``average'' and not know how it was calculated! -
+\href{https://www.quora.com/When-is-it-most-appropriate-to-take-the-arithmetic-mean-vs-geometric-mean-vs-harmonic-mean}{Michael
+F. Martin,Quora Answer}
+\end{quote}
+
+\includegraphics{bst4r_files/figure-latex/unnamed-chunk-12-1.pdf}
 
 \subsubsection{The Arithmetic Mean}\label{the-arithmetic-mean}
 
@@ -483,42 +510,6 @@ The arithmetic mean is the sum of all the observations divided by the
 number of observations. It is written in statistical terms as
 
 \[\overline{x} = \frac{1}{n}\sum^n_{i=1}x_i\]
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{y=}\StringTok{ }\KeywordTok{rbeta}\NormalTok{(}\DecValTok{10000}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{6}\NormalTok{)}
-\KeywordTok{hist}\NormalTok{(y, }\CommentTok{# histogram}
- \DataTypeTok{col =} \StringTok{"lightblue"}\NormalTok{, }\CommentTok{# column color}
- \DataTypeTok{border =} \StringTok{"black"}\NormalTok{, }
- \DataTypeTok{prob =} \OtherTok{TRUE}\NormalTok{, }\CommentTok{# show densities instead of frequencies}
- \DataTypeTok{xlab =} \StringTok{"x"}\NormalTok{,}
- \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{3.5}\NormalTok{),}
- \DataTypeTok{main =} \StringTok{"Skewed Dataset"}
-\NormalTok{ )}
-
-\KeywordTok{lines}\NormalTok{(}\KeywordTok{density}\NormalTok{(y), }\DataTypeTok{col=}\StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{3}\NormalTok{)}
-\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \KeywordTok{mean}\NormalTok{(y),}
- \DataTypeTok{col =} \StringTok{"royalblue"}\NormalTok{,}
- \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-
-\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \KeywordTok{median}\NormalTok{(y),}
- \DataTypeTok{col =} \StringTok{"red"}\NormalTok{,}
- \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-
-\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \KeywordTok{exp}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\KeywordTok{log}\NormalTok{(y))),}
- \DataTypeTok{col =} \StringTok{"green"}\NormalTok{,}
- \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-
-
-
-\KeywordTok{legend}\NormalTok{(}\DataTypeTok{x =} \StringTok{"topright"}\NormalTok{, }\CommentTok{# location of legend within plot area}
- \KeywordTok{c}\NormalTok{(}\StringTok{"Mean"}\NormalTok{, }\StringTok{"Median"}\NormalTok{, }\StringTok{"Geometric Mean"}\NormalTok{),}
- \DataTypeTok{col =} \KeywordTok{c}\NormalTok{( }\StringTok{"royalblue"}\NormalTok{, }\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{),}
- \DataTypeTok{lwd =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{bst4r_files/figure-latex/unnamed-chunk-13-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -531,6 +522,18 @@ number of observations. It is written in statistical terms as
 \end{verbatim}
 
 \subsubsection{The Median}\label{the-median}
+
+The sample median is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  If \emph{n} is odd \(\rightarrow\)
+  \(\Big(\frac{n+1}{2}\Big)\text{th}\) largest observation
+\item
+  If \emph{n} is even \(\rightarrow\) \(\Big(\frac{n}{2}\Big)\text{th}\)
+  and \(\Big(\frac{n}{2}+1\Big)\text{th}\) largest observations
+\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -958,24 +961,252 @@ data-set.
 Error in grouped_df_impl(data, unname(vars), drop): Column `weight` is unknown
 \end{verbatim}
 
-\subsection{Some Properties of the Arithmetic
-Mean}\label{some-properties-of-the-arithmetic-mean}
+\subsubsection{Geometric Mean}\label{geometric-mean}
+
+The geometric mean is the antilogarithm of \(\overline{\log x}\), where
+\[\overline{\log x}= \frac{1}{n}\sum^n_{i=1}\log{x_i}\]
+
+As with mode, there is no function in Base-R for finding the geometric
+mean.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# using values }
+\NormalTok{gm1 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  n =}\StringTok{ }\KeywordTok{length}\NormalTok{(x)}
+  
+\NormalTok{  gm =}\StringTok{ }\KeywordTok{exp}\NormalTok{((}\DecValTok{1}\OperatorTok{/}\NormalTok{n)}\OperatorTok{*}\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(x)))}
+
+  \KeywordTok{return}\NormalTok{(gm)}
+\NormalTok{\}}
+
+\NormalTok{gm2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{exp}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\KeywordTok{log}\NormalTok{(x))))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gm1}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 103.1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gm2}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 103.1
+\end{verbatim}
 
 \subsection{Measures of Spread}\label{measures-of-spread}
 
-\subsection{Some Properties of the Variance and Standard
-deviation}\label{some-properties-of-the-variance-and-standard-deviation}
+\subsubsection{Range}\label{range}
+
+The range is the difference between the largest and smallest
+observations in a sample.
+
+\subsubsection{Quantiles/Percentiles}\label{quantilespercentiles}
+
+The pth percentile is defined by
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The (k+1)th largest sample point if np/100 is not an integer (where k
+  is the largest integer less than np/100).
+\item
+  The average of the (np/100)th and (np/100+1)th largest observations if
+  np/100 is an integer.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 10th and 90th percentile}
+\KeywordTok{quantile}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{probs =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.9}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  10%   90% 
+ 47.7 223.6 
+\end{verbatim}
+
+\subsubsection{The Variance and Standard
+Deviation}\label{the-variance-and-standard-deviation}
+
+\[s^2 = \frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# variance}
+\KeywordTok{var}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 5051
+\end{verbatim}
+
+\[s = \sqrt{\frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Standard deviation}
+\KeywordTok{sd}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 71.07
+\end{verbatim}
 
 \subsection{The Coefficient of
 Variation}\label{the-coefficient-of-variation}
 
+The coefficient of variation (CV) is defined by
+\[100\%\times\frac{s}{\bar{x}}\]
+
 \subsection{Grouped data}\label{grouped-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bwt <-}\StringTok{ }\NormalTok{readr}\OperatorTok{::}\KeywordTok{read_csv}\NormalTok{(}\StringTok{"data/CSV/Birthweight.csv"}\NormalTok{)}
+\NormalTok{bwt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 100 x 1
+     BWT
+   <int>
+ 1    58
+ 2   120
+ 3   123
+ 4   104
+ 5   121
+ 6   111
+ 7    91
+ 8   104
+ 9   128
+10   133
+# ... with 90 more rows
+\end{verbatim}
+
+Frequency Distribution
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# starting dataframe (df)}
+\NormalTok{bwt }\OperatorTok{%>%}\StringTok{                                }
+\StringTok{  }\CommentTok{# sort df by BWT column}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(BWT) }\OperatorTok{%>%}\StringTok{                         }
+\StringTok{   }\CommentTok{# counts values in BWT (n)}
+\StringTok{  }\KeywordTok{add_count}\NormalTok{(BWT) }\OperatorTok{%>%}\StringTok{                       }
+\StringTok{  }\CommentTok{# renames n to Frequency}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Frequency =}\NormalTok{ n) }\OperatorTok{%>%}\StringTok{                }
+\StringTok{  }\CommentTok{# creating new columns}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(                                  }
+    \DataTypeTok{Cum_Percent =} \KeywordTok{cume_dist}\NormalTok{(BWT)     }\CommentTok{# returns cumulative percent}
+\NormalTok{  ) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\CommentTok{# remove duplicated rows}
+\StringTok{  }\KeywordTok{distinct}\NormalTok{(.) ->}\StringTok{ }\NormalTok{freq_tab  }
+
+\NormalTok{DT}\OperatorTok{::}\KeywordTok{datatable}\NormalTok{(freq_tab)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{htmlwidget-f3982fcbb333aaa6e68d}{}
 
 \subsection{Graphic Methods}\label{graphic-methods}
 
+\subsubsection{Bar Graphs}\label{bar-graphs}
+
+Base-R
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(bwt}\OperatorTok{$}\NormalTok{BWT)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bst4r_files/figure-latex/unnamed-chunk-43-1.pdf}
+
+\texttt{ggplot2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+ \KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ bwt,}\KeywordTok{aes}\NormalTok{(BWT))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{color =} \StringTok{"black"}\NormalTok{,}\DataTypeTok{binwidth =} \DecValTok{10}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bst4r_files/figure-latex/unnamed-chunk-44-1.pdf}
+
+\subsubsection{Stem-and-Leaf Plots}\label{stem-and-leaf-plots}
+
+Base-R
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{stem}\NormalTok{(bwt}\OperatorTok{$}\NormalTok{BWT, }\DataTypeTok{scale =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+  The decimal point is 1 digit(s) to the right of the |
+
+   3 | 2
+   4 | 
+   5 | 8
+   6 | 478
+   7 | 
+   8 | 3556788999
+   9 | 12344568889
+  10 | 0123444445567888899
+  11 | 00122235555556889
+  12 | 01112222344445567788
+  13 | 222334557888
+  14 | 0146
+  15 | 5
+  16 | 1
+\end{verbatim}
+
+\subsubsection{Box Plots}\label{box-plots}
+
+Base-R
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(bwt}\OperatorTok{$}\NormalTok{BWT)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bst4r_files/figure-latex/unnamed-chunk-46-1.pdf}
+
+\texttt{ggplot2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(bwt, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \StringTok{""}\NormalTok{,BWT))}\OperatorTok{+}\KeywordTok{geom_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bst4r_files/figure-latex/unnamed-chunk-47-1.pdf}
+
 \section{Probability}\label{probability}
 
-\subsection{Introduction}\label{introduction-1}
+\subsection{Introduction}\label{introduction}
 
 \subsection{Definition of Probability}\label{definition-of-probability}
 
@@ -1002,7 +1233,7 @@ Tests}\label{bayes-rule-and-screening-tests}
 \section{Discrete Probability
 distributions}\label{discrete-probability-distributions}
 
-\subsection{Introduction}\label{introduction-2}
+\subsection{Introduction}\label{introduction-1}
 
 \subsection{Random Variables}\label{random-variables}
 
@@ -1040,7 +1271,7 @@ Distribution}\label{poisson-approximation-to-the-binomial-distribution}
 \section{Continuous Probability
 distributions}\label{continuous-probability-distributions}
 
-\subsection{Introduction}\label{introduction-3}
+\subsection{Introduction}\label{introduction-2}
 
 \subsection{General Concepts}\label{general-concepts}
 
@@ -1063,7 +1294,7 @@ Distribution}\label{normal-approximation-to-the-poisson-distribution}
 
 \section{Estimation}\label{estimation}
 
-\subsection{Introduction}\label{introduction-4}
+\subsection{Introduction}\label{introduction-3}
 
 \subsection{The Relationship Between Population and
 Sample}\label{the-relationship-between-population-and-sample}
@@ -1093,7 +1324,7 @@ Intervals}\label{one-sided-confidence-intervals}
 \section{hypothesis testing: one-Sample
 inference}\label{hypothesis-testing-one-sample-inference}
 
-\subsection{introduction}\label{introduction-5}
+\subsection{introduction}\label{introduction-4}
 
 \subsection{General Concepts}\label{general-concepts-1}
 
@@ -1124,7 +1355,7 @@ distribution}\label{one-sample-inference-for-the-poisson-distribution}
 \section{Hypothesis Testing: two-Sample
 inference}\label{hypothesis-testing-two-sample-inference}
 
-\subsection{introduction}\label{introduction-6}
+\subsection{introduction}\label{introduction-5}
 
 \subsection{the Paired t test}\label{the-paired-t-test}
 
@@ -1155,7 +1386,7 @@ Means}\label{estimation-of-sample-size-and-power-for-comparing-two-means}
 
 \section{Nonparametric Methods}\label{nonparametric-methods}
 
-\subsection{introduction}\label{introduction-7}
+\subsection{introduction}\label{introduction-6}
 
 \subsection{the Sign test}\label{the-sign-test}
 
@@ -1170,7 +1401,7 @@ test}\label{the-wilcoxon-rank-sum-test}
 \section{hypothesis
 testing:Categoricaldata}\label{hypothesis-testingcategoricaldata}
 
-\subsection{introduction}\label{introduction-8}
+\subsection{introduction}\label{introduction-7}
 
 \subsection{two-Sample test for Binomial
 Proportions}\label{two-sample-test-for-binomial-proportions}
@@ -1198,7 +1429,7 @@ Formulas}\label{derivation-of-selected-formulas}
 \section{Regression and Correlation
 Methods}\label{regression-and-correlation-methods}
 
-\subsection{introduction}\label{introduction-9}
+\subsection{introduction}\label{introduction-8}
 
 \subsection{General Concepts}\label{general-concepts-2}
 
@@ -1264,7 +1495,7 @@ Coefficient}\label{the-intraclass-correlation-coefficient}
 \section{design and Analysis techniques for Epidemiologic
 Studies}\label{design-and-analysis-techniques-for-epidemiologic-studies}
 
-\subsection{introduction}\label{introduction-10}
+\subsection{introduction}\label{introduction-9}
 
 \subsection{Study design}\label{study-design}
 
