@@ -1,16 +1,60 @@
 #Probability
 
-## Introduction
+The probability of an event is the relative frequency of an event (outcome) within a sample space (all possible outcomes). 
 
-## Definition of Probability 
+### Some Useful Probabilistic notation 
 
-## Some Useful Probabilistic notation 
+|       Symbol       | Definition                                                    |
+|:------------------:|---------------------------------------------------------------|
+|          |         | given                                                         |
+|       $\cap$       | intersection (and)                                            |
+|       $\cup$       | union (or)                                                    |
+| A'  $\bar{A}$ $A^c$ |  complement (not)                                             |
+|         { }        | event                                                         |
+|       $Pr(A)$      | Probability that event A will occur.                          |
+|     $Pr(A\|B)$     | The probability of A occurring if B occurred.                 |
+|       $P(A')$      | The probability A will not occur. ($\bar{A}=1-Pr(A)$)         |
+|    $Pr(A\cap B)$   | The Probability events A and B occurring together.            |
+|    $Pr(A\cup B)$   | Probability events either A or B occur, or they both occurr.  |
 
-## The Multiplication Law of Probability 
+1. The probability of an event ($Pr(E)$) always satisfies: $$0 \leq \text{Pr(E)} \leq 1$$
+2. If events A and B cannot both occur  simultanously, they are __mutually exclusive__.  $$Pr(A\cap B)=0$$
+3. Two events A and B are called independent if $$Pr(A\ycap B)=Pr(A)\times Pr(B)$$
+4. Two events A and B are called dependent if $$Pr(A\cap B)\ne Pr(A)\times Pr(B)$$
 
-## The Addition Law of Probability 
+## Laws of Probability
+
+
+### The Multiplication Law of Probability: $Pr(A\cap B)$ 
+
+If $A_1,...,A_n$ are mutually independent events, then $$Pr(A_1 \cap A_2 \cap ... \cap A_n) = Pr(A_1)\times Pr(A_2)\times ...\times Pr(A_n)$$
+
+
+### The Addition Law of Probability: $Pr(A\cup B)$
+
+If $A\text{ and }B$ are __any__ events, then $$Pr(A \cup B) = Pr(A)+ Pr(B)- Pr(A\cap B)$$
+
+If $A\text{ and }B$ are __mutually exclusive__, then $$Pr(A \cup B) = Pr(A)+ Pr(B)$$
+
+If $A\text{ and }B$ are __independent__ events, then $$Pr(A \cup B) = Pr(A)+ Pr(B)\times[1-Pr(A)]$$
 
 ## Conditional Probability 
+
+A conditional probability is the probability of one event if another event occurred.
+$$Pr(A|B) = \frac{Pr(A\cap B)}{Pr(A)}$$
+
+1.  If A and B are independent events, then $$Pr(B|A) = Pr(B) = Pr(B|\bar{A})$$
+2.  If two events A and B are dependent, then $$Pr(B|A)\ne Pr(B) \ne Pr(B|\bar{A})$$ and $$Pr(A\cap B) \ne Pr(A)\times Pr(B)$$
+
+### Relative Risk
+
+The relative risk (RR) of B given is $$RR=\frac{Pr(B|A)}{Pr(B|\bar{A})}$$
+
+If two events A and B are independent, then RR = 1. 
+
+### Total Probability
+
+Let A
 
 ## Bayes’ Rule and Screening Tests 
 

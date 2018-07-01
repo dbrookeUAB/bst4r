@@ -331,7 +331,7 @@ sd(x)
 ```
 
 
-## The Coefficient of Variation 
+### The Coefficient of Variation 
 
 The coefficient of variation (CV) is defined by 
 $$100\%\times\frac{s}{\bar{x}}$$

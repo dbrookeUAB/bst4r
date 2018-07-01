@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-4-graphic-methods.html">
-<link rel="next" href="3-1-laws-of-probability.html">
+<link rel="prev" href="3-probability.html">
+<link rel="next" href="3-2-the-addition-law-of-probability.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -96,18 +96,13 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-probability.html"><a href="3-probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a><ul>
 <li class="chapter" data-level="3.0.1" data-path="3-probability.html"><a href="3-probability.html#some-useful-probabilistic-notation"><i class="fa fa-check"></i><b>3.0.1</b> Some Useful Probabilistic notation</a></li>
-<li class="chapter" data-level="3.1" data-path="3-1-laws-of-probability.html"><a href="3-1-laws-of-probability.html"><i class="fa fa-check"></i><b>3.1</b> Laws of Probability</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="3-1-laws-of-probability.html"><a href="3-1-laws-of-probability.html#the-multiplication-law-of-probability-pracap-b"><i class="fa fa-check"></i><b>3.1.1</b> The Multiplication Law of Probability: <span class="math inline">\(Pr(A\cap B)\)</span></a></li>
-<li class="chapter" data-level="3.1.2" data-path="3-1-laws-of-probability.html"><a href="3-1-laws-of-probability.html#the-addition-law-of-probability-pracup-b"><i class="fa fa-check"></i><b>3.1.2</b> The Addition Law of Probability: <span class="math inline">\(Pr(A\cup B)\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-conditional-probability.html"><a href="3-2-conditional-probability.html"><i class="fa fa-check"></i><b>3.2</b> Conditional Probability</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="3-2-conditional-probability.html"><a href="3-2-conditional-probability.html#relative-risk"><i class="fa fa-check"></i><b>3.2.1</b> Relative Risk</a></li>
-<li class="chapter" data-level="3.2.2" data-path="3-2-conditional-probability.html"><a href="3-2-conditional-probability.html#total-probability"><i class="fa fa-check"></i><b>3.2.2</b> Total Probability</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-bayes-rule-and-screening-tests.html"><a href="3-3-bayes-rule-and-screening-tests.html"><i class="fa fa-check"></i><b>3.3</b> Bayes’ Rule and Screening Tests</a></li>
-<li class="chapter" data-level="3.4" data-path="3-4-bayesian-inference.html"><a href="3-4-bayesian-inference.html"><i class="fa fa-check"></i><b>3.4</b> Bayesian inference</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-roc-curves.html"><a href="3-5-roc-curves.html"><i class="fa fa-check"></i><b>3.5</b> RoC Curves</a></li>
-<li class="chapter" data-level="3.6" data-path="3-6-prevalence-and-incidence.html"><a href="3-6-prevalence-and-incidence.html"><i class="fa fa-check"></i><b>3.6</b> Prevalence and incidence</a></li>
+<li class="chapter" data-level="3.1" data-path="3-1-the-multiplication-law-of-probability.html"><a href="3-1-the-multiplication-law-of-probability.html"><i class="fa fa-check"></i><b>3.1</b> The Multiplication Law of Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="3-2-the-addition-law-of-probability.html"><a href="3-2-the-addition-law-of-probability.html"><i class="fa fa-check"></i><b>3.2</b> The Addition Law of Probability</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-conditional-probability.html"><a href="3-3-conditional-probability.html"><i class="fa fa-check"></i><b>3.3</b> Conditional Probability</a></li>
+<li class="chapter" data-level="3.4" data-path="3-4-bayes-rule-and-screening-tests.html"><a href="3-4-bayes-rule-and-screening-tests.html"><i class="fa fa-check"></i><b>3.4</b> Bayes’ Rule and Screening Tests</a></li>
+<li class="chapter" data-level="3.5" data-path="3-5-bayesian-inference.html"><a href="3-5-bayesian-inference.html"><i class="fa fa-check"></i><b>3.5</b> Bayesian inference</a></li>
+<li class="chapter" data-level="3.6" data-path="3-6-roc-curves.html"><a href="3-6-roc-curves.html"><i class="fa fa-check"></i><b>3.6</b> RoC Curves</a></li>
+<li class="chapter" data-level="3.7" data-path="3-7-prevalence-and-incidence.html"><a href="3-7-prevalence-and-incidence.html"><i class="fa fa-check"></i><b>3.7</b> Prevalence and incidence</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-discrete-probability-distributions.html"><a href="4-discrete-probability-distributions.html"><i class="fa fa-check"></i><b>4</b> Discrete Probability distributions</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-1-introduction.html"><a href="4-1-introduction.html"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
@@ -272,76 +267,19 @@ toc:
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probability" class="section level1">
-<h1><span class="header-section-number">3</span> Probability</h1>
-<p>The probability of an event is the relative frequency of an event (outcome) within a sample space (all possible outcomes).</p>
-<div id="some-useful-probabilistic-notation" class="section level3">
-<h3><span class="header-section-number">3.0.1</span> Some Useful Probabilistic notation</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Symbol</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\cap\)</span></td>
-<td>intersection (and)</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\cup\)</span></td>
-<td>union (or)</td>
-</tr>
-<tr class="even">
-<td align="center">’ <span class="math inline">\(\bar{A}\)</span> <span class="math inline">\(A^c\)</span></td>
-<td>complement (not)</td>
-</tr>
-<tr class="odd">
-<td align="center">{ }</td>
-<td>event</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(Pr(A)\)</span></td>
-<td>Probability that event A will occur.</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(Pr(A\|B)\)</span></td>
-<td>The probability of A occurring if B occurred.</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(P(A&#39;)\)</span></td>
-<td>The probability A will not occur. (<span class="math inline">\(\bar{A}=1-Pr(A)\)</span>)</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(Pr(A\cap B)\)</span></td>
-<td>The Probability events A and B occurring together.</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(Pr(A\cup B)\)</span></td>
-<td>Probability events either A or B occur, or they both occurr.</td>
-</tr>
-</tbody>
-</table>
-<ol style="list-style-type: decimal">
-<li>The probability of an event (<span class="math inline">\(Pr(E)\)</span>) always satisfies: <span class="math display">\[0 \leq \text{Pr(E)} \leq 1\]</span></li>
-<li>If events A and B cannot both occur simultanously, they are <strong>mutually exclusive</strong>. <span class="math display">\[Pr(A\cap B)=0\]</span></li>
-<li>Two events A and B are called independent if <span class="math display">\[Pr(A\cap B)=Pr(A)\times Pr(B)\]</span></li>
-<li>Two events A and B are called dependent if <span class="math display">\[Pr(A\cap B)\ne Pr(A)\times Pr(B)\]</span></li>
-</ol>
-</div> 
+<div id="the-multiplication-law-of-probability" class="section level2">
+<h2><span class="header-section-number">3.1</span> The Multiplication Law of Probability</h2>
+<blockquote>
+<p>Two events A and B are called <strong>independent</strong> events if <span class="math display">\[Pr(A\cap B)=Pr(A)\times Pr(B)\]</span></p>
+</blockquote>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="2-4-graphic-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-1-laws-of-probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-2-the-addition-law-of-probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

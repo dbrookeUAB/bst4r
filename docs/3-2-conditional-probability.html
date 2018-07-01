@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-4-graphic-methods.html">
-<link rel="next" href="3-1-laws-of-probability.html">
+<link rel="prev" href="3-1-laws-of-probability.html">
+<link rel="next" href="3-3-bayes-rule-and-screening-tests.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -272,76 +272,29 @@ toc:
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probability" class="section level1">
-<h1><span class="header-section-number">3</span> Probability</h1>
-<p>The probability of an event is the relative frequency of an event (outcome) within a sample space (all possible outcomes).</p>
-<div id="some-useful-probabilistic-notation" class="section level3">
-<h3><span class="header-section-number">3.0.1</span> Some Useful Probabilistic notation</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Symbol</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\cap\)</span></td>
-<td>intersection (and)</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\cup\)</span></td>
-<td>union (or)</td>
-</tr>
-<tr class="even">
-<td align="center">’ <span class="math inline">\(\bar{A}\)</span> <span class="math inline">\(A^c\)</span></td>
-<td>complement (not)</td>
-</tr>
-<tr class="odd">
-<td align="center">{ }</td>
-<td>event</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(Pr(A)\)</span></td>
-<td>Probability that event A will occur.</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(Pr(A\|B)\)</span></td>
-<td>The probability of A occurring if B occurred.</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(P(A&#39;)\)</span></td>
-<td>The probability A will not occur. (<span class="math inline">\(\bar{A}=1-Pr(A)\)</span>)</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(Pr(A\cap B)\)</span></td>
-<td>The Probability events A and B occurring together.</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(Pr(A\cup B)\)</span></td>
-<td>Probability events either A or B occur, or they both occurr.</td>
-</tr>
-</tbody>
-</table>
+<div id="conditional-probability" class="section level2">
+<h2><span class="header-section-number">3.2</span> Conditional Probability</h2>
+<p>A conditional probability is the probability of one event if another event occurred. <span class="math display">\[Pr(A|B) = \frac{Pr(A\cap B)}{Pr(A)}\]</span></p>
 <ol style="list-style-type: decimal">
-<li>The probability of an event (<span class="math inline">\(Pr(E)\)</span>) always satisfies: <span class="math display">\[0 \leq \text{Pr(E)} \leq 1\]</span></li>
-<li>If events A and B cannot both occur simultanously, they are <strong>mutually exclusive</strong>. <span class="math display">\[Pr(A\cap B)=0\]</span></li>
-<li>Two events A and B are called independent if <span class="math display">\[Pr(A\cap B)=Pr(A)\times Pr(B)\]</span></li>
-<li>Two events A and B are called dependent if <span class="math display">\[Pr(A\cap B)\ne Pr(A)\times Pr(B)\]</span></li>
+<li>If A and B are independent events, then <span class="math display">\[Pr(B|A) = Pr(B) = Pr(B|\bar{A})\]</span></li>
+<li>If two events A and B are dependent, then <span class="math display">\[Pr(B|A)\ne Pr(B) \ne Pr(B|\bar{A})\]</span> and <span class="math display">\[Pr(A\cap B) \ne Pr(A)\times Pr(B)\]</span></li>
 </ol>
-</div> 
+<div id="relative-risk" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Relative Risk</h3>
+<p>The relative risk (RR) of B given is <span class="math display">\[RR=\frac{Pr(B|A)}{Pr(B|\bar{A})}\]</span></p>
+<p>If two events A and B are independent, then RR = 1.</p>
+</div>
+<div id="total-probability" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Total Probability</h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="2-4-graphic-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-1-laws-of-probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-1-laws-of-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-3-bayes-rule-and-screening-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
