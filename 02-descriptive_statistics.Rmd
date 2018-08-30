@@ -6,6 +6,96 @@ library(DT)
 datatable(ChickWeight, rownames = FALSE)
 ```
 
+## Introduction to Probablity
+
+
+### Definitions
+
+__Sample Space__: set of all possible outcomes in an experiment or trial
+
+__Event__: any individual outcome of interest, or subset of outcomes of interest, in an experiment or trial
+
+__Probablity__: relative frequency of an event of interest over an indefintely large (or infinite) number of trials
+
+
+### Probablity
+
+The true probablity of an event is often unknown and ca only be estimated. 
+
+__Relative frequency probablity__: Counting the number of repetitions of a process and the number of times each events occurs
+- Divide the number of each outcome by the total number of repetitions
+- This estimates the likelihood of each event occuring
+-This follows the ideas of bar charts and histograms
+
+
+
+### Sampling
+
+__Population__: A well defined collection of objects, such as: pregnant women, MS patients, stroke survivors, etc.
+- Measurements on every member of th population consitutes a census.
+- A census may not be feasible or desired.
+
+__Sample__: a subset of the populaiton from which characterstics are measured in order to estimate and infer characteristics of the population.
+- Individual components of the sample are its elements (observations)
+
+
+### Statistics
+
+__Parameters__: fixed values used to describe characteristics of a variable's distribution (e.g., where it is centered, measures of its spread, measures of its skewness, etc.)
+
+Common paramters are the mean and standard deviation.
+
+Go back and fix
+*** 
+
+### __Descriptive Statistics:__ summary statistics used to estiamte population paramters
+
+Sample statistics include $\bar{x}, s^2, s$
+- lower case letters are used for describing samples.
+
+Population parameters are estimated from the sample
+- population parameters include $\mu, \sigma^s, \sigma$
+
+Inferential Statistics
+
+Go back and fix
+***
+
+#### Describing Data
+Data are summarized by descriptive statistics, and distributions of variables are often depicted using plots including:
+-charts
+-histograms
+
+go back and fix
+***
+
+Of we have a sample of n objects, then the values are denoted as $x_1, x_2, ..., x_n$.
+
+The sample mean $$\bar{x} = \frac{\sum_i^nx}{n}$$
+
+Sample variance  $s^2 = \frac{\sum_i^n{x_i-\bar{x}}}{n-1}$
+
+Sample std dev  $s = \sqrt{s^2}$
+
+It can be shown that $\sum{x_i-\bar{x}}=0$ and the actual differences between each observation and the samle mean are not informative.
+
+The square distance between the observed values and the sample mean is what we examine. 
+
+Alternative measure is the __mean obsolute deviation__ (MAD)
+$$\text{MAD} = \frac{\sum^n_{i=1}|x_i-\bar{x}|}{n}$$
+
+__Median__: the middle value in the list of ordered values (the median is the $50^\text{th}$ percentile)
+
+__Percentile__: the value such that some percent of the data are less than that value.
+- for the ordered data, the $k^\text{th}$ percentile is in the $\frac{k}{100}(1+n)$ position. 
+- if the position falls between 2 numbers, then the $k^\text{th}$ percentile is the average of the two surrounding numbers.
+
+__quartiles__: the $25^\text{th}$ ($Q_1$) and $75^\text{th}$ ($Q_3$) 
+
+__interquartile range__: $75^\text{th}-50^\text{th}$ percentile
+
+
+
 
 ## Measures of Location using Base R
 
@@ -331,10 +421,36 @@ sd(x)
 ```
 
 
-## The Coefficient of Variation 
+The standard deviation is invariant to location. All data values can be shifted up or down by a constant, c,
+and the variance and standard deviation will remain the same.
+
+If $x_1, x_2, ..., x_n$ are all multipled by a constant $c$, we have $cx_1, cx_2, ..., cx_n$, and the varaince is now $c^2s^2$ while the $s^2$ is the variance of the original values. 
+
+
+### The Coefficient of Variation 
 
 The coefficient of variation (CV) is defined by 
 $$100\%\times\frac{s}{\bar{x}}$$
+
+### Example: Birthweights
+```{r}
+library(haven)
+btw <- read_sas("data/SAS/birthweight.sas7bdat")
+btw
+```
+
+```{r}
+summary(btw)
+```
+
+```{r}
+library(skimr)
+skim(btw)
+```
+
+
+Ordering data
+
 
 
 ## Grouped data

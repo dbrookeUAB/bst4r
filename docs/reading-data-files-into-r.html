@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Biostatistics using R</title>
   <meta name="description" content="Biostatistics using R">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
 
   <meta property="og:title" content="Biostatistics using R" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Dewey Brooke">
 
 
-<meta name="date" content="2018-06-29">
+<meta name="date" content="2018-07-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -58,41 +58,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -130,168 +158,167 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.2.1" data-path="2-2-measures-of-spread.html"><a href="2-2-measures-of-spread.html#range"><i class="fa fa-check"></i><b>2.2.1</b> Range</a></li>
 <li class="chapter" data-level="2.2.2" data-path="2-2-measures-of-spread.html"><a href="2-2-measures-of-spread.html#quantilespercentiles"><i class="fa fa-check"></i><b>2.2.2</b> Quantiles/Percentiles</a></li>
 <li class="chapter" data-level="2.2.3" data-path="2-2-measures-of-spread.html"><a href="2-2-measures-of-spread.html#the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>2.2.3</b> The Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="2-2-measures-of-spread.html"><a href="2-2-measures-of-spread.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>2.2.4</b> The Coefficient of Variation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="2-3-the-coefficient-of-variation.html"><a href="2-3-the-coefficient-of-variation.html"><i class="fa fa-check"></i><b>2.3</b> The Coefficient of Variation</a></li>
-<li class="chapter" data-level="2.4" data-path="2-4-grouped-data.html"><a href="2-4-grouped-data.html"><i class="fa fa-check"></i><b>2.4</b> Grouped data</a></li>
-<li class="chapter" data-level="2.5" data-path="2-5-graphic-methods.html"><a href="2-5-graphic-methods.html"><i class="fa fa-check"></i><b>2.5</b> Graphic Methods</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="2-5-graphic-methods.html"><a href="2-5-graphic-methods.html#bar-graphs"><i class="fa fa-check"></i><b>2.5.1</b> Bar Graphs</a></li>
-<li class="chapter" data-level="2.5.2" data-path="2-5-graphic-methods.html"><a href="2-5-graphic-methods.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>2.5.2</b> Stem-and-Leaf Plots</a></li>
-<li class="chapter" data-level="2.5.3" data-path="2-5-graphic-methods.html"><a href="2-5-graphic-methods.html#box-plots"><i class="fa fa-check"></i><b>2.5.3</b> Box Plots</a></li>
+<li class="chapter" data-level="2.3" data-path="2-3-grouped-data.html"><a href="2-3-grouped-data.html"><i class="fa fa-check"></i><b>2.3</b> Grouped data</a></li>
+<li class="chapter" data-level="2.4" data-path="2-4-graphic-methods.html"><a href="2-4-graphic-methods.html"><i class="fa fa-check"></i><b>2.4</b> Graphic Methods</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="2-4-graphic-methods.html"><a href="2-4-graphic-methods.html#bar-graphs"><i class="fa fa-check"></i><b>2.4.1</b> Bar Graphs</a></li>
+<li class="chapter" data-level="2.4.2" data-path="2-4-graphic-methods.html"><a href="2-4-graphic-methods.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>2.4.2</b> Stem-and-Leaf Plots</a></li>
+<li class="chapter" data-level="2.4.3" data-path="2-4-graphic-methods.html"><a href="2-4-graphic-methods.html#box-plots"><i class="fa fa-check"></i><b>2.4.3</b> Box Plots</a></li>
+<li class="chapter" data-level="2.4.4" data-path="2-4-graphic-methods.html"><a href="2-4-graphic-methods.html#some-useful-probabilistic-notation"><i class="fa fa-check"></i><b>2.4.4</b> Some Useful Probabilistic notation</a></li>
 </ul></li>
+<li class="chapter" data-level="2.5" data-path="2-5-laws-of-probability.html"><a href="2-5-laws-of-probability.html"><i class="fa fa-check"></i><b>2.5</b> Laws of Probability</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="2-5-laws-of-probability.html"><a href="2-5-laws-of-probability.html#the-multiplication-law-of-probability-pracap-b"><i class="fa fa-check"></i><b>2.5.1</b> The Multiplication Law of Probability: <span class="math inline">\(Pr(A\cap B)\)</span></a></li>
+<li class="chapter" data-level="2.5.2" data-path="2-5-laws-of-probability.html"><a href="2-5-laws-of-probability.html#the-addition-law-of-probability-pracup-b"><i class="fa fa-check"></i><b>2.5.2</b> The Addition Law of Probability: <span class="math inline">\(Pr(A\cup B)\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-probability.html"><a href="3-probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a><ul>
+<li class="chapter" data-level="2.6" data-path="2-6-conditional-probability.html"><a href="2-6-conditional-probability.html"><i class="fa fa-check"></i><b>2.6</b> Conditional Probability</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="2-6-conditional-probability.html"><a href="2-6-conditional-probability.html#relative-risk"><i class="fa fa-check"></i><b>2.6.1</b> Relative Risk</a></li>
+<li class="chapter" data-level="2.6.2" data-path="2-6-conditional-probability.html"><a href="2-6-conditional-probability.html#total-probability"><i class="fa fa-check"></i><b>2.6.2</b> Total Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="2-7-bayes-rule-and-screening-tests.html"><a href="2-7-bayes-rule-and-screening-tests.html"><i class="fa fa-check"></i><b>2.7</b> Bayes’ Rule and Screening Tests</a></li>
+<li class="chapter" data-level="2.8" data-path="2-8-bayesian-inference.html"><a href="2-8-bayesian-inference.html"><i class="fa fa-check"></i><b>2.8</b> Bayesian inference</a></li>
+<li class="chapter" data-level="2.9" data-path="2-9-roc-curves.html"><a href="2-9-roc-curves.html"><i class="fa fa-check"></i><b>2.9</b> RoC Curves</a></li>
+<li class="chapter" data-level="2.10" data-path="2-10-prevalence-and-incidence.html"><a href="2-10-prevalence-and-incidence.html"><i class="fa fa-check"></i><b>2.10</b> Prevalence and incidence</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-discrete-probability-distributions.html"><a href="3-discrete-probability-distributions.html"><i class="fa fa-check"></i><b>3</b> Discrete Probability distributions</a><ul>
 <li class="chapter" data-level="3.1" data-path="3-1-introduction.html"><a href="3-1-introduction.html"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
-<li class="chapter" data-level="3.2" data-path="3-2-definition-of-probability.html"><a href="3-2-definition-of-probability.html"><i class="fa fa-check"></i><b>3.2</b> Definition of Probability</a></li>
-<li class="chapter" data-level="3.3" data-path="3-3-some-useful-probabilistic-notation.html"><a href="3-3-some-useful-probabilistic-notation.html"><i class="fa fa-check"></i><b>3.3</b> Some Useful Probabilistic notation</a></li>
-<li class="chapter" data-level="3.4" data-path="3-4-the-multiplication-law-of-probability.html"><a href="3-4-the-multiplication-law-of-probability.html"><i class="fa fa-check"></i><b>3.4</b> The Multiplication Law of Probability</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-the-addition-law-of-probability.html"><a href="3-5-the-addition-law-of-probability.html"><i class="fa fa-check"></i><b>3.5</b> The Addition Law of Probability</a></li>
-<li class="chapter" data-level="3.6" data-path="3-6-conditional-probability.html"><a href="3-6-conditional-probability.html"><i class="fa fa-check"></i><b>3.6</b> Conditional Probability</a></li>
-<li class="chapter" data-level="3.7" data-path="3-7-bayes-rule-and-screening-tests.html"><a href="3-7-bayes-rule-and-screening-tests.html"><i class="fa fa-check"></i><b>3.7</b> Bayes’ Rule and Screening Tests</a></li>
-<li class="chapter" data-level="3.8" data-path="3-8-bayesian-inference.html"><a href="3-8-bayesian-inference.html"><i class="fa fa-check"></i><b>3.8</b> Bayesian inference</a></li>
-<li class="chapter" data-level="3.9" data-path="3-9-roc-curves.html"><a href="3-9-roc-curves.html"><i class="fa fa-check"></i><b>3.9</b> RoC Curves</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-prevalence-and-incidence.html"><a href="3-10-prevalence-and-incidence.html"><i class="fa fa-check"></i><b>3.10</b> Prevalence and incidence</a></li>
+<li class="chapter" data-level="3.2" data-path="3-2-random-variables.html"><a href="3-2-random-variables.html"><i class="fa fa-check"></i><b>3.2</b> Random Variables</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-the-probability-mass-function-for-a-discrete-random-variable.html"><a href="3-3-the-probability-mass-function-for-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>3.3</b> The Probability-Mass Function for a Discrete Random Variable</a></li>
+<li class="chapter" data-level="3.4" data-path="3-4-the-expected-value-of-a-discrete-random-variable.html"><a href="3-4-the-expected-value-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>3.4</b> The Expected Value of a discrete Random Variable</a></li>
+<li class="chapter" data-level="3.5" data-path="3-5-the-variance-of-a-discrete-random-variable.html"><a href="3-5-the-variance-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>3.5</b> The Variance of a Discrete Random Variable</a></li>
+<li class="chapter" data-level="3.6" data-path="3-6-the-cumulative-distribution-function-of-a-discrete-random-variable.html"><a href="3-6-the-cumulative-distribution-function-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>3.6</b> The Cumulative-Distribution Function of a Discrete Random Variable</a></li>
+<li class="chapter" data-level="3.7" data-path="3-7-permutations-and-combinations.html"><a href="3-7-permutations-and-combinations.html"><i class="fa fa-check"></i><b>3.7</b> Permutations and Combinations</a></li>
+<li class="chapter" data-level="3.8" data-path="3-8-the-binomial-distribution.html"><a href="3-8-the-binomial-distribution.html"><i class="fa fa-check"></i><b>3.8</b> The Binomial distribution</a></li>
+<li class="chapter" data-level="3.9" data-path="3-9-expected-value-and-variance-of-the-binomial-distribution.html"><a href="3-9-expected-value-and-variance-of-the-binomial-distribution.html"><i class="fa fa-check"></i><b>3.9</b> Expected Value and Variance of the Binomial distribution</a></li>
+<li class="chapter" data-level="3.10" data-path="3-10-the-poisson-distribution.html"><a href="3-10-the-poisson-distribution.html"><i class="fa fa-check"></i><b>3.10</b> The Poisson distribution</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-computation-of-poisson-probabilities.html"><a href="3-11-computation-of-poisson-probabilities.html"><i class="fa fa-check"></i><b>3.11</b> Computation of Poisson Probabilities</a></li>
+<li class="chapter" data-level="3.12" data-path="3-12-expected-value-and-variance-of-the-poisson-distribution.html"><a href="3-12-expected-value-and-variance-of-the-poisson-distribution.html"><i class="fa fa-check"></i><b>3.12</b> Expected Value and Variance of the Poisson Distribution</a></li>
+<li class="chapter" data-level="3.13" data-path="3-13-poisson-approximation-to-the-binomial-distribution.html"><a href="3-13-poisson-approximation-to-the-binomial-distribution.html"><i class="fa fa-check"></i><b>3.13</b> Poisson Approximation to the Binomial Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-discrete-probability-distributions.html"><a href="4-discrete-probability-distributions.html"><i class="fa fa-check"></i><b>4</b> Discrete Probability distributions</a><ul>
+<li class="chapter" data-level="4" data-path="4-continuous-probability-distributions.html"><a href="4-continuous-probability-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Probability distributions</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-1-introduction-1.html"><a href="4-1-introduction-1.html"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
-<li class="chapter" data-level="4.2" data-path="4-2-random-variables.html"><a href="4-2-random-variables.html"><i class="fa fa-check"></i><b>4.2</b> Random Variables</a></li>
-<li class="chapter" data-level="4.3" data-path="4-3-the-probability-mass-function-for-a-discrete-random-variable.html"><a href="4-3-the-probability-mass-function-for-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>4.3</b> The Probability-Mass Function for a Discrete Random Variable</a></li>
-<li class="chapter" data-level="4.4" data-path="4-4-the-expected-value-of-a-discrete-random-variable.html"><a href="4-4-the-expected-value-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>4.4</b> The Expected Value of a discrete Random Variable</a></li>
-<li class="chapter" data-level="4.5" data-path="4-5-the-variance-of-a-discrete-random-variable.html"><a href="4-5-the-variance-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>4.5</b> The Variance of a Discrete Random Variable</a></li>
-<li class="chapter" data-level="4.6" data-path="4-6-the-cumulative-distribution-function-of-a-discrete-random-variable.html"><a href="4-6-the-cumulative-distribution-function-of-a-discrete-random-variable.html"><i class="fa fa-check"></i><b>4.6</b> The Cumulative-Distribution Function of a Discrete Random Variable</a></li>
-<li class="chapter" data-level="4.7" data-path="4-7-permutations-and-combinations.html"><a href="4-7-permutations-and-combinations.html"><i class="fa fa-check"></i><b>4.7</b> Permutations and Combinations</a></li>
-<li class="chapter" data-level="4.8" data-path="4-8-the-binomial-distribution.html"><a href="4-8-the-binomial-distribution.html"><i class="fa fa-check"></i><b>4.8</b> The Binomial distribution</a></li>
-<li class="chapter" data-level="4.9" data-path="4-9-expected-value-and-variance-of-the-binomial-distribution.html"><a href="4-9-expected-value-and-variance-of-the-binomial-distribution.html"><i class="fa fa-check"></i><b>4.9</b> Expected Value and Variance of the Binomial distribution</a></li>
-<li class="chapter" data-level="4.10" data-path="4-10-the-poisson-distribution.html"><a href="4-10-the-poisson-distribution.html"><i class="fa fa-check"></i><b>4.10</b> The Poisson distribution</a></li>
-<li class="chapter" data-level="4.11" data-path="4-11-computation-of-poisson-probabilities.html"><a href="4-11-computation-of-poisson-probabilities.html"><i class="fa fa-check"></i><b>4.11</b> Computation of Poisson Probabilities</a></li>
-<li class="chapter" data-level="4.12" data-path="4-12-expected-value-and-variance-of-the-poisson-distribution.html"><a href="4-12-expected-value-and-variance-of-the-poisson-distribution.html"><i class="fa fa-check"></i><b>4.12</b> Expected Value and Variance of the Poisson Distribution</a></li>
-<li class="chapter" data-level="4.13" data-path="4-13-poisson-approximation-to-the-binomial-distribution.html"><a href="4-13-poisson-approximation-to-the-binomial-distribution.html"><i class="fa fa-check"></i><b>4.13</b> Poisson Approximation to the Binomial Distribution</a></li>
+<li class="chapter" data-level="4.2" data-path="4-2-general-concepts.html"><a href="4-2-general-concepts.html"><i class="fa fa-check"></i><b>4.2</b> General Concepts</a></li>
+<li class="chapter" data-level="4.3" data-path="4-3-the-normal-distribution.html"><a href="4-3-the-normal-distribution.html"><i class="fa fa-check"></i><b>4.3</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="4-4-properties-of-the-standard-normal-distribution.html"><a href="4-4-properties-of-the-standard-normal-distribution.html"><i class="fa fa-check"></i><b>4.4</b> Properties of the Standard Normal Distribution</a></li>
+<li class="chapter" data-level="4.5" data-path="4-5-conversion-from-an-n2-distribution-to-an-n-01-distribution.html"><a href="4-5-conversion-from-an-n2-distribution-to-an-n-01-distribution.html"><i class="fa fa-check"></i><b>4.5</b> Conversion from an n(μ,σ2) Distribution to an n (0,1) Distribution</a></li>
+<li class="chapter" data-level="4.6" data-path="4-6-linear-combinations-of-random-variables.html"><a href="4-6-linear-combinations-of-random-variables.html"><i class="fa fa-check"></i><b>4.6</b> Linear Combinations of Random Variables</a></li>
+<li class="chapter" data-level="4.7" data-path="4-7-normal-approximation-to-the-binomial-distribution.html"><a href="4-7-normal-approximation-to-the-binomial-distribution.html"><i class="fa fa-check"></i><b>4.7</b> Normal Approximation to the Binomial Distribution</a></li>
+<li class="chapter" data-level="4.8" data-path="4-8-normal-approximation-to-the-poisson-distribution.html"><a href="4-8-normal-approximation-to-the-poisson-distribution.html"><i class="fa fa-check"></i><b>4.8</b> Normal Approximation to the Poisson Distribution</a></li>
+<li class="chapter" data-level="4.9" data-path="4-9-introduction-2.html"><a href="4-9-introduction-2.html"><i class="fa fa-check"></i><b>4.9</b> Introduction</a></li>
+<li class="chapter" data-level="4.10" data-path="4-10-the-relationship-between-population-and-sample.html"><a href="4-10-the-relationship-between-population-and-sample.html"><i class="fa fa-check"></i><b>4.10</b> The Relationship Between Population and Sample</a></li>
+<li class="chapter" data-level="4.11" data-path="4-11-random-number-tables.html"><a href="4-11-random-number-tables.html"><i class="fa fa-check"></i><b>4.11</b> Random-Number Tables</a></li>
+<li class="chapter" data-level="4.12" data-path="4-12-randomized-clinical-trials.html"><a href="4-12-randomized-clinical-trials.html"><i class="fa fa-check"></i><b>4.12</b> Randomized Clinical Trials</a></li>
+<li class="chapter" data-level="4.13" data-path="4-13-estimation-of-the-mean-of-a-distribution.html"><a href="4-13-estimation-of-the-mean-of-a-distribution.html"><i class="fa fa-check"></i><b>4.13</b> Estimation of the Mean of a Distribution</a></li>
+<li class="chapter" data-level="4.14" data-path="4-14-estimation-of-the-variance-of-a-distribution.html"><a href="4-14-estimation-of-the-variance-of-a-distribution.html"><i class="fa fa-check"></i><b>4.14</b> Estimation of the Variance of a Distribution</a></li>
+<li class="chapter" data-level="4.15" data-path="4-15-estimation-for-the-binomial-distribution.html"><a href="4-15-estimation-for-the-binomial-distribution.html"><i class="fa fa-check"></i><b>4.15</b> Estimation for the Binomial Distribution</a></li>
+<li class="chapter" data-level="4.16" data-path="4-16-estimation-for-the-poisson-distribution.html"><a href="4-16-estimation-for-the-poisson-distribution.html"><i class="fa fa-check"></i><b>4.16</b> Estimation for the Poisson Distribution</a></li>
+<li class="chapter" data-level="4.17" data-path="4-17-one-sided-confidence-intervals.html"><a href="4-17-one-sided-confidence-intervals.html"><i class="fa fa-check"></i><b>4.17</b> One-Sided Confidence Intervals</a></li>
+<li class="chapter" data-level="4.18" data-path="4-18-the-bootstrap.html"><a href="4-18-the-bootstrap.html"><i class="fa fa-check"></i><b>4.18</b> The Bootstrap</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-continuous-probability-distributions.html"><a href="5-continuous-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Continuous Probability distributions</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-1-introduction-2.html"><a href="5-1-introduction-2.html"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-general-concepts.html"><a href="5-2-general-concepts.html"><i class="fa fa-check"></i><b>5.2</b> General Concepts</a></li>
-<li class="chapter" data-level="5.3" data-path="5-3-the-normal-distribution.html"><a href="5-3-the-normal-distribution.html"><i class="fa fa-check"></i><b>5.3</b> The Normal Distribution</a></li>
-<li class="chapter" data-level="5.4" data-path="5-4-properties-of-the-standard-normal-distribution.html"><a href="5-4-properties-of-the-standard-normal-distribution.html"><i class="fa fa-check"></i><b>5.4</b> Properties of the Standard Normal Distribution</a></li>
-<li class="chapter" data-level="5.5" data-path="5-5-conversion-from-an-n2-distribution-to-an-n-01-distribution.html"><a href="5-5-conversion-from-an-n2-distribution-to-an-n-01-distribution.html"><i class="fa fa-check"></i><b>5.5</b> Conversion from an n(μ,σ2) Distribution to an n (0,1) Distribution</a></li>
-<li class="chapter" data-level="5.6" data-path="5-6-linear-combinations-of-random-variables.html"><a href="5-6-linear-combinations-of-random-variables.html"><i class="fa fa-check"></i><b>5.6</b> Linear Combinations of Random Variables</a></li>
-<li class="chapter" data-level="5.7" data-path="5-7-normal-approximation-to-the-binomial-distribution.html"><a href="5-7-normal-approximation-to-the-binomial-distribution.html"><i class="fa fa-check"></i><b>5.7</b> Normal Approximation to the Binomial Distribution</a></li>
-<li class="chapter" data-level="5.8" data-path="5-8-normal-approximation-to-the-poisson-distribution.html"><a href="5-8-normal-approximation-to-the-poisson-distribution.html"><i class="fa fa-check"></i><b>5.8</b> Normal Approximation to the Poisson Distribution</a></li>
+<li class="chapter" data-level="5" data-path="5-hypothesis-testing-one-sample-inference.html"><a href="5-hypothesis-testing-one-sample-inference.html"><i class="fa fa-check"></i><b>5</b> hypothesis testing: one-Sample inference</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-1-introduction-3.html"><a href="5-1-introduction-3.html"><i class="fa fa-check"></i><b>5.1</b> introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-general-concepts-1.html"><a href="5-2-general-concepts-1.html"><i class="fa fa-check"></i><b>5.2</b> General Concepts</a></li>
+<li class="chapter" data-level="5.3" data-path="5-3-one-sample-test-for-the-mean-of-a-normal-distribution-one-sided-alternatives.html"><a href="5-3-one-sample-test-for-the-mean-of-a-normal-distribution-one-sided-alternatives.html"><i class="fa fa-check"></i><b>5.3</b> one-Sample test for the Mean of a normal distribution: one-Sided Alternatives</a></li>
+<li class="chapter" data-level="5.4" data-path="5-4-one-sample-test-for-the-mean-of-a-normal-distribution-two-sided-alternatives.html"><a href="5-4-one-sample-test-for-the-mean-of-a-normal-distribution-two-sided-alternatives.html"><i class="fa fa-check"></i><b>5.4</b> one-Sample test for the Mean of a normal distribution: two-Sided Alternatives</a></li>
+<li class="chapter" data-level="5.5" data-path="5-5-the-relationship-between-hypothesis-testing-and-confidence-intervals.html"><a href="5-5-the-relationship-between-hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>5.5</b> the Relationship Between hypothesis testing and Confidence intervals</a></li>
+<li class="chapter" data-level="5.6" data-path="5-6-the-power-of-a-test.html"><a href="5-6-the-power-of-a-test.html"><i class="fa fa-check"></i><b>5.6</b> the Power of a test</a></li>
+<li class="chapter" data-level="5.7" data-path="5-7-sample-size-determination.html"><a href="5-7-sample-size-determination.html"><i class="fa fa-check"></i><b>5.7</b> Sample-Size determination</a></li>
+<li class="chapter" data-level="5.8" data-path="5-8-one-sample-2-test-for-the-variance-of-a-normal-distribution.html"><a href="5-8-one-sample-2-test-for-the-variance-of-a-normal-distribution.html"><i class="fa fa-check"></i><b>5.8</b> one-Sample χ2 test for the Variance of a normal distribution</a></li>
+<li class="chapter" data-level="5.9" data-path="5-9-one-sample-inference-for-the-binomial-distribution.html"><a href="5-9-one-sample-inference-for-the-binomial-distribution.html"><i class="fa fa-check"></i><b>5.9</b> one-Sample inference for the Binomial distribution</a></li>
+<li class="chapter" data-level="5.10" data-path="5-10-one-sample-inference-for-the-poisson-distribution.html"><a href="5-10-one-sample-inference-for-the-poisson-distribution.html"><i class="fa fa-check"></i><b>5.10</b> one-Sample inference for the Poisson distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-estimation.html"><a href="6-estimation.html"><i class="fa fa-check"></i><b>6</b> Estimation</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-introduction-3.html"><a href="6-1-introduction-3.html"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-the-relationship-between-population-and-sample.html"><a href="6-2-the-relationship-between-population-and-sample.html"><i class="fa fa-check"></i><b>6.2</b> The Relationship Between Population and Sample</a></li>
-<li class="chapter" data-level="6.3" data-path="6-3-random-number-tables.html"><a href="6-3-random-number-tables.html"><i class="fa fa-check"></i><b>6.3</b> Random-Number Tables</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-randomized-clinical-trials.html"><a href="6-4-randomized-clinical-trials.html"><i class="fa fa-check"></i><b>6.4</b> Randomized Clinical Trials</a></li>
-<li class="chapter" data-level="6.5" data-path="6-5-estimation-of-the-mean-of-a-distribution.html"><a href="6-5-estimation-of-the-mean-of-a-distribution.html"><i class="fa fa-check"></i><b>6.5</b> Estimation of the Mean of a Distribution</a></li>
-<li class="chapter" data-level="6.6" data-path="6-6-estimation-of-the-variance-of-a-distribution.html"><a href="6-6-estimation-of-the-variance-of-a-distribution.html"><i class="fa fa-check"></i><b>6.6</b> Estimation of the Variance of a Distribution</a></li>
-<li class="chapter" data-level="6.7" data-path="6-7-estimation-for-the-binomial-distribution.html"><a href="6-7-estimation-for-the-binomial-distribution.html"><i class="fa fa-check"></i><b>6.7</b> Estimation for the Binomial Distribution</a></li>
-<li class="chapter" data-level="6.8" data-path="6-8-estimation-for-the-poisson-distribution.html"><a href="6-8-estimation-for-the-poisson-distribution.html"><i class="fa fa-check"></i><b>6.8</b> Estimation for the Poisson Distribution</a></li>
-<li class="chapter" data-level="6.9" data-path="6-9-one-sided-confidence-intervals.html"><a href="6-9-one-sided-confidence-intervals.html"><i class="fa fa-check"></i><b>6.9</b> One-Sided Confidence Intervals</a></li>
-<li class="chapter" data-level="6.10" data-path="6-10-the-bootstrap.html"><a href="6-10-the-bootstrap.html"><i class="fa fa-check"></i><b>6.10</b> The Bootstrap</a></li>
+<li class="chapter" data-level="6" data-path="6-hypothesis-testing-two-sample-inference.html"><a href="6-hypothesis-testing-two-sample-inference.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing: two-Sample inference</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-1-introduction-4.html"><a href="6-1-introduction-4.html"><i class="fa fa-check"></i><b>6.1</b> introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="6-2-the-paired-t-test.html"><a href="6-2-the-paired-t-test.html"><i class="fa fa-check"></i><b>6.2</b> the Paired t test</a></li>
+<li class="chapter" data-level="6.3" data-path="6-3-interval-estimation-for-the-comparison-of-means-from-two-paired-samples.html"><a href="6-3-interval-estimation-for-the-comparison-of-means-from-two-paired-samples.html"><i class="fa fa-check"></i><b>6.3</b> interval Estimation for the Comparison of Means from two Paired Samples</a></li>
+<li class="chapter" data-level="6.4" data-path="6-4-two-sample-t-test-for-independent-samples-with-equal-variances.html"><a href="6-4-two-sample-t-test-for-independent-samples-with-equal-variances.html"><i class="fa fa-check"></i><b>6.4</b> two-Sample t test for independent Samples with Equal Variances</a></li>
+<li class="chapter" data-level="6.5" data-path="6-5-interval-estimation-for-the-comparison-of-means-from-two-independent-samples-equal-variance-case.html"><a href="6-5-interval-estimation-for-the-comparison-of-means-from-two-independent-samples-equal-variance-case.html"><i class="fa fa-check"></i><b>6.5</b> interval Estimation for the Comparison of Means from two independent Samples (Equal Variance Case)</a></li>
+<li class="chapter" data-level="6.6" data-path="6-6-testing-for-the-equality-of-two-variances.html"><a href="6-6-testing-for-the-equality-of-two-variances.html"><i class="fa fa-check"></i><b>6.6</b> testing for the Equality of two Variances</a></li>
+<li class="chapter" data-level="6.7" data-path="6-7-two-sample-t-test-for-independent-samples-with-unequal-variances.html"><a href="6-7-two-sample-t-test-for-independent-samples-with-unequal-variances.html"><i class="fa fa-check"></i><b>6.7</b> two-Sample t test for independent Samples with Unequal Variances</a></li>
+<li class="chapter" data-level="6.8" data-path="6-8-estimation-of-sample-size-and-power-for-comparing-two-means.html"><a href="6-8-estimation-of-sample-size-and-power-for-comparing-two-means.html"><i class="fa fa-check"></i><b>6.8</b> Estimation of Sample Size and Power for Comparing two Means</a></li>
+<li class="chapter" data-level="6.9" data-path="6-9-the-treatment-of-outliers.html"><a href="6-9-the-treatment-of-outliers.html"><i class="fa fa-check"></i><b>6.9</b> the treatment of outliers</a></li>
+<li class="chapter" data-level="6.10" data-path="6-10-derivation-of-equation-8-13.html"><a href="6-10-derivation-of-equation-8-13.html"><i class="fa fa-check"></i><b>6.10</b> derivation of Equation 8.13</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-hypothesis-testing-one-sample-inference.html"><a href="7-hypothesis-testing-one-sample-inference.html"><i class="fa fa-check"></i><b>7</b> hypothesis testing: one-Sample inference</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-introduction-4.html"><a href="7-1-introduction-4.html"><i class="fa fa-check"></i><b>7.1</b> introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-general-concepts-1.html"><a href="7-2-general-concepts-1.html"><i class="fa fa-check"></i><b>7.2</b> General Concepts</a></li>
-<li class="chapter" data-level="7.3" data-path="7-3-one-sample-test-for-the-mean-of-a-normal-distribution-one-sided-alternatives.html"><a href="7-3-one-sample-test-for-the-mean-of-a-normal-distribution-one-sided-alternatives.html"><i class="fa fa-check"></i><b>7.3</b> one-Sample test for the Mean of a normal distribution: one-Sided Alternatives</a></li>
-<li class="chapter" data-level="7.4" data-path="7-4-one-sample-test-for-the-mean-of-a-normal-distribution-two-sided-alternatives.html"><a href="7-4-one-sample-test-for-the-mean-of-a-normal-distribution-two-sided-alternatives.html"><i class="fa fa-check"></i><b>7.4</b> one-Sample test for the Mean of a normal distribution: two-Sided Alternatives</a></li>
-<li class="chapter" data-level="7.5" data-path="7-5-the-relationship-between-hypothesis-testing-and-confidence-intervals.html"><a href="7-5-the-relationship-between-hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>7.5</b> the Relationship Between hypothesis testing and Confidence intervals</a></li>
-<li class="chapter" data-level="7.6" data-path="7-6-the-power-of-a-test.html"><a href="7-6-the-power-of-a-test.html"><i class="fa fa-check"></i><b>7.6</b> the Power of a test</a></li>
-<li class="chapter" data-level="7.7" data-path="7-7-sample-size-determination.html"><a href="7-7-sample-size-determination.html"><i class="fa fa-check"></i><b>7.7</b> Sample-Size determination</a></li>
-<li class="chapter" data-level="7.8" data-path="7-8-one-sample-2-test-for-the-variance-of-a-normal-distribution.html"><a href="7-8-one-sample-2-test-for-the-variance-of-a-normal-distribution.html"><i class="fa fa-check"></i><b>7.8</b> one-Sample χ2 test for the Variance of a normal distribution</a></li>
-<li class="chapter" data-level="7.9" data-path="7-9-one-sample-inference-for-the-binomial-distribution.html"><a href="7-9-one-sample-inference-for-the-binomial-distribution.html"><i class="fa fa-check"></i><b>7.9</b> one-Sample inference for the Binomial distribution</a></li>
-<li class="chapter" data-level="7.10" data-path="7-10-one-sample-inference-for-the-poisson-distribution.html"><a href="7-10-one-sample-inference-for-the-poisson-distribution.html"><i class="fa fa-check"></i><b>7.10</b> one-Sample inference for the Poisson distribution</a></li>
+<li class="chapter" data-level="7" data-path="7-nonparametric-methods.html"><a href="7-nonparametric-methods.html"><i class="fa fa-check"></i><b>7</b> Nonparametric Methods</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-1-introduction-5.html"><a href="7-1-introduction-5.html"><i class="fa fa-check"></i><b>7.1</b> introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="7-2-the-sign-test.html"><a href="7-2-the-sign-test.html"><i class="fa fa-check"></i><b>7.2</b> the Sign test</a></li>
+<li class="chapter" data-level="7.3" data-path="7-3-the-wilcoxon-signed-rank-test.html"><a href="7-3-the-wilcoxon-signed-rank-test.html"><i class="fa fa-check"></i><b>7.3</b> the Wilcoxon Signed-Rank test</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-the-wilcoxon-rank-sum-test.html"><a href="7-4-the-wilcoxon-rank-sum-test.html"><i class="fa fa-check"></i><b>7.4</b> the Wilcoxon Rank-Sum test</a></li>
+<li class="chapter" data-level="7.5" data-path="7-5-permutation-tests.html"><a href="7-5-permutation-tests.html"><i class="fa fa-check"></i><b>7.5</b> Permutation tests</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-hypothesis-testing-two-sample-inference.html"><a href="8-hypothesis-testing-two-sample-inference.html"><i class="fa fa-check"></i><b>8</b> Hypothesis Testing: two-Sample inference</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-introduction-5.html"><a href="8-1-introduction-5.html"><i class="fa fa-check"></i><b>8.1</b> introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="8-2-the-paired-t-test.html"><a href="8-2-the-paired-t-test.html"><i class="fa fa-check"></i><b>8.2</b> the Paired t test</a></li>
-<li class="chapter" data-level="8.3" data-path="8-3-interval-estimation-for-the-comparison-of-means-from-two-paired-samples.html"><a href="8-3-interval-estimation-for-the-comparison-of-means-from-two-paired-samples.html"><i class="fa fa-check"></i><b>8.3</b> interval Estimation for the Comparison of Means from two Paired Samples</a></li>
-<li class="chapter" data-level="8.4" data-path="8-4-two-sample-t-test-for-independent-samples-with-equal-variances.html"><a href="8-4-two-sample-t-test-for-independent-samples-with-equal-variances.html"><i class="fa fa-check"></i><b>8.4</b> two-Sample t test for independent Samples with Equal Variances</a></li>
-<li class="chapter" data-level="8.5" data-path="8-5-interval-estimation-for-the-comparison-of-means-from-two-independent-samples-equal-variance-case.html"><a href="8-5-interval-estimation-for-the-comparison-of-means-from-two-independent-samples-equal-variance-case.html"><i class="fa fa-check"></i><b>8.5</b> interval Estimation for the Comparison of Means from two independent Samples (Equal Variance Case)</a></li>
-<li class="chapter" data-level="8.6" data-path="8-6-testing-for-the-equality-of-two-variances.html"><a href="8-6-testing-for-the-equality-of-two-variances.html"><i class="fa fa-check"></i><b>8.6</b> testing for the Equality of two Variances</a></li>
-<li class="chapter" data-level="8.7" data-path="8-7-two-sample-t-test-for-independent-samples-with-unequal-variances.html"><a href="8-7-two-sample-t-test-for-independent-samples-with-unequal-variances.html"><i class="fa fa-check"></i><b>8.7</b> two-Sample t test for independent Samples with Unequal Variances</a></li>
-<li class="chapter" data-level="8.8" data-path="8-8-estimation-of-sample-size-and-power-for-comparing-two-means.html"><a href="8-8-estimation-of-sample-size-and-power-for-comparing-two-means.html"><i class="fa fa-check"></i><b>8.8</b> Estimation of Sample Size and Power for Comparing two Means</a></li>
-<li class="chapter" data-level="8.9" data-path="8-9-the-treatment-of-outliers.html"><a href="8-9-the-treatment-of-outliers.html"><i class="fa fa-check"></i><b>8.9</b> the treatment of outliers</a></li>
-<li class="chapter" data-level="8.10" data-path="8-10-derivation-of-equation-8-13.html"><a href="8-10-derivation-of-equation-8-13.html"><i class="fa fa-check"></i><b>8.10</b> derivation of Equation 8.13</a></li>
+<li class="chapter" data-level="8" data-path="8-hypothesis-testingcategoricaldata.html"><a href="8-hypothesis-testingcategoricaldata.html"><i class="fa fa-check"></i><b>8</b> hypothesis testing:Categoricaldata</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-introduction-6.html"><a href="8-1-introduction-6.html"><i class="fa fa-check"></i><b>8.1</b> introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="8-2-two-sample-test-for-binomial-proportions.html"><a href="8-2-two-sample-test-for-binomial-proportions.html"><i class="fa fa-check"></i><b>8.2</b> two-Sample test for Binomial Proportions</a></li>
+<li class="chapter" data-level="8.3" data-path="8-3-fishers-exact-test.html"><a href="8-3-fishers-exact-test.html"><i class="fa fa-check"></i><b>8.3</b> Fisher’s Exact test</a></li>
+<li class="chapter" data-level="8.4" data-path="8-4-two-sample-test-for-binomial-proportions-for-matched-pair-data-mcnemars-test.html"><a href="8-4-two-sample-test-for-binomial-proportions-for-matched-pair-data-mcnemars-test.html"><i class="fa fa-check"></i><b>8.4</b> two-Sample test for Binomial Proportions for Matched-Pair data (Mcnemar’s test)</a></li>
+<li class="chapter" data-level="8.5" data-path="8-5-estimation-of-sample-size-and-power-for-comparing-two-binomial-proportions.html"><a href="8-5-estimation-of-sample-size-and-power-for-comparing-two-binomial-proportions.html"><i class="fa fa-check"></i><b>8.5</b> Estimation of Sample Size and Power for Comparing two Binomial Proportions</a></li>
+<li class="chapter" data-level="8.6" data-path="8-6-r-c-contingency-tables.html"><a href="8-6-r-c-contingency-tables.html"><i class="fa fa-check"></i><b>8.6</b> R × C Contingency tables</a></li>
+<li class="chapter" data-level="8.7" data-path="8-7-chi-square-goodness-of-fit-test.html"><a href="8-7-chi-square-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>8.7</b> Chi-Square Goodness-of-Fit test</a></li>
+<li class="chapter" data-level="8.8" data-path="8-8-the-kappa-statistic.html"><a href="8-8-the-kappa-statistic.html"><i class="fa fa-check"></i><b>8.8</b> the Kappa Statistic</a></li>
+<li class="chapter" data-level="8.9" data-path="8-9-derivation-of-selected-formulas.html"><a href="8-9-derivation-of-selected-formulas.html"><i class="fa fa-check"></i><b>8.9</b> derivation of Selected Formulas</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-nonparametric-methods.html"><a href="9-nonparametric-methods.html"><i class="fa fa-check"></i><b>9</b> Nonparametric Methods</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-introduction-6.html"><a href="9-1-introduction-6.html"><i class="fa fa-check"></i><b>9.1</b> introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="9-2-the-sign-test.html"><a href="9-2-the-sign-test.html"><i class="fa fa-check"></i><b>9.2</b> the Sign test</a></li>
-<li class="chapter" data-level="9.3" data-path="9-3-the-wilcoxon-signed-rank-test.html"><a href="9-3-the-wilcoxon-signed-rank-test.html"><i class="fa fa-check"></i><b>9.3</b> the Wilcoxon Signed-Rank test</a></li>
-<li class="chapter" data-level="9.4" data-path="9-4-the-wilcoxon-rank-sum-test.html"><a href="9-4-the-wilcoxon-rank-sum-test.html"><i class="fa fa-check"></i><b>9.4</b> the Wilcoxon Rank-Sum test</a></li>
-<li class="chapter" data-level="9.5" data-path="9-5-permutation-tests.html"><a href="9-5-permutation-tests.html"><i class="fa fa-check"></i><b>9.5</b> Permutation tests</a></li>
+<li class="chapter" data-level="9" data-path="9-regression-and-correlation-methods.html"><a href="9-regression-and-correlation-methods.html"><i class="fa fa-check"></i><b>9</b> Regression and Correlation Methods</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-1-introduction-7.html"><a href="9-1-introduction-7.html"><i class="fa fa-check"></i><b>9.1</b> introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="9-2-general-concepts-2.html"><a href="9-2-general-concepts-2.html"><i class="fa fa-check"></i><b>9.2</b> General Concepts</a></li>
+<li class="chapter" data-level="9.3" data-path="9-3-fitting-regression-linesthe-method-of-least-squares.html"><a href="9-3-fitting-regression-linesthe-method-of-least-squares.html"><i class="fa fa-check"></i><b>9.3</b> Fitting Regression Lines—the Method of Least Squares</a></li>
+<li class="chapter" data-level="9.4" data-path="9-4-inferences-about-parameters-from-regression-lines.html"><a href="9-4-inferences-about-parameters-from-regression-lines.html"><i class="fa fa-check"></i><b>9.4</b> inferences About Parameters from Regression Lines</a></li>
+<li class="chapter" data-level="9.5" data-path="9-5-interval-estimation-for-linear-regression.html"><a href="9-5-interval-estimation-for-linear-regression.html"><i class="fa fa-check"></i><b>9.5</b> interval Estimation for Linear Regression</a></li>
+<li class="chapter" data-level="9.6" data-path="9-6-assessing-the-goodness-of-fit-of-regression-lines.html"><a href="9-6-assessing-the-goodness-of-fit-of-regression-lines.html"><i class="fa fa-check"></i><b>9.6</b> Assessing the Goodness of Fit of Regression Lines</a></li>
+<li class="chapter" data-level="9.7" data-path="9-7-the-correlation-coefficient.html"><a href="9-7-the-correlation-coefficient.html"><i class="fa fa-check"></i><b>9.7</b> the Correlation Coefficient</a></li>
+<li class="chapter" data-level="9.8" data-path="9-8-statistical-inference-for-correlation-coefficients.html"><a href="9-8-statistical-inference-for-correlation-coefficients.html"><i class="fa fa-check"></i><b>9.8</b> Statistical inference for Correlation Coefficients</a></li>
+<li class="chapter" data-level="9.9" data-path="9-9-multiple-regression.html"><a href="9-9-multiple-regression.html"><i class="fa fa-check"></i><b>9.9</b> Multiple Regression</a></li>
+<li class="chapter" data-level="9.10" data-path="9-10-partial-and-multiple-correlation.html"><a href="9-10-partial-and-multiple-correlation.html"><i class="fa fa-check"></i><b>9.10</b> Partial and Multiple Correlation</a></li>
+<li class="chapter" data-level="9.11" data-path="9-11-rank-correlation.html"><a href="9-11-rank-correlation.html"><i class="fa fa-check"></i><b>9.11</b> Rank Correlation</a></li>
+<li class="chapter" data-level="9.12" data-path="9-12-interval-estimation-for-rank-correlation-coefficients.html"><a href="9-12-interval-estimation-for-rank-correlation-coefficients.html"><i class="fa fa-check"></i><b>9.12</b> interval Estimation for Rank-Correlation Coefficients</a></li>
+<li class="chapter" data-level="9.13" data-path="9-13-derivation-of-equation-11-26.html"><a href="9-13-derivation-of-equation-11-26.html"><i class="fa fa-check"></i><b>9.13</b> derivation of Equation 11.26</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-hypothesis-testingcategoricaldata.html"><a href="10-hypothesis-testingcategoricaldata.html"><i class="fa fa-check"></i><b>10</b> hypothesis testing:Categoricaldata</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-1-introduction-7.html"><a href="10-1-introduction-7.html"><i class="fa fa-check"></i><b>10.1</b> introduction</a></li>
-<li class="chapter" data-level="10.2" data-path="10-2-two-sample-test-for-binomial-proportions.html"><a href="10-2-two-sample-test-for-binomial-proportions.html"><i class="fa fa-check"></i><b>10.2</b> two-Sample test for Binomial Proportions</a></li>
-<li class="chapter" data-level="10.3" data-path="10-3-fishers-exact-test.html"><a href="10-3-fishers-exact-test.html"><i class="fa fa-check"></i><b>10.3</b> Fisher’s Exact test</a></li>
-<li class="chapter" data-level="10.4" data-path="10-4-two-sample-test-for-binomial-proportions-for-matched-pair-data-mcnemars-test.html"><a href="10-4-two-sample-test-for-binomial-proportions-for-matched-pair-data-mcnemars-test.html"><i class="fa fa-check"></i><b>10.4</b> two-Sample test for Binomial Proportions for Matched-Pair data (Mcnemar’s test)</a></li>
-<li class="chapter" data-level="10.5" data-path="10-5-estimation-of-sample-size-and-power-for-comparing-two-binomial-proportions.html"><a href="10-5-estimation-of-sample-size-and-power-for-comparing-two-binomial-proportions.html"><i class="fa fa-check"></i><b>10.5</b> Estimation of Sample Size and Power for Comparing two Binomial Proportions</a></li>
-<li class="chapter" data-level="10.6" data-path="10-6-r-c-contingency-tables.html"><a href="10-6-r-c-contingency-tables.html"><i class="fa fa-check"></i><b>10.6</b> R × C Contingency tables</a></li>
-<li class="chapter" data-level="10.7" data-path="10-7-chi-square-goodness-of-fit-test.html"><a href="10-7-chi-square-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>10.7</b> Chi-Square Goodness-of-Fit test</a></li>
-<li class="chapter" data-level="10.8" data-path="10-8-the-kappa-statistic.html"><a href="10-8-the-kappa-statistic.html"><i class="fa fa-check"></i><b>10.8</b> the Kappa Statistic</a></li>
-<li class="chapter" data-level="10.9" data-path="10-9-derivation-of-selected-formulas.html"><a href="10-9-derivation-of-selected-formulas.html"><i class="fa fa-check"></i><b>10.9</b> derivation of Selected Formulas</a></li>
+<li class="chapter" data-level="10" data-path="10-multisample-inference.html"><a href="10-multisample-inference.html"><i class="fa fa-check"></i><b>10</b> Multisample inference</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-introduction-to-the-one-way-analysis-of-variance.html"><a href="10-1-introduction-to-the-one-way-analysis-of-variance.html"><i class="fa fa-check"></i><b>10.1</b> introduction to the one-Way Analysis of Variance</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-one-way-anovafixed-effects-model.html"><a href="10-2-one-way-anovafixed-effects-model.html"><i class="fa fa-check"></i><b>10.2</b> one-Way AnoVA—Fixed-Effects Model</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-hypothesis-testing-in-one-way-anova-fixed-effects-model.html"><a href="10-3-hypothesis-testing-in-one-way-anova-fixed-effects-model.html"><i class="fa fa-check"></i><b>10.3</b> hypothesis testing in one-Way AnoVA— Fixed-Effects Model</a></li>
+<li class="chapter" data-level="10.4" data-path="10-4-comparisons-of-specific-groups-in-one-way-anova.html"><a href="10-4-comparisons-of-specific-groups-in-one-way-anova.html"><i class="fa fa-check"></i><b>10.4</b> Comparisons of Specific Groups in one- Way AnoVA</a></li>
+<li class="chapter" data-level="10.5" data-path="10-5-two-way-anova.html"><a href="10-5-two-way-anova.html"><i class="fa fa-check"></i><b>10.5</b> two-Way AnoVA</a></li>
+<li class="chapter" data-level="10.6" data-path="10-6-the-kruskal-wallis-test.html"><a href="10-6-the-kruskal-wallis-test.html"><i class="fa fa-check"></i><b>10.6</b> the Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="10.7" data-path="10-7-one-way-anovathe-random-effects-model.html"><a href="10-7-one-way-anovathe-random-effects-model.html"><i class="fa fa-check"></i><b>10.7</b> one-Way AnoVA—the Random-Effects Model</a></li>
+<li class="chapter" data-level="10.8" data-path="10-8-the-intraclass-correlation-coefficient.html"><a href="10-8-the-intraclass-correlation-coefficient.html"><i class="fa fa-check"></i><b>10.8</b> the intraclass Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.9" data-path="10-9-mixed-models.html"><a href="10-9-mixed-models.html"><i class="fa fa-check"></i><b>10.9</b> Mixed Models</a></li>
+<li class="chapter" data-level="10.10" data-path="10-10-derivation-of-equation.html"><a href="10-10-derivation-of-equation.html"><i class="fa fa-check"></i><b>10.10</b> derivation of Equation</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-regression-and-correlation-methods.html"><a href="11-regression-and-correlation-methods.html"><i class="fa fa-check"></i><b>11</b> Regression and Correlation Methods</a><ul>
+<li class="chapter" data-level="11" data-path="11-design-and-analysis-techniques-for-epidemiologic-studies.html"><a href="11-design-and-analysis-techniques-for-epidemiologic-studies.html"><i class="fa fa-check"></i><b>11</b> design and Analysis techniques for Epidemiologic Studies</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-introduction-8.html"><a href="11-1-introduction-8.html"><i class="fa fa-check"></i><b>11.1</b> introduction</a></li>
-<li class="chapter" data-level="11.2" data-path="11-2-general-concepts-2.html"><a href="11-2-general-concepts-2.html"><i class="fa fa-check"></i><b>11.2</b> General Concepts</a></li>
-<li class="chapter" data-level="11.3" data-path="11-3-fitting-regression-linesthe-method-of-least-squares.html"><a href="11-3-fitting-regression-linesthe-method-of-least-squares.html"><i class="fa fa-check"></i><b>11.3</b> Fitting Regression Lines—the Method of Least Squares</a></li>
-<li class="chapter" data-level="11.4" data-path="11-4-inferences-about-parameters-from-regression-lines.html"><a href="11-4-inferences-about-parameters-from-regression-lines.html"><i class="fa fa-check"></i><b>11.4</b> inferences About Parameters from Regression Lines</a></li>
-<li class="chapter" data-level="11.5" data-path="11-5-interval-estimation-for-linear-regression.html"><a href="11-5-interval-estimation-for-linear-regression.html"><i class="fa fa-check"></i><b>11.5</b> interval Estimation for Linear Regression</a></li>
-<li class="chapter" data-level="11.6" data-path="11-6-assessing-the-goodness-of-fit-of-regression-lines.html"><a href="11-6-assessing-the-goodness-of-fit-of-regression-lines.html"><i class="fa fa-check"></i><b>11.6</b> Assessing the Goodness of Fit of Regression Lines</a></li>
-<li class="chapter" data-level="11.7" data-path="11-7-the-correlation-coefficient.html"><a href="11-7-the-correlation-coefficient.html"><i class="fa fa-check"></i><b>11.7</b> the Correlation Coefficient</a></li>
-<li class="chapter" data-level="11.8" data-path="11-8-statistical-inference-for-correlation-coefficients.html"><a href="11-8-statistical-inference-for-correlation-coefficients.html"><i class="fa fa-check"></i><b>11.8</b> Statistical inference for Correlation Coefficients</a></li>
-<li class="chapter" data-level="11.9" data-path="11-9-multiple-regression.html"><a href="11-9-multiple-regression.html"><i class="fa fa-check"></i><b>11.9</b> Multiple Regression</a></li>
-<li class="chapter" data-level="11.10" data-path="11-10-partial-and-multiple-correlation.html"><a href="11-10-partial-and-multiple-correlation.html"><i class="fa fa-check"></i><b>11.10</b> Partial and Multiple Correlation</a></li>
-<li class="chapter" data-level="11.11" data-path="11-11-rank-correlation.html"><a href="11-11-rank-correlation.html"><i class="fa fa-check"></i><b>11.11</b> Rank Correlation</a></li>
-<li class="chapter" data-level="11.12" data-path="11-12-interval-estimation-for-rank-correlation-coefficients.html"><a href="11-12-interval-estimation-for-rank-correlation-coefficients.html"><i class="fa fa-check"></i><b>11.12</b> interval Estimation for Rank-Correlation Coefficients</a></li>
-<li class="chapter" data-level="11.13" data-path="11-13-derivation-of-equation-11-26.html"><a href="11-13-derivation-of-equation-11-26.html"><i class="fa fa-check"></i><b>11.13</b> derivation of Equation 11.26</a></li>
+<li class="chapter" data-level="11.2" data-path="11-2-study-design.html"><a href="11-2-study-design.html"><i class="fa fa-check"></i><b>11.2</b> Study design</a></li>
+<li class="chapter" data-level="11.3" data-path="11-3-measures-of-effect-for-categorical-data.html"><a href="11-3-measures-of-effect-for-categorical-data.html"><i class="fa fa-check"></i><b>11.3</b> Measures of Effect for Categorical data</a></li>
+<li class="chapter" data-level="11.4" data-path="11-4-attributable-risk.html"><a href="11-4-attributable-risk.html"><i class="fa fa-check"></i><b>11.4</b> Attributable Risk</a></li>
+<li class="chapter" data-level="11.5" data-path="11-5-confounding-and-standardization.html"><a href="11-5-confounding-and-standardization.html"><i class="fa fa-check"></i><b>11.5</b> Confounding and Standardization</a></li>
+<li class="chapter" data-level="11.6" data-path="11-6-methods-of-inference-for-stratified-categorical-datathe-mantel-haenszel-test.html"><a href="11-6-methods-of-inference-for-stratified-categorical-datathe-mantel-haenszel-test.html"><i class="fa fa-check"></i><b>11.6</b> Methods of inference for Stratified Categorical data—the Mantel-haenszel test</a></li>
+<li class="chapter" data-level="11.7" data-path="11-7-multiple-logistic-regression.html"><a href="11-7-multiple-logistic-regression.html"><i class="fa fa-check"></i><b>11.7</b> Multiple Logistic Regression</a></li>
+<li class="chapter" data-level="11.8" data-path="11-8-extensions-to-logistic-regression.html"><a href="11-8-extensions-to-logistic-regression.html"><i class="fa fa-check"></i><b>11.8</b> Extensions to Logistic Regression</a></li>
+<li class="chapter" data-level="11.9" data-path="11-9-sample-size-estimation-for-logistic-regression.html"><a href="11-9-sample-size-estimation-for-logistic-regression.html"><i class="fa fa-check"></i><b>11.9</b> Sample Size Estimation for Logistic Regression</a></li>
+<li class="chapter" data-level="11.10" data-path="11-10-meta-analysis.html"><a href="11-10-meta-analysis.html"><i class="fa fa-check"></i><b>11.10</b> Meta-Analysis</a></li>
+<li class="chapter" data-level="11.11" data-path="11-11-equivalence-studies.html"><a href="11-11-equivalence-studies.html"><i class="fa fa-check"></i><b>11.11</b> Equivalence Studies</a></li>
+<li class="chapter" data-level="11.12" data-path="11-12-the-cross-over-design.html"><a href="11-12-the-cross-over-design.html"><i class="fa fa-check"></i><b>11.12</b> the Cross-over design</a></li>
+<li class="chapter" data-level="11.13" data-path="11-13-clustered-binary-data.html"><a href="11-13-clustered-binary-data.html"><i class="fa fa-check"></i><b>11.13</b> Clustered Binary data</a></li>
+<li class="chapter" data-level="11.14" data-path="11-14-longitudinal-data-analysis.html"><a href="11-14-longitudinal-data-analysis.html"><i class="fa fa-check"></i><b>11.14</b> Longitudinal data Analysis</a></li>
+<li class="chapter" data-level="11.15" data-path="11-15-measurement-error-methods.html"><a href="11-15-measurement-error-methods.html"><i class="fa fa-check"></i><b>11.15</b> Measurement-Error Methods</a></li>
+<li class="chapter" data-level="11.16" data-path="11-16-missing-data.html"><a href="11-16-missing-data.html"><i class="fa fa-check"></i><b>11.16</b> Missing data</a></li>
+<li class="chapter" data-level="11.17" data-path="11-17-derivation-of-100-1-ci-for-the-risk-difference.html"><a href="11-17-derivation-of-100-1-ci-for-the-risk-difference.html"><i class="fa fa-check"></i><b>11.17</b> derivation of 100% × (1 – α) Ci for the Risk difference</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-multisample-inference.html"><a href="12-multisample-inference.html"><i class="fa fa-check"></i><b>12</b> Multisample inference</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-introduction-to-the-one-way-analysis-of-variance.html"><a href="12-1-introduction-to-the-one-way-analysis-of-variance.html"><i class="fa fa-check"></i><b>12.1</b> introduction to the one-Way Analysis of Variance</a></li>
-<li class="chapter" data-level="12.2" data-path="12-2-one-way-anovafixed-effects-model.html"><a href="12-2-one-way-anovafixed-effects-model.html"><i class="fa fa-check"></i><b>12.2</b> one-Way AnoVA—Fixed-Effects Model</a></li>
-<li class="chapter" data-level="12.3" data-path="12-3-hypothesis-testing-in-one-way-anova-fixed-effects-model.html"><a href="12-3-hypothesis-testing-in-one-way-anova-fixed-effects-model.html"><i class="fa fa-check"></i><b>12.3</b> hypothesis testing in one-Way AnoVA— Fixed-Effects Model</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-comparisons-of-specific-groups-in-one-way-anova.html"><a href="12-4-comparisons-of-specific-groups-in-one-way-anova.html"><i class="fa fa-check"></i><b>12.4</b> Comparisons of Specific Groups in one- Way AnoVA</a></li>
-<li class="chapter" data-level="12.5" data-path="12-5-two-way-anova.html"><a href="12-5-two-way-anova.html"><i class="fa fa-check"></i><b>12.5</b> two-Way AnoVA</a></li>
-<li class="chapter" data-level="12.6" data-path="12-6-the-kruskal-wallis-test.html"><a href="12-6-the-kruskal-wallis-test.html"><i class="fa fa-check"></i><b>12.6</b> the Kruskal-Wallis test</a></li>
-<li class="chapter" data-level="12.7" data-path="12-7-one-way-anovathe-random-effects-model.html"><a href="12-7-one-way-anovathe-random-effects-model.html"><i class="fa fa-check"></i><b>12.7</b> one-Way AnoVA—the Random-Effects Model</a></li>
-<li class="chapter" data-level="12.8" data-path="12-8-the-intraclass-correlation-coefficient.html"><a href="12-8-the-intraclass-correlation-coefficient.html"><i class="fa fa-check"></i><b>12.8</b> the intraclass Correlation Coefficient</a></li>
-<li class="chapter" data-level="12.9" data-path="12-9-mixed-models.html"><a href="12-9-mixed-models.html"><i class="fa fa-check"></i><b>12.9</b> Mixed Models</a></li>
-<li class="chapter" data-level="12.10" data-path="12-10-derivation-of-equation.html"><a href="12-10-derivation-of-equation.html"><i class="fa fa-check"></i><b>12.10</b> derivation of Equation</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="13-design-and-analysis-techniques-for-epidemiologic-studies.html"><a href="13-design-and-analysis-techniques-for-epidemiologic-studies.html"><i class="fa fa-check"></i><b>13</b> design and Analysis techniques for Epidemiologic Studies</a><ul>
-<li class="chapter" data-level="13.1" data-path="13-1-introduction-9.html"><a href="13-1-introduction-9.html"><i class="fa fa-check"></i><b>13.1</b> introduction</a></li>
-<li class="chapter" data-level="13.2" data-path="13-2-study-design.html"><a href="13-2-study-design.html"><i class="fa fa-check"></i><b>13.2</b> Study design</a></li>
-<li class="chapter" data-level="13.3" data-path="13-3-measures-of-effect-for-categorical-data.html"><a href="13-3-measures-of-effect-for-categorical-data.html"><i class="fa fa-check"></i><b>13.3</b> Measures of Effect for Categorical data</a></li>
-<li class="chapter" data-level="13.4" data-path="13-4-attributable-risk.html"><a href="13-4-attributable-risk.html"><i class="fa fa-check"></i><b>13.4</b> Attributable Risk</a></li>
-<li class="chapter" data-level="13.5" data-path="13-5-confounding-and-standardization.html"><a href="13-5-confounding-and-standardization.html"><i class="fa fa-check"></i><b>13.5</b> Confounding and Standardization</a></li>
-<li class="chapter" data-level="13.6" data-path="13-6-methods-of-inference-for-stratified-categorical-datathe-mantel-haenszel-test.html"><a href="13-6-methods-of-inference-for-stratified-categorical-datathe-mantel-haenszel-test.html"><i class="fa fa-check"></i><b>13.6</b> Methods of inference for Stratified Categorical data—the Mantel-haenszel test</a></li>
-<li class="chapter" data-level="13.7" data-path="13-7-multiple-logistic-regression.html"><a href="13-7-multiple-logistic-regression.html"><i class="fa fa-check"></i><b>13.7</b> Multiple Logistic Regression</a></li>
-<li class="chapter" data-level="13.8" data-path="13-8-extensions-to-logistic-regression.html"><a href="13-8-extensions-to-logistic-regression.html"><i class="fa fa-check"></i><b>13.8</b> Extensions to Logistic Regression</a></li>
-<li class="chapter" data-level="13.9" data-path="13-9-sample-size-estimation-for-logistic-regression.html"><a href="13-9-sample-size-estimation-for-logistic-regression.html"><i class="fa fa-check"></i><b>13.9</b> Sample Size Estimation for Logistic Regression</a></li>
-<li class="chapter" data-level="13.10" data-path="13-10-meta-analysis.html"><a href="13-10-meta-analysis.html"><i class="fa fa-check"></i><b>13.10</b> Meta-Analysis</a></li>
-<li class="chapter" data-level="13.11" data-path="13-11-equivalence-studies.html"><a href="13-11-equivalence-studies.html"><i class="fa fa-check"></i><b>13.11</b> Equivalence Studies</a></li>
-<li class="chapter" data-level="13.12" data-path="13-12-the-cross-over-design.html"><a href="13-12-the-cross-over-design.html"><i class="fa fa-check"></i><b>13.12</b> the Cross-over design</a></li>
-<li class="chapter" data-level="13.13" data-path="13-13-clustered-binary-data.html"><a href="13-13-clustered-binary-data.html"><i class="fa fa-check"></i><b>13.13</b> Clustered Binary data</a></li>
-<li class="chapter" data-level="13.14" data-path="13-14-longitudinal-data-analysis.html"><a href="13-14-longitudinal-data-analysis.html"><i class="fa fa-check"></i><b>13.14</b> Longitudinal data Analysis</a></li>
-<li class="chapter" data-level="13.15" data-path="13-15-measurement-error-methods.html"><a href="13-15-measurement-error-methods.html"><i class="fa fa-check"></i><b>13.15</b> Measurement-Error Methods</a></li>
-<li class="chapter" data-level="13.16" data-path="13-16-missing-data.html"><a href="13-16-missing-data.html"><i class="fa fa-check"></i><b>13.16</b> Missing data</a></li>
-<li class="chapter" data-level="13.17" data-path="13-17-derivation-of-100-1-ci-for-the-risk-difference.html"><a href="13-17-derivation-of-100-1-ci-for-the-risk-difference.html"><i class="fa fa-check"></i><b>13.17</b> derivation of 100% × (1 – α) Ci for the Risk difference</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="14-hypothesis-testing-person-time-data.html"><a href="14-hypothesis-testing-person-time-data.html"><i class="fa fa-check"></i><b>14</b> Hypothesis testing: Person-time data</a><ul>
-<li class="chapter" data-level="14.1" data-path="14-1-measure-of-effect-for-person-time-data.html"><a href="14-1-measure-of-effect-for-person-time-data.html"><i class="fa fa-check"></i><b>14.1</b> Measure of Effect for Person-time data</a></li>
-<li class="chapter" data-level="14.2" data-path="14-2-one-sample-inference-for-incidence-rate-data.html"><a href="14-2-one-sample-inference-for-incidence-rate-data.html"><i class="fa fa-check"></i><b>14.2</b> one-Sample inference for incidence-Rate data</a></li>
-<li class="chapter" data-level="14.3" data-path="14-3-two-sample-inference-for-incidence-rate-data.html"><a href="14-3-two-sample-inference-for-incidence-rate-data.html"><i class="fa fa-check"></i><b>14.3</b> two-Sample inference for incidence-Rate data</a></li>
-<li class="chapter" data-level="14.4" data-path="14-4-power-and-sample-size-estimation-for-person-time-data.html"><a href="14-4-power-and-sample-size-estimation-for-person-time-data.html"><i class="fa fa-check"></i><b>14.4</b> Power and Sample-Size Estimation for Person-time data</a></li>
-<li class="chapter" data-level="14.5" data-path="14-5-inference-for-stratified-person-time-data.html"><a href="14-5-inference-for-stratified-person-time-data.html"><i class="fa fa-check"></i><b>14.5</b> Inference for Stratified Person-Time Data</a></li>
-<li class="chapter" data-level="14.6" data-path="14-6-power-and-sample-size-estimation-for-stratified-person-time-data.html"><a href="14-6-power-and-sample-size-estimation-for-stratified-person-time-data.html"><i class="fa fa-check"></i><b>14.6</b> Power and Sample-Size Estimation for Stratified Person-Time Data</a></li>
-<li class="chapter" data-level="14.7" data-path="14-7-testing-for-trend-incidence-rate-data.html"><a href="14-7-testing-for-trend-incidence-rate-data.html"><i class="fa fa-check"></i><b>14.7</b> Testing for Trend: Incidence-Rate Data</a></li>
-<li class="chapter" data-level="14.8" data-path="14-8-introduction-to-survival-analysis.html"><a href="14-8-introduction-to-survival-analysis.html"><i class="fa fa-check"></i><b>14.8</b> Introduction to Survival Analysis</a></li>
-<li class="chapter" data-level="14.9" data-path="14-9-estimation-of-survival-curves-the-kaplan-meier-estimator.html"><a href="14-9-estimation-of-survival-curves-the-kaplan-meier-estimator.html"><i class="fa fa-check"></i><b>14.9</b> Estimation of Survival Curves: The Kaplan-Meier Estimator</a></li>
-<li class="chapter" data-level="14.10" data-path="14-10-the-log-rank-test.html"><a href="14-10-the-log-rank-test.html"><i class="fa fa-check"></i><b>14.10</b> The Log-Rank Test</a></li>
-<li class="chapter" data-level="14.11" data-path="14-11-the-proportional-hazards-model.html"><a href="14-11-the-proportional-hazards-model.html"><i class="fa fa-check"></i><b>14.11</b> The Proportional-Hazards Model</a></li>
-<li class="chapter" data-level="14.12" data-path="14-12-power-and-sample-size-estimation-under-the-proportional-hazards-model.html"><a href="14-12-power-and-sample-size-estimation-under-the-proportional-hazards-model.html"><i class="fa fa-check"></i><b>14.12</b> Power and Sample-Size Estimation under the Proportional-Hazards Model</a></li>
-<li class="chapter" data-level="14.13" data-path="14-13-parametric-survival-analysis.html"><a href="14-13-parametric-survival-analysis.html"><i class="fa fa-check"></i><b>14.13</b> Parametric Survival Analysis</a></li>
-<li class="chapter" data-level="14.14" data-path="14-14-parametric-regression-models-for-survival-data.html"><a href="14-14-parametric-regression-models-for-survival-data.html"><i class="fa fa-check"></i><b>14.14</b> Parametric Regression Models for Survival Data</a></li>
-<li class="chapter" data-level="14.15" data-path="14-15-derivation-of-selected-formulas-1.html"><a href="14-15-derivation-of-selected-formulas-1.html"><i class="fa fa-check"></i><b>14.15</b> Derivation of Selected Formulas</a></li>
+<li class="chapter" data-level="12" data-path="12-hypothesis-testing-person-time-data.html"><a href="12-hypothesis-testing-person-time-data.html"><i class="fa fa-check"></i><b>12</b> Hypothesis testing: Person-time data</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-1-measure-of-effect-for-person-time-data.html"><a href="12-1-measure-of-effect-for-person-time-data.html"><i class="fa fa-check"></i><b>12.1</b> Measure of Effect for Person-time data</a></li>
+<li class="chapter" data-level="12.2" data-path="12-2-one-sample-inference-for-incidence-rate-data.html"><a href="12-2-one-sample-inference-for-incidence-rate-data.html"><i class="fa fa-check"></i><b>12.2</b> one-Sample inference for incidence-Rate data</a></li>
+<li class="chapter" data-level="12.3" data-path="12-3-two-sample-inference-for-incidence-rate-data.html"><a href="12-3-two-sample-inference-for-incidence-rate-data.html"><i class="fa fa-check"></i><b>12.3</b> two-Sample inference for incidence-Rate data</a></li>
+<li class="chapter" data-level="12.4" data-path="12-4-power-and-sample-size-estimation-for-person-time-data.html"><a href="12-4-power-and-sample-size-estimation-for-person-time-data.html"><i class="fa fa-check"></i><b>12.4</b> Power and Sample-Size Estimation for Person-time data</a></li>
+<li class="chapter" data-level="12.5" data-path="12-5-inference-for-stratified-person-time-data.html"><a href="12-5-inference-for-stratified-person-time-data.html"><i class="fa fa-check"></i><b>12.5</b> Inference for Stratified Person-Time Data</a></li>
+<li class="chapter" data-level="12.6" data-path="12-6-power-and-sample-size-estimation-for-stratified-person-time-data.html"><a href="12-6-power-and-sample-size-estimation-for-stratified-person-time-data.html"><i class="fa fa-check"></i><b>12.6</b> Power and Sample-Size Estimation for Stratified Person-Time Data</a></li>
+<li class="chapter" data-level="12.7" data-path="12-7-testing-for-trend-incidence-rate-data.html"><a href="12-7-testing-for-trend-incidence-rate-data.html"><i class="fa fa-check"></i><b>12.7</b> Testing for Trend: Incidence-Rate Data</a></li>
+<li class="chapter" data-level="12.8" data-path="12-8-introduction-to-survival-analysis.html"><a href="12-8-introduction-to-survival-analysis.html"><i class="fa fa-check"></i><b>12.8</b> Introduction to Survival Analysis</a></li>
+<li class="chapter" data-level="12.9" data-path="12-9-estimation-of-survival-curves-the-kaplan-meier-estimator.html"><a href="12-9-estimation-of-survival-curves-the-kaplan-meier-estimator.html"><i class="fa fa-check"></i><b>12.9</b> Estimation of Survival Curves: The Kaplan-Meier Estimator</a></li>
+<li class="chapter" data-level="12.10" data-path="12-10-the-log-rank-test.html"><a href="12-10-the-log-rank-test.html"><i class="fa fa-check"></i><b>12.10</b> The Log-Rank Test</a></li>
+<li class="chapter" data-level="12.11" data-path="12-11-the-proportional-hazards-model.html"><a href="12-11-the-proportional-hazards-model.html"><i class="fa fa-check"></i><b>12.11</b> The Proportional-Hazards Model</a></li>
+<li class="chapter" data-level="12.12" data-path="12-12-power-and-sample-size-estimation-under-the-proportional-hazards-model.html"><a href="12-12-power-and-sample-size-estimation-under-the-proportional-hazards-model.html"><i class="fa fa-check"></i><b>12.12</b> Power and Sample-Size Estimation under the Proportional-Hazards Model</a></li>
+<li class="chapter" data-level="12.13" data-path="12-13-parametric-survival-analysis.html"><a href="12-13-parametric-survival-analysis.html"><i class="fa fa-check"></i><b>12.13</b> Parametric Survival Analysis</a></li>
+<li class="chapter" data-level="12.14" data-path="12-14-parametric-regression-models-for-survival-data.html"><a href="12-14-parametric-regression-models-for-survival-data.html"><i class="fa fa-check"></i><b>12.14</b> Parametric Regression Models for Survival Data</a></li>
+<li class="chapter" data-level="12.15" data-path="12-15-derivation-of-selected-formulas-1.html"><a href="12-15-derivation-of-selected-formulas-1.html"><i class="fa fa-check"></i><b>12.15</b> Derivation of Selected Formulas</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -325,9 +352,9 @@ toc:
 <h4><span class="header-section-number">1.0.1.1</span> CSV- Comma Separated Values</h4>
 <p>The fields are separated by a comma <code>,</code> and are typically used for loading into spreadsheets.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">csv_example_path &lt;-<span class="st"> &quot;data/ASCII-comma/FEV.DAT.txt&quot;</span>
+<pre class="sourceCode r"><code class="sourceCode r">csv_example_path &lt;-<span class="st"> &quot;data/ASCII-comma/FEV.DAT.txt&quot;</span>
 
-<span class="kw">readLines</span>(csv_example_path)[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]  <span class="co"># reads each line of the file</span></code></pre></div>
+<span class="kw">readLines</span>(csv_example_path)[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]  <span class="co"># reads each line of the file</span></code></pre>
 <pre><code>[1] &quot;&#39;Id&#39;,&#39;Age&#39;,&#39;FEV&#39;,&#39;Hgt&#39;,&#39;Sex&#39;,&#39;Smoke&#39;&quot;
 [2] &quot;301,9,1.708,57,0,0&quot;                  
 [3] &quot;451,8,1.724,67.5,0,0&quot;                
@@ -336,12 +363,12 @@ toc:
 [6] &quot;901,9,1.895,57,1,0&quot;                  
 [7] &quot;1701,8,2.336,61,0,0&quot;                 
 [8] &quot;1752,6,1.919,58,0,0&quot;                 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Note: readLines(csv_example_path) is the same as</span>
-<span class="co"># readLines(&quot;data/ASCII-comma/FEV.DAT.txt&quot;)</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Note: readLines(csv_example_path) is the same as</span>
+<span class="co"># readLines(&quot;data/ASCII-comma/FEV.DAT.txt&quot;)</span></code></pre>
 <p>In Base-R, CSV data can be read using the <code>read.csv()</code> function. The <code>read.csv2()</code> function is used in countries that use a comma as a decimal point and a semicolon as a field separator.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">csv_example &lt;-<span class="st"> </span><span class="kw">read.csv</span>(csv_example_path)
+<pre class="sourceCode r"><code class="sourceCode r">csv_example &lt;-<span class="st"> </span><span class="kw">read.csv</span>(csv_example_path)
 
-<span class="kw">head</span>(csv_example)</code></pre></div>
+<span class="kw">head</span>(csv_example)</code></pre>
 <pre><code>  X.Id. X.Age. X.FEV. X.Hgt. X.Sex. X.Smoke.
 1   301      9  1.708   57.0      0        0
 2   451      8  1.724   67.5      0        0
@@ -354,9 +381,9 @@ toc:
 <h4><span class="header-section-number">1.0.1.2</span> TSV- Tab Separated Values</h4>
 <p>The fields are separated by a tabulation <TAB> or and are saved as <code>.txt</code> files. However, not all <code>.txt</code> files contain tab separated values.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tsv_example_path &lt;-<span class="st"> &quot;data/ASCII-tab/FEV.DAT.txt&quot;</span>
+<pre class="sourceCode r"><code class="sourceCode r">tsv_example_path &lt;-<span class="st"> &quot;data/ASCII-tab/FEV.DAT.txt&quot;</span>
 
-<span class="kw">readLines</span>(tsv_example_path)[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]</code></pre></div>
+<span class="kw">readLines</span>(tsv_example_path)[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]</code></pre>
 <pre><code>[1] &quot;&#39;Id&#39;\t&#39;Age&#39;\t&#39;FEV&#39;\t&#39;Hgt&#39;\t&#39;Sex&#39;\t&#39;Smoke&#39;&quot;
 [2] &quot;301\t9\t1.708\t57\t0\t0&quot;                  
 [3] &quot;451\t8\t1.724\t67.5\t0\t0&quot;                
@@ -365,8 +392,8 @@ toc:
 [6] &quot;901\t9\t1.895\t57\t1\t0&quot;                  
 [7] &quot;1701\t8\t2.336\t61\t0\t0&quot;                 
 [8] &quot;1752\t6\t1.919\t58\t0\t0&quot;                 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tsv_example &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;data/ASCII-tab/FEV.DAT.txt&quot;</span>)
-<span class="kw">head</span>(tsv_example)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">tsv_example &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;data/ASCII-tab/FEV.DAT.txt&quot;</span>)
+<span class="kw">head</span>(tsv_example)</code></pre>
 <pre><code>  X.Id. X.Age. X.FEV. X.Hgt. X.Sex. X.Smoke.
 1   301      9  1.708   57.0      0        0
 2   451      8  1.724   67.5      0        0
@@ -378,17 +405,17 @@ toc:
 </div>
 <div id="excel" class="section level3">
 <h3><span class="header-section-number">1.0.2</span> Excel</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)</code></pre>
 </div>
 <div id="software-specific-formats" class="section level3">
 <h3><span class="header-section-number">1.0.3</span> Software Specific Formats</h3>
 <p>R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaborates will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the <code>haven</code> R-package can both read and write any of these file formats.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(haven)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(haven)</code></pre>
 <div id="sas.sas7bdat-spss.sav.por-.xpt-stata-.dta" class="section level4">
 <h4><span class="header-section-number">1.0.3.1</span> SAS(<code>.sas7bdat</code>), SPSS(<code>.sav</code>,<code>.por</code>, <code>.xpt</code>), Stata (<code>.dta</code>)</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;data/SAS/FEV.sas7bdat&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r">sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;data/SAS/FEV.sas7bdat&quot;</span>)
 
-<span class="kw">head</span>(sas)</code></pre></div>
+<span class="kw">head</span>(sas)</code></pre>
 <pre><code># A tibble: 6 x 6
      ID   AGE   FEV   HGT   SEX SMOKE
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -398,8 +425,8 @@ toc:
 4   642     9  1.56  53       1     0
 5   901     9  1.90  57       1     0
 6  1701     8  2.34  61       0     0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;data/SPSS/FEV.DAT.sav&quot;</span>)
-<span class="kw">head</span>(spss)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;data/SPSS/FEV.DAT.sav&quot;</span>)
+<span class="kw">head</span>(spss)</code></pre>
 <pre><code># A tibble: 6 x 6
      Id   Age   FEV   Hgt   Sex Smoke
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -409,8 +436,8 @@ toc:
 4   642     9  1.56  53       1     0
 5   901     9  1.90  57       1     0
 6  1701     8  2.34  61       0     0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">stata &lt;-<span class="st"> </span><span class="kw">read_stata</span>(<span class="st">&quot;data/Stata/FEV.DAT.dta&quot;</span>)
-<span class="kw">head</span>(stata)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">stata &lt;-<span class="st"> </span><span class="kw">read_stata</span>(<span class="st">&quot;data/Stata/FEV.DAT.dta&quot;</span>)
+<span class="kw">head</span>(stata)</code></pre>
 <pre><code># A tibble: 6 x 6
      Id   Age   fev   Hgt   Sex Smoke
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -423,8 +450,8 @@ toc:
 <p>The <code>foreign</code> package included in Base-R can also be used to Reading and writing data stored by some versions of ‘Epi Info’, ‘Minitab’, ‘S’, ‘SAS’, ‘SPSS’, ‘Stata’, ‘Systat’, ‘Weka’,and for reading and writing some ‘dBase’ files.</p>
 <div id="rds" class="section level6">
 <h6><span class="header-section-number">1.0.3.1.0.1</span> RDS</h6>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rds_example &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/RDS/BETACAR.DAT.rds&quot;</span>)
-<span class="kw">head</span>(rds_example)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">rds_example &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/RDS/BETACAR.DAT.rds&quot;</span>)
+<span class="kw">head</span>(rds_example)</code></pre>
 <pre><code># A tibble: 6 x 8
   `&#39;Prepar&#39;` `&#39;Id&#39;` `&#39;Base1lvl&#39;` `&#39;Base2lvl&#39;`
        &lt;int&gt;  &lt;int&gt;        &lt;int&gt;        &lt;int&gt;
@@ -441,8 +468,8 @@ toc:
 <div id="rdata" class="section level6">
 <h6><span class="header-section-number">1.0.3.1.0.2</span> <code>rdata</code></h6>
 <p>The <code>.rdata</code> format is R’s specific format. Instead of using a <code>read.{something}</code> function, <code>.rdata</code> is read into the environment using <code>load(filename.rdata)</code> and retains the original name it had when it was last saved.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;data/R/BETACAR.DAT.rdata&quot;</span>)  <span class="co">#named betacar when it was last saved</span>
-<span class="kw">head</span>(betacar)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;data/R/BETACAR.DAT.rdata&quot;</span>)  <span class="co">#named betacar when it was last saved</span>
+<span class="kw">head</span>(betacar)</code></pre>
 <pre><code>  Prepar Id Base1lvl Base2lvl Wk6lvl Wk8lvl Wk10lvl
 1      1 71      298      116    174    178     218
 2      1 73      124      146    294    278     244
@@ -517,7 +544,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
