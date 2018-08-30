@@ -421,12 +421,15 @@ sd(x)
 ```
 
 
+<<<<<<< HEAD
 The standard deviation is invariant to location. All data values can be shifted up or down by a constant, c,
 and the variance and standard deviation will remain the same.
 
 If $x_1, x_2, ..., x_n$ are all multipled by a constant $c$, we have $cx_1, cx_2, ..., cx_n$, and the varaince is now $c^2s^2$ while the $s^2$ is the variance of the original values. 
 
 
+=======
+>>>>>>> be36a580c91456396a6159d2a5434c00d94ce164
 ### The Coefficient of Variation 
 
 The coefficient of variation (CV) is defined by 
