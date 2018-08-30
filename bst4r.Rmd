@@ -1,0 +1,1071 @@
+--- 
+title: "Biostatistics using R"
+author: "Dewey Brooke"
+date: "`r Sys.Date()`"
+knit: "bookdown::render_book"
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+fontsize: 12pt
+monofont: "Source Code Pro"
+monofontoptions: "Scale=0.7"
+github-repo: dbrooke/bst4r
+always_allow_html: yes
+site: bookdown::bookdown_site
+description: ""
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2,
+  width = 55, digits = 4, warnPartialMatchAttr = FALSE, warnPartialMatchDollar = FALSE
+)
+
+knitr::opts_chunk$set(comment = NULL, cache = FALSE)
+
+```
+
+# Preface {-}
+
+This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
+The **bookdown** package can be installed from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#intro}
+
+## Reading Data Files into R {-}
+
+
+The first step in every analysis requires data to be read into the environment, and learning how to do this is the first hurdle a person needs to overcome to begin learning to use R. 
+
+Data can exist in many different formats, either as the generic universal types (e.g. csv, tsv, .json, etc) or software specific types (e.g. `.xlsx`, `` )
+
+In this chapter, we will first discuss how to read data using functions in Base-R (when possible), and then we will discuss alternative packages, such as the multitude of packages in the [Tidyverse](https://www.tidyverse.org), and highlight their advantages over Base-R functions. 
+
+
+
+### Generic Formats
+
+
+#### CSV- Comma Separated Values
+The fields are separated by a comma `,` and are typically used for loading into spreadsheets.
+
+For example:
+
+
+```{r}
+csv_example_path <- "data/ASCII-comma/FEV.DAT.txt"
+
+readLines(csv_example_path)[1:8]  # reads each line of the file
+
+# Note: readLines(csv_example_path) is the same as
+# readLines("data/ASCII-comma/FEV.DAT.txt")
+
+```
+
+In Base-R, CSV data can be read using the `read.csv()` function. The `read.csv2()` function is used in countries that use a comma as a decimal point and a semicolon as a field separator.  
+
+```{r, comment=NULL}
+csv_example <- read.csv(csv_example_path)
+
+head(csv_example)
+```
+
+
+
+#### TSV- Tab Separated Values
+ The fields are separated by a tabulation <TAB> or \t and are saved as `.txt` files. However, not all `.txt` files contain tab separated values.  
+
+For example:
+
+```{r }
+tsv_example_path <- "data/ASCII-tab/FEV.DAT.txt"
+
+readLines(tsv_example_path)[1:8]
+
+```
+
+```{r, comment=NULL}
+tsv_example <- read.delim("data/ASCII-tab/FEV.DAT.txt")
+head(tsv_example)
+```
+
+### Excel
+
+```{r}
+library(readxl)
+
+
+```
+
+
+
+### Software Specific Formats
+
+R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaborates will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the `haven` R-package can both read and write any of these file formats. 
+
+
+```{r}
+library(haven)
+```
+
+
+#### SAS(`.sas7bdat`), SPSS(`.sav`,`.por`, `.xpt`), Stata (`.dta`)
+
+```{r read SAS}
+sas <- read_sas("data/SAS/FEV.sas7bdat")
+
+head(sas)
+```
+
+
+```{r read SPSS}
+
+spss <- read_spss("data/SPSS/FEV.DAT.sav")
+head(spss)
+
+```
+
+
+
+```{r read Stata}
+
+stata <- read_stata("data/Stata/FEV.DAT.dta")
+head(stata)
+
+```
+
+The `foreign` package included in Base-R can also be used to Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka',and for reading and writing some 'dBase' files.
+
+
+
+###### RDS
+
+```{r}
+rds_example <- readRDS("data/RDS/BETACAR.DAT.rds")
+head(rds_example)
+```
+
+###### `rdata` 
+The `.rdata` format is R's specific format. Instead of using a `read.{something}` function, `.rdata` is read into the environment using `load(filename.rdata)` and retains the original name it had when it was last saved. 
+
+```{r}
+load("data/R/BETACAR.DAT.rdata")  #named betacar when it was last saved
+head(betacar)
+```
+
+
+
+   
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Descriptive Statistics
+
+
+```{r, echo=FALSE}
+library(DT)
+datatable(ChickWeight, rownames = FALSE)
+```
+
+## Introduction to Probablity
+
+
+### Definitions
+
+__Sample Space__: set of all possible outcomes in an experiment or trial
+
+__Event__: any individual outcome of interest, or subset of outcomes of interest, in an experiment or trial
+
+__Probablity__: relative frequency of an event of interest over an indefintely large (or infinite) number of trials
+
+
+### Probablity
+
+The true probablity of an event is often unknown and ca only be estimated. 
+
+__Relative frequency probablity__: Counting the number of repetitions of a process and the number of times each events occurs
+- Divide the number of each outcome by the total number of repetitions
+- This estimates the likelihood of each event occuring
+-This follows the ideas of bar charts and histograms
+
+
+
+### Sampling
+
+__Population__: A well defined collection of objects, such as: pregnant women, MS patients, stroke survivors, etc.
+- Measurements on every member of th population consitutes a census.
+- A census may not be feasible or desired.
+
+__Sample__: a subset of the populaiton from which characterstics are measured in order to estimate and infer characteristics of the population.
+- Individual components of the sample are its elements (observations)
+
+
+### Statistics
+
+__Parameters__: fixed values used to describe characteristics of a variable's distribution (e.g., where it is centered, measures of its spread, measures of its skewness, etc.)
+
+Common paramters are the mean and standard deviation.
+
+Go back and fix
+*** 
+
+### __Descriptive Statistics:__ summary statistics used to estiamte population paramters
+
+Sample statistics include $\bar{x}, s^2, s$
+- lower case letters are used for describing samples.
+
+Population parameters are estimated from the sample
+- population parameters include $\mu, \sigma^s, \sigma$
+
+Inferential Statistics
+
+Go back and fix
+***
+
+#### Describing Data
+Data are summarized by descriptive statistics, and distributions of variables are often depicted using plots including:
+-charts
+-histograms
+
+go back and fix
+***
+
+Of we have a sample of n objects, then the values are denoted as $x_1, x_2, ..., x_n$.
+
+The sample mean $$\bar{x} = \frac{\sum_i^nx}{n}$$
+
+Sample variance  $s^2 = \frac{\sum_i^n{x_i-\bar{x}}}{n-1}$
+
+Sample std dev  $s = \sqrt{s^2}$
+
+It can be shown that $\sum{x_i-\bar{x}}=0$ and the actual differences between each observation and the samle mean are not informative.
+
+The square distance between the observed values and the sample mean is what we examine. 
+
+Alternative measure is the __mean obsolute deviation__ (MAD)
+$$\text{MAD} = \frac{\sum^n_{i=1}|x_i-\bar{x}|}{n}$$
+
+__Median__: the middle value in the list of ordered values (the median is the $50^\text{th}$ percentile)
+
+__Percentile__: the value such that some percent of the data are less than that value.
+- for the ordered data, the $k^\text{th}$ percentile is in the $\frac{k}{100}(1+n)$ position. 
+- if the position falls between 2 numbers, then the $k^\text{th}$ percentile is the average of the two surrounding numbers.
+
+__quartiles__: the $25^\text{th}$ ($Q_1$) and $75^\text{th}$ ($Q_3$) 
+
+__interquartile range__: $75^\text{th}-50^\text{th}$ percentile
+
+
+
+
+## Measures of Location using Base R
+
+>Determining the correct method for measuring the central tendancy of a vector depends on the relationship between the numbers within the vector. Numbers that can be summed in a linear sequence are best represented using the arithmic mean. 
+>
+>If you’re measuring units that add up as reciprocals in a sequence (such as speed or distance / time over a constant distance, capacitance in series, resistance in parallel), then a harmonic mean will give you a meaningful average. For example, the harmonic mean of capacitors in series represents the capacitance that a single capacitor would have if only one capacitor was used instead of the set of capacitors in series.
+>
+>If you’re measuring units that multiply in a sequence (such as growth rates or percentages), then a geometric mean will give you a meaningful average. For example, the geometric mean of a sequence of different annual interest rates over 10 years represents an interest rate that, if applied constantly for ten years, would produce the same amount growth in principal as the sequence of different annual interest rates over ten years did.
+Does an arithmetic mean of interest rates have any significance? As a number, sure. But as an “average” interest rate it seems less intuitive because the principal it produces at the end of ten years is much larger than the geometric mean. Similarly, the harmonic mean of interest rates produces a smaller principal, and so is less intuitive.
+>
+>Now consider areas and volumes as a test of understanding. What mean should we use to report the “average” area or volume in a sequence of areas or volumes? Area is measured in units of length squared. Volume is measured in units of length cubed. In a sequence of areas or volumes, we could either add them up linearly and divide or multiply them and take the roots — which is correct? It depends on what we’re measuring. If these areas or volumes are dependent upon each other (e.g., the size of the same microbe at different times), then a geometric mean probably makes more sense. If these areas or volumes are independent of each other (e.g., the size of a house or pool), then an arithmetic mean probably makes more sense.
+But whatever you decide, when in doubt report that decision. There is nothing worse for a reader than to see an “average” and not know how it was calculated!
+> - [Michael F. Martin,Quora Answer](https://www.quora.com/When-is-it-most-appropriate-to-take-the-arithmetic-mean-vs-geometric-mean-vs-harmonic-mean)
+
+
+
+```{r, echo = FALSE}
+y= rbeta(10000,1,12,6)
+hist(y, # histogram
+ col = "lightblue", # column color
+ border = "black", 
+ prob = TRUE, # show densities instead of frequencies
+ xlab = "x",
+ ylim = c(0,3.5),
+ main = "Skewed Dataset"
+ )
+
+lines(density(y), col='black', lwd=3)
+abline(v = mean(y),
+ col = "royalblue",
+ lwd = 2)
+
+abline(v = median(y),
+ col = "red",
+ lwd = 2)
+
+abline(v = exp(mean(log(y))),
+ col = "green",
+ lwd = 2)
+
+
+
+legend(x = "topright", # location of legend within plot area
+ c("Mean", "Median", "Geometric Mean"),
+ col = c( "royalblue", "red", "green"),
+ lwd = c(2, 2, 2))
+
+```
+
+
+### The Arithmetic Mean
+
+The arithmetic mean is the sum of all the observations divided by the number of observations. It is written in statistical terms as 
+
+$$\overline{x} = \frac{1}{n}\sum^n_{i=1}x_i$$
+
+```{r, comment=NULL}
+mean(ChickWeight$weight)
+```
+
+
+### The Median
+
+The sample median is:
+
+1. If *n* is odd $\rightarrow$ $\Big(\frac{n+1}{2}\Big)\text{th}$ largest observation 
+
+2. If *n* is even $\rightarrow$ $\Big(\frac{n}{2}\Big)\text{th}$ and $\Big(\frac{n}{2}+1\Big)\text{th}$ largest observations 
+
+
+```{r}
+median(ChickWeight$weight)
+```
+
+### The Mode
+
+The mode is the most frequently occurring value among all observations in the sample. Although it is infrequently used, it is very useful for categorical and discrete data.
+
+Since there isn't a built in R-function for mode, we learn how to write a function to return the mode through a few examples. 
+
+
+#### Functions
+
+---
+
+##### Base R Example
+
+The most simple function begins by assigning the output of `function()` to some character string (e.g. `simple_fun`)
+
+All statements after the `function()` are referred as the body of the function. 
+
+```{r}
+function_name <- function(arg1, arg2,...) {
+  #statements
+  
+  return("some output")
+}
+function_name() # returns NULL
+```
+
+Use `return()` to output the result of the function.
+```{r}
+return_value <- function(x,y) {
+  z=x-y  
+  z=x+y
+  return(z)
+}
+return_value(4,5) 
+```
+
+
+
+Since our goal is to find the most frequently occurring value in our data-set (`ChickWeight`), we need to decide the sequence of functions that we need to accomplish this. As you continue to add various R functions to your R tool belt, you will find many possible combinations for the same solution. 
+
+First, let's assign the weight column from ChickWeight to x to simplify things.  When `x` is called, the weight column from ChickWeight is returned as a vector.
+
+```{r}
+x<-ChickWeight$weight
+head(x)
+```
+
+We can return the size of `x` using the `length` function. `r length(x)`
+
+```{r}
+length(x)
+```
+
+We can reduce x to return only the unique values by using the `unique` function. We'll assign it to y so we can use it later. 
+```{r}
+y <- unique(x)
+length(y)
+```
+
+To more easily watch how the functions are working, we will create two data-frames to watch how we are manipulating both x and y. 
+
+```{r}
+df.x <- data.frame(x)
+df.y <- data.frame(y)
+```
+
+
+Using the unique values from the `x` vector we defined as `y`, we can use the `match` function to return a vector that replaces each value in x with their position in the y vector (1-212).
+
+```{r}
+df.x$position_in_y<-match(x, y)
+head(df.x, n = 30)
+```
+
+The output from match can then be simplified using the tabulate function
+
+```{r}
+df.y$frequency <- tabulate(df.x$position_in_y)
+head(df.y)
+```
+
+`which.max` returns the position of the maximum value. 
+```{r}
+which.max(df.y$frequency)
+```
+
+```{r}
+df.y[43,]  #df.y[row,column]
+```
+
+Putting it all together, we can do this in one line. 
+
+```{r}
+df.y[which.max(tabulate(match(x,y))),] 
+y[which.max(tabulate(match(x,y)))]
+```
+
+Writing this as a function
+
+```{r}
+mode <- function(x){
+  unique_x <- unique(x)
+  result<-unique_x[which.max(tabulate(match(x,unique_x)))]
+  return(result)
+}
+
+mode(x)
+```
+##### Tidyverse Example
+
+As with most problems in R, we can also find a solution using packages from the Tidyverse. We will therefore use this as an opportunity to introduce some of the basic tenants of Tidyverse functions. 
+
+In the `dplyr` package, a typical workflow will combine observations into a single data-frame, aggregate them into groups, manipulate values into new columns, and summaries the data-frame into more simple terms. 
+
+The piping operator `%>%` allows for this to be done seamlessly by literally pipping the result of one function into arguments of another function. 
+
+```{r}
+print("non-piped text")
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+"piped text" %>% print()
+```
+
+To show how this works, we will start with a simple example where we first want to divided the sum of three and some other number (e.g. 2) by seven.  
+
+Because of the order of operations, the sum of two and three would need to be placed with parenthesis to indicate it happens before dividing by seven. 
+```{r}
+(4+3)/7 # correct
+4 + 3 / 7 # incorrect
+```
+
+The piping operator allows the order of operations be explicated dictated with manipulations of starting value reading from the left to right. 
+
+```{r}
+# pipes use the (.) as a placeholder
+4 %>% + 3 %>% {./7} # removing the { } returns an error
+```
+
+Using pipes increases readability of your R-code and it can easily be reused for different starting values. In R Studio, the pipe character can be easily inserted using a keyboard shortcut (Windows:Ctrl+Shift+M,	Mac:Cmd+Shift+M).  
+
+```{r}
+11 %>% + 3 %>% {./7}
+```
+
+Plus, the piped workflow can easily be defined by a function by assigning it to some string with a `.` in the beginning.
+
+```{r}
+op_order <- . %>% +3 %>% {./7}
+op_order(4)
+op_order(11)
+```
+
+###### Determining Mode with `dplyr`
+
+Using the `ChickWeight` data-set as before, we start by outlining the order of operations.
+
+1. Group the data by weights `group_by()`
+2. Tally the number of members within each group and sort by frequency. `tally()`
+3. Select the row with the largest n. `slice()` 
+4. Return the corresponding weight. `.$weight`
+
+```{r}
+ChickWeight %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
+```
+
+As before, this workflow can be written as a function by placing `.` between the assignment operator `<-` and piping operator `%>%`.
+
+```{r}
+mode_cw<-. %>% group_by(weight) %>% tally(sort = TRUE) %>% slice(1) %>% .$weight
+
+mode_cw(ChickWeight)
+```
+
+However, this function will only work on the `ChickWeight` data-set.
+
+```{r, error=TRUE}
+mode_cw(mtcars)
+```
+
+
+### Geometric Mean
+
+The geometric mean is the antilogarithm of $\overline{\log x}$, where
+$$\overline{\log x}= \frac{1}{n}\sum^n_{i=1}\log{x_i}$$
+
+As with mode, there is no function in Base-R for finding the geometric mean. 
+
+```{r}
+# using values 
+gm1 <- function(x){
+  n = length(x)
+  
+  gm = exp((1/n)*sum(log(x)))
+
+  return(gm)
+}
+
+gm2 <- function(x){
+  return(exp(mean(log(x))))
+}
+```
+
+```{r}
+gm1(x)
+gm2(x)
+```
+
+## Measures of Spread 
+
+
+### Range
+
+The range is the difference between the largest and smallest observations in a sample. 
+
+### Quantiles/Percentiles
+
+The pth percentile is defined by 
+
+1.  The (k+1)th largest sample point if np/100 is not an integer (where k is the largest integer less than np/100).
+
+2.  The average of the (np/100)th and (np/100+1)th largest observations if np/100 is an integer. 
+
+```{r}
+# 10th and 90th percentile
+quantile(x = x, probs = c(0.1,0.9))
+
+```
+
+
+
+### The Variance and Standard Deviation
+
+$$s^2 = \frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}$$
+
+```{r}
+# variance
+var(x)
+```
+
+$$s = \sqrt{\frac{\sum^n_{i=1}(x-\bar{x})^2}{n-1}}$$
+
+
+
+```{r}
+# Standard deviation
+sd(x)
+```
+
+
+<<<<<<< HEAD
+The standard deviation is invariant to location. All data values can be shifted up or down by a constant, c,
+and the variance and standard deviation will remain the same.
+
+If $x_1, x_2, ..., x_n$ are all multipled by a constant $c$, we have $cx_1, cx_2, ..., cx_n$, and the varaince is now $c^2s^2$ while the $s^2$ is the variance of the original values. 
+
+
+=======
+>>>>>>> be36a580c91456396a6159d2a5434c00d94ce164
+### The Coefficient of Variation 
+
+The coefficient of variation (CV) is defined by 
+$$100\%\times\frac{s}{\bar{x}}$$
+
+### Example: Birthweights
+```{r}
+library(haven)
+btw <- read_sas("data/SAS/birthweight.sas7bdat")
+btw
+```
+
+```{r}
+summary(btw)
+```
+
+```{r}
+library(skimr)
+skim(btw)
+```
+
+
+Ordering data
+
+
+
+## Grouped data
+
+```{r , message = FALSE, fig.cap= "Frequency Distribution of birthweight data"}
+bwt <- readr::read_csv("data/CSV/Birthweight.csv")
+bwt
+```
+
+Frequency Distribution
+
+```{r}
+# starting dataframe (df)
+bwt %>%                                
+  # sort df by BWT column
+  arrange(BWT) %>%                         
+   # counts values in BWT (n)
+  add_count(BWT) %>%                       
+  # renames n to Frequency
+  rename(Frequency = n) %>%                
+  # creating new columns
+  mutate(                                  
+    Cum_Percent = cume_dist(BWT)     # returns cumulative percent
+  ) %>% 
+  # remove duplicated rows
+  distinct(.) -> freq_tab  
+
+DT::datatable(freq_tab)
+```
+
+
+
+## Graphic Methods 
+
+### Bar Graphs
+
+Base-R
+
+```{r}
+hist(bwt$BWT)
+```
+
+`ggplot2`
+
+```{r}
+library(ggplot2)
+ ggplot(data = bwt,aes(BWT))+
+  geom_histogram(fill = "white", color = "black",binwidth = 10)+
+  ylab("Count")
+```
+
+
+### Stem-and-Leaf Plots
+
+Base-R
+
+```{r}
+stem(bwt$BWT, scale = 2)
+```
+
+### Box Plots
+
+Base-R
+
+```{r}
+boxplot(bwt$BWT)
+```
+
+
+`ggplot2`
+
+```{r}
+ggplot(bwt, aes(x = "",BWT))+geom_boxplot()
+```
+
+
+<!--chapter:end:02-descriptive_statistics.Rmd-->
+
+# Probability
+
+The probability of an event is the relative frequency of an event (outcome) within a sample space (all possible outcomes). 
+
+### Some Useful Probabilistic notation 
+
+|       Symbol       | Definition                                                    |
+|:------------------:|---------------------------------------------------------------|
+|          |         | given                                                         |
+|       $\cap$       | intersection (and)                                            |
+|       $\cup$       | union (or)                                                    |
+| A'  $\bar{A}$ $A^c$ |  complement (not)                                             |
+|         { }        | event                                                         |
+|       $Pr(A)$      | Probability that event A will occur.                          |
+|     $Pr(A\|B)$     | The probability of A occurring if B occurred.                 |
+|       $P(A')$      | The probability A will not occur. ($\bar{A}=1-Pr(A)$)         |
+|    $Pr(A\cap B)$   | The Probability events A and B occurring together.            |
+|    $Pr(A\cup B)$   | Probability events either A or B occur, or they both occurr.  |
+
+1. The probability of an event ($Pr(E)$) always satisfies: $$0 \leq \text{Pr(E)} \leq 1$$
+2. If events A and B cannot both occur  simultanously, they are __mutually exclusive__.  $$Pr(A\cap B)=0$$
+3. Two events A and B are called independent if $$Pr(A\ycap B)=Pr(A)\times Pr(B)$$
+4. Two events A and B are called dependent if $$Pr(A\cap B)\ne Pr(A)\times Pr(B)$$
+
+## Laws of Probability
+
+
+### The Multiplication Law of Probability: $Pr(A\cap B)$ 
+
+If $A_1,...,A_n$ are mutually independent events, then $$Pr(A_1 \cap A_2 \cap ... \cap A_n) = Pr(A_1)\times Pr(A_2)\times ...\times Pr(A_n)$$
+
+
+### The Addition Law of Probability: $Pr(A\cup B)$
+
+If $A\text{ and }B$ are __any__ events, then $$Pr(A \cup B) = Pr(A)+ Pr(B)- Pr(A\cap B)$$
+
+If $A\text{ and }B$ are __mutually exclusive__, then $$Pr(A \cup B) = Pr(A)+ Pr(B)$$
+
+If $A\text{ and }B$ are __independent__ events, then $$Pr(A \cup B) = Pr(A)+ Pr(B)\times[1-Pr(A)]$$
+
+## Conditional Probability 
+
+A conditional probability is the probability of one event if another event occurred.
+$$Pr(A|B) = \frac{Pr(A\cap B)}{Pr(A)}$$
+
+1.  If A and B are independent events, then $$Pr(B|A) = Pr(B) = Pr(B|\bar{A})$$
+2.  If two events A and B are dependent, then $$Pr(B|A)\ne Pr(B) \ne Pr(B|\bar{A})$$ and $$Pr(A\cap B) \ne Pr(A)\times Pr(B)$$
+
+### Relative Risk
+
+The relative risk (RR) of B given is $$RR=\frac{Pr(B|A)}{Pr(B|\bar{A})}$$
+
+If two events A and B are independent, then RR = 1. 
+
+### Total Probability
+
+Let A
+
+## Bayes’ Rule and Screening Tests 
+
+## Bayesian inference 
+
+## RoC Curves 
+
+## Prevalence and incidence 
+
+<!--chapter:end:03-probability.Rmd-->
+
+# Discrete Probability distributions
+
+## Introduction 
+
+## Random Variables 
+
+## The Probability-Mass Function for a Discrete Random Variable 
+
+## The Expected Value of a discrete Random Variable 
+
+## The Variance of a Discrete Random Variable 
+
+## The Cumulative-Distribution Function of a Discrete Random Variable 
+
+## Permutations and Combinations 
+
+## The Binomial distribution 
+
+## Expected Value and Variance of the Binomial distribution 
+
+## The Poisson distribution 
+
+## Computation of Poisson Probabilities 
+
+## Expected Value and Variance of the Poisson Distribution 
+
+## Poisson Approximation to the Binomial Distribution 
+
+<!--chapter:end:04-discrete_probability_distributions.Rmd-->
+
+# Continuous Probability distributions
+
+## Introduction 
+
+## General Concepts 
+
+## The Normal Distribution 
+
+## Properties of the Standard Normal Distribution 
+
+## Conversion from an n(μ,σ2) Distribution to an n (0,1) Distribution 
+
+## Linear Combinations of Random Variables 
+
+## Normal Approximation to the Binomial Distribution 
+
+## Normal Approximation to the Poisson Distribution 
+
+<!--chapter:end:05-continuous_probability_distributions.Rmd-->
+
+# Estimation
+
+## Introduction 
+
+
+## The Relationship Between Population and Sample 
+
+## Random-Number Tables 
+
+## Randomized Clinical Trials 
+
+## Estimation of the Mean of a Distribution 
+
+## Estimation of the Variance of a Distribution 
+
+## Estimation for the Binomial Distribution 
+
+## Estimation for the Poisson Distribution 
+
+## One-Sided Confidence Intervals 
+
+## The Bootstrap 
+
+<!--chapter:end:06-estimation.Rmd-->
+
+# hypothesis testing: one-Sample inference
+
+## introduction 
+
+## General Concepts 
+
+## one-Sample test for the Mean of a normal distribution: one-Sided Alternatives 
+
+## one-Sample test for the Mean of a normal distribution: two-Sided Alternatives 
+
+## the Relationship Between hypothesis testing and Confidence intervals 
+
+## the Power of a test 
+
+## Sample-Size determination 
+
+## one-Sample χ2 test for the Variance of a normal distribution 
+
+## one-Sample inference for the Binomial distribution 
+
+## one-Sample inference for the Poisson distribution 
+
+<!--chapter:end:07_hypothesis_testing_one_sample.Rmd-->
+
+# Hypothesis Testing: two-Sample inference
+
+## introduction 
+
+## the Paired t test 
+
+## interval Estimation for the Comparison of Means from two Paired Samples 
+
+## two-Sample t test for independent Samples with Equal Variances 
+
+## interval Estimation for the Comparison of Means from two independent Samples (Equal Variance Case) 
+
+## testing for the Equality of two Variances 
+
+## two-Sample t test for independent Samples with Unequal Variances 
+
+## Estimation of Sample Size and Power for Comparing two Means 
+
+## the treatment of outliers 
+
+## derivation of Equation 8.13 
+
+<!--chapter:end:08-hypothesis_testing_two_sample.Rmd-->
+
+# Nonparametric Methods
+
+## introduction 
+
+## the Sign test 
+
+## the Wilcoxon Signed-Rank test 
+
+## the Wilcoxon Rank-Sum test 
+
+## Permutation tests 
+
+<!--chapter:end:09-nonparametric_methods.Rmd-->
+
+# hypothesis testing:Categoricaldata
+
+## introduction 
+
+## two-Sample test for Binomial Proportions 
+
+## Fisher’s Exact test 
+
+## two-Sample test for Binomial Proportions for Matched-Pair data (Mcnemar’s test) 
+
+## Estimation of Sample Size and Power for Comparing two Binomial Proportions 
+
+## R × C Contingency tables 
+
+## Chi-Square Goodness-of-Fit test 
+
+## the Kappa Statistic 
+
+## derivation of Selected Formulas 
+
+<!--chapter:end:10-hypothesis_testing_categorical.Rmd-->
+
+# Regression and Correlation Methods
+
+## introduction 
+
+## General Concepts 
+
+## Fitting Regression Lines—the Method of Least Squares 
+
+## inferences About Parameters from Regression Lines 
+
+## interval Estimation for Linear Regression 
+
+## Assessing the Goodness of Fit of Regression Lines 
+
+## the Correlation Coefficient 
+
+## Statistical inference for Correlation Coefficients 
+
+## Multiple Regression 
+
+## Partial and Multiple Correlation 
+
+## Rank Correlation 
+
+## interval Estimation for Rank-Correlation Coefficients 
+
+## derivation of Equation 11.26 
+
+<!--chapter:end:11-regression_and_correlation_methods.Rmd-->
+
+# Multisample inference
+
+## introduction to the one-Way Analysis of Variance 
+
+## one-Way AnoVA—Fixed-Effects Model 
+
+## hypothesis testing in one-Way AnoVA— Fixed-Effects Model 
+
+## Comparisons of Specific Groups in one- Way AnoVA 
+
+## two-Way AnoVA 
+
+## the Kruskal-Wallis test 
+
+## one-Way AnoVA—the Random-Effects Model 
+
+## the intraclass Correlation Coefficient 
+
+## Mixed Models 
+
+## derivation of Equation 
+
+<!--chapter:end:12-multisample_inference.Rmd-->
+
+# design and Analysis techniques for Epidemiologic Studies
+
+## introduction 
+
+## Study design 
+
+## Measures of Effect for Categorical data 
+
+## Attributable Risk 
+
+## Confounding and Standardization 
+
+## Methods of inference for Stratified Categorical data—the Mantel-haenszel test 
+
+## Multiple Logistic Regression 
+
+## Extensions to Logistic Regression 
+
+## Sample Size Estimation for Logistic Regression 
+
+## Meta-Analysis 
+
+## Equivalence Studies 
+
+## the Cross-over design 
+
+## Clustered Binary data 
+
+## Longitudinal data Analysis 
+
+## Measurement-Error Methods 
+
+## Missing data 
+
+## derivation of 100% × (1 – α) Ci for the Risk difference 
+
+<!--chapter:end:13-epi_techniques.Rmd-->
+
+# Hypothesis testing: Person-time data
+
+## Measure of Effect for Person-time data 
+
+## one-Sample inference for incidence-Rate data 
+
+## two-Sample inference for incidence-Rate data 
+
+## Power and Sample-Size Estimation for Person-time data 
+
+## Inference for Stratified Person-Time Data  
+
+## Power and Sample-Size Estimation for  Stratified Person-Time Data  
+
+## Testing for Trend: Incidence-Rate Data  
+
+## Introduction to Survival Analysis  
+
+## Estimation of Survival Curves:   The Kaplan-Meier Estimator  
+
+## The Log-Rank Test  
+
+## The Proportional-Hazards Model  
+
+## Power and Sample-Size Estimation under  the Proportional-Hazards Model  
+
+## Parametric Survival Analysis  
+
+## Parametric Regression Models for Survival  Data  
+
+## Derivation of Selected Formulas  
+
+<!--chapter:end:14-hypothesis_testing_person_timed.Rmd-->
+

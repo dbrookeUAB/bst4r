@@ -1,4 +1,4 @@
-#Probability
+# Probability
 
 The probability of an event is the relative frequency of an event (outcome) within a sample space (all possible outcomes). 
 
