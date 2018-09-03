@@ -150,11 +150,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.1" data-path="1-3-quick-introduction-to-rstudio.html"><a href="1-3-quick-introduction-to-rstudio.html#the-interface"><i class="fa fa-check"></i><b>1.3.1</b> The Interface</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="1-4-starting-a-project.html"><a href="1-4-starting-a-project.html"><i class="fa fa-check"></i><b>1.4</b> Starting a Project</a></li>
-<li class="chapter" data-level="1.5" data-path="1-5-understanding-the-basics.html"><a href="1-5-understanding-the-basics.html"><i class="fa fa-check"></i><b>1.5</b> Understanding the basics</a></li>
+<li class="chapter" data-level="1.5" data-path="1-5-understanding-the-basics.html"><a href="1-5-understanding-the-basics.html"><i class="fa fa-check"></i><b>1.5</b> Understanding the basics</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-5-understanding-the-basics.html"><a href="1-5-understanding-the-basics.html#types"><i class="fa fa-check"></i><b>1.5.1</b> Types</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-6-installing-packages-important.html"><a href="1-6-installing-packages-important.html"><i class="fa fa-check"></i><b>1.6</b> Installing Packages (IMPORTANT)</a></li>
 <li class="chapter" data-level="" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html"><i class="fa fa-check"></i>Reading Data Files into R</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#generic-formats"><i class="fa fa-check"></i><b>1.5.1</b> Generic Formats</a></li>
-<li class="chapter" data-level="1.5.2" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#excel"><i class="fa fa-check"></i><b>1.5.2</b> Excel</a></li>
-<li class="chapter" data-level="1.5.3" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#software-specific-formats"><i class="fa fa-check"></i><b>1.5.3</b> Software Specific Formats</a></li>
+<li class="chapter" data-level="1.6.1" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#generic-formats"><i class="fa fa-check"></i><b>1.6.1</b> Generic Formats</a></li>
+<li class="chapter" data-level="1.6.2" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#excel"><i class="fa fa-check"></i><b>1.6.2</b> Excel</a></li>
+<li class="chapter" data-level="1.6.3" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#software-specific-formats"><i class="fa fa-check"></i><b>1.6.3</b> Software Specific Formats</a></li>
+<li class="chapter" data-level="1.6.4" data-path="reading-data-files-into-r.html"><a href="reading-data-files-into-r.html#section"><i class="fa fa-check"></i><b>1.6.4</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-descriptive-statistics.html"><a href="2-descriptive-statistics.html"><i class="fa fa-check"></i><b>2</b> Descriptive Statistics</a><ul>
@@ -368,13 +372,13 @@ toc:
 <h3><span class="header-section-number">2.5.1</span> Bar Graphs</h3>
 <p>Base-R</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(bwt<span class="op">$</span>BWT)</code></pre>
-<p><img src="bst4r_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="bst4r_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p><code>ggplot2</code></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
  <span class="kw">ggplot</span>(<span class="dt">data =</span> bwt,<span class="kw">aes</span>(BWT))<span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="dv">10</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Count&quot;</span>)</code></pre>
-<p><img src="bst4r_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="bst4r_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="stem-and-leaf-plots" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Stem-and-Leaf Plots</h3>
@@ -402,10 +406,10 @@ toc:
 <h3><span class="header-section-number">2.5.3</span> Box Plots</h3>
 <p>Base-R</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(bwt<span class="op">$</span>BWT)</code></pre>
-<p><img src="bst4r_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="bst4r_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p><code>ggplot2</code></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(bwt, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>,BWT))<span class="op">+</span><span class="kw">geom_boxplot</span>()</code></pre>
-<p><img src="bst4r_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="bst4r_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 
 </div>
 </div>
