@@ -1,5 +1,94 @@
 # Introduction {#intro}
 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## The R Ecosystem
+
+__Base-R__
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+__The Comprehensive R Archive Network__
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+__Github__
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+## Getting Started
+
+Installing the binary distribution of R should be done before installing RStudio (discussed later) although it won't hurt anything if you did that by accident.  If you installed RStudio first, you will likely see an error window after launching RStudio that will ask to take you to the CRAN website to install R. 
+
+Follow the instructions under the heading of the operating system you are using in the next section. 
+
+### Installing R
+
+#### Mac
+
+Visit the [CRAN website]https://cran.rstudio.com/bin/macosx/) and click the latest release or you can simply click the following link to [__download directly__](https://cran.rstudio.com/bin/macosx/R-3.5.1.pkg).
+
+If your are using a legacy Mac operating system, you can install one of the Previous releases although some R packages may not be compatible. 
+
+
+#### Windows
+
+Visit the [CRAN website](https://cran.rstudio.com/bin/windows/base/) and click __Download R 3.5.1 for Windows__ or simply click the following link to [__download directly__](https://cran.rstudio.com/bin/windows/base/R-3.5.1-win.exe). 
+
+The [installation instructions](https://cran.rstudio.com/bin/windows/base/README.R-3.5.1) from the CRAN website state:
+
+>The distribution is distributed as an installer R-3.5.1-win.exe. Just run this for a Windows-style installer.
+>
+>For more details, including command-line options for the installer andhow to uninstall, see the rw-FAQ.  If you are reading this as part of an installed version of R, that is both a file rw-FAQ in this directory and a file doc\html\rw-FAQ.html.
+
+
+#### Linux
+
+To be updated later.... 
+
+
+### Install RStudio
+
+After you install R on your machine, you can immediately start using the R terminal, yet the book will focus on using the RStudio IDE. However, a special section in the Appendix will give an overview on how to use the popular multilanguage-datascience application called [Jupyter](http://jupyter.org).
+
+Install RStudio by first visiting their [website](https://www.rstudio.com/products/rstudio/download/#download) and begin installing RStudio Desktop (Open Source License).  
+
+
+## Quick Introduction to RStudio
+
+
+### The Interface 
+
+```{r, echo=FALSE, fig.cap="The main four panel window. A.) Source Panel B.) Console C.)Enviornment, History, Connections, etc D.) Files, Plots, Packages, Help, Viewer. This layout can be changed in the View menu.", out.width = '100%'}
+knitr::include_graphics("images/01_Rstudio_main.png")
+```
+
+## Starting a Project
+
+```{r}
+knitr::include_graphics("images/new_project_00.png")
+```
+
+```{r}
+knitr::include_graphics("images/new_project_01.png")
+```
+
+```{r}
+knitr::include_graphics("images/new_project_02.png")
+```
+
+```{r}
+knitr::include_graphics("images/new_project_03.png")
+```
+
+
+## Understanding the basics
+
+If you are familiar with excel, you probably at some point had to set the format of whatever you had placed in that cell, especially when excel prevented your calculations by treating your set of numbers as dates or even worse as text. 
+
+In R however, cells are referred to as objects and we refer to their format as their __type__ or __mode__. 
+
 ## Reading Data Files into R {-}
 
 
