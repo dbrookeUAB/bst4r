@@ -19,7 +19,7 @@ The probability of an event is the relative frequency of an event (outcome) with
 
 1. The probability of an event ($Pr(E)$) always satisfies: $$0 \leq \text{Pr(E)} \leq 1$$
 2. If events A and B cannot both occur  simultanously, they are __mutually exclusive__.  $$Pr(A\cap B)=0$$
-3. Two events A and B are called independent if $$Pr(A\ycap B)=Pr(A)\times Pr(B)$$
+3. Two events A and B are called independent if $$Pr(A\cap B)=Pr(A)\times Pr(B)$$
 4. Two events A and B are called dependent if $$Pr(A\cap B)\ne Pr(A)\times Pr(B)$$
 
 ## Laws of Probability

@@ -73,7 +73,9 @@ Of we have a sample of n objects, then the values are denoted as $x_1, x_2, ...,
 
 The sample mean $$\bar{x} = \frac{\sum_i^nx}{n}$$
 
-Sample variance  $s^2 = \frac{\sum_i^n{x_i-\bar{x}}}{n-1}$
+
+
+Sample variance  $s^2 = \frac{\sum^n{i}{x_i-\bar{x}}}{n-1}$
 
 Sample std dev  $s = \sqrt{s^2}$
 
