@@ -1,10 +1,10 @@
 # Hypothesis Testing: One-Sample Inference
 
-## introduction 
+## Introduction 
 
 ## General Concepts 
 
-## one-Sample test for the Mean of a normal distribution: one-Sided Alternatives 
+## One-Sample test for the Mean of a normal distribution: one-Sided Alternatives 
 
 ## one-Sample test for the Mean of a normal distribution: two-Sided Alternatives 
 
