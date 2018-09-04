@@ -1,4 +1,4 @@
-# hypothesis testing: one-Sample inference
+# Hypothesis Testing: One-Sample Inference
 
 ## introduction 
 
