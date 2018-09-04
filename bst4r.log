@@ -1,11 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  30 AUG 2018 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.4)  4 SEP 2018 03:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bst4r.tex
 (./bst4r.tex
-LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+LaTeX2e <2018-04-01> patch level 5
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/size12.clo
@@ -321,7 +320,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/03/24 v5.7 Page Geometry
+Package: geometry 2018/04/16 v5.8 Page Geometry
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 ) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
@@ -670,104 +669,57 @@ e
 \tf@lof=\write7
 \openout7 = `bst4r.lof'.
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 150.
+[1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 211.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 150.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 211.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 150
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 211
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 150
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 211
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 150.
+(Font)              <12> on input line 211.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 150.
+(Font)              <8> on input line 211.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 150.
-LaTeX Font Info:    Try loading font information for U+msa on input line 150.
+(Font)              <6> on input line 211.
+LaTeX Font Info:    Try loading font information for U+msa on input line 211.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 150.
+LaTeX Font Info:    Try loading font information for U+msb on input line 211.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 155.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 156.
-[1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 220
-.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 254.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2] [3] [4]
-Overfull \hbox (592.3455pt too wide) in paragraph at lines 450--450
-[]\T1/lmtt/m/n/12 PhantomJS not found. You can install it with webshot::install
-_phantomjs(). If it is installed, please make sure the phantomjs executable can
- be found via the PATH variable.[] 
- []
-
-[5] [6] [7]
-<bst4r_files/figure-latex/unnamed-chunk-12-1.pdf, id=95, 435.6275pt x 283.0575p
-t>
-File: bst4r_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
-<use bst4r_files/figure-latex/unnamed-chunk-12-1.pdf>
-Package pdftex.def Info: bst4r_files/figure-latex/unnamed-chunk-12-1.pdf  used 
-on input line 608.
-(pdftex.def)             Requested size: 435.62643pt x 283.0568pt.
-[8] [9 <./bst4r_files/figure-latex/unnamed-chunk-12-1.pdf>] [10] [11] [12] [13]
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 1071--1071
-[]\T1/lmtt/m/n/12 Error in grouped_df_impl(data, unname(vars), drop): Column \T
-S1/lmtt/m/n/12 `\T1/lmtt/m/n/12 weight\TS1/lmtt/m/n/12 ` \T1/lmtt/m/n/12 is unk
-nown[] 
- []
-
-[14] [15] [16]
-
-! Package inputenc Error: Unicode character ▁ (U+2581)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1263 \end{verbatim}
-                      
+! Undefined control sequence.
+l.241 and a file doc\html
+                         \rw-FAQ.html. 
 Here is how much of TeX's memory you used:
- 12942 strings out of 492649
- 190548 string characters out of 6129622
- 300572 words of memory out of 5000000
- 16491 multiletter control sequences out of 15000+600000
- 57358 words of font info for 82 fonts, out of 8000000 for 9000
+ 12703 strings out of 492642
+ 186224 string characters out of 6129385
+ 295917 words of memory out of 5000000
+ 16384 multiletter control sequences out of 15000+600000
+ 43952 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,6n,38p,408b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,6n,38p,236b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

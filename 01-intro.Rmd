@@ -23,16 +23,16 @@ Installing the binary distribution of R should be done before installing RStudio
 
 Follow the instructions under the heading of the operating system you are using in the next section. 
 
-### Installing R
+### Installing R 
 
-#### Mac
+#### Mac {-}
 
 Visit the [CRAN website]https://cran.rstudio.com/bin/macosx/) and click the latest release or you can simply click the following link to [__download directly__](https://cran.rstudio.com/bin/macosx/R-3.5.1.pkg).
 
 If your are using a legacy Mac operating system, you can install one of the Previous releases although some R packages may not be compatible. 
 
 
-#### Windows
+#### Windows {-}
 
 Visit the [CRAN website](https://cran.rstudio.com/bin/windows/base/) and click __Download R 3.5.1 for Windows__ or simply click the following link to [__download directly__](https://cran.rstudio.com/bin/windows/base/R-3.5.1-win.exe). 
 
@@ -43,12 +43,12 @@ The [installation instructions](https://cran.rstudio.com/bin/windows/base/README
 >For more details, including command-line options for the installer andhow to uninstall, see the rw-FAQ.  If you are reading this as part of an installed version of R, that is both a file rw-FAQ in this directory and a file doc\html\rw-FAQ.html.
 
 
-#### Linux
+#### Linux {-}
 
 To be updated later.... 
 
 
-### Install RStudio
+### Install RStudio 
 
 After you install R on your machine, you can immediately start using the R terminal, yet the book will focus on using the RStudio IDE. However, a special section in the Appendix will give an overview on how to use the popular multilanguage-datascience application called [Jupyter](http://jupyter.org).
 
@@ -64,7 +64,7 @@ Install RStudio by first visiting their [website](https://www.rstudio.com/produc
 knitr::include_graphics("images/01_Rstudio_main.png")
 ```
 
-## Starting a Project
+### Starting a Project
 
 ```{r, echo = FALSE, "The initial menus for creating a new project. Its best to start out with a New directory when first starting a project"}
 knitr::include_graphics("images/new_project_00.png")
@@ -83,18 +83,18 @@ knitr::include_graphics("images/new_project_03.png")
 ```
 
 
-## Understanding the basics
+## Understanding the basics 
 
 If you are familiar with excel, you probably at some point had to set the format of whatever you had placed in that cell, especially when excel prevented your calculations by treating your set of numbers as dates or even worse as text.
 
 In R however, cells are referred to as objects and we refer to their format as their __type__ and how they are stored in memory is called __mode__. 
 
-### Types
+### Types 
 
 We will use the `typeof()` function to demonstrate the four main data types.
 
 
-#### Integer
+#### Integer {-}
 
 ```{r}
 # Integer Type
@@ -102,7 +102,7 @@ typeof(1L)
 ```
 
 
-#### Double
+#### Double {-}
 
 ```{r}
 # Double Type
@@ -110,14 +110,14 @@ typeof(1.0)
 ```
 
 
-#### Character 
+#### Character  {-}
 
 ```{r}
 #Character Type
 typeof("1")
 ```
 
-#### Logical
+#### Logical {-}
 
 ```{r}
 # Logical Type
@@ -125,13 +125,13 @@ typeof(TRUE)
 ```
 
 
-## Installing Packages (IMPORTANT)
+### Installing Packages (IMPORTANT) 
 
 As previously described, the R ecosystem is rich with numerous packages that can be used for anything from basic statistics to Machine Learning. Even this book was published using an R package [`bookdown`](https://bookdown.org/home/).   
 
 
 
-## Reading Data Files into R {-}
+## Reading Data Files into R 
 
 
 The first step in every analysis requires data to be read into the environment, and learning how to do this is the first hurdle a person needs to overcome to begin learning to use R. 
@@ -142,10 +142,10 @@ In this chapter, we will first discuss how to read data using functions in Base-
 
 
 
-### Generic Formats
+### Generic Formats 
 
 
-#### CSV- Comma Separated Values
+#### CSV- Comma Separated Values {-}
 The fields are separated by a comma `,` and are typically used for loading into spreadsheets.
 
 For example:
@@ -171,7 +171,7 @@ head(csv_example)
 
 
 
-#### TSV- Tab Separated Values
+#### TSV- Tab Separated Values {-}
  The fields are separated by a tabulation <TAB> or \t and are saved as `.txt` files. However, not all `.txt` files contain tab separated values.  
 
 For example:
@@ -190,7 +190,7 @@ tsv_example <- read.delim("data/ASCII-tab/FEV.DAT.txt")
 head(tsv_example)
 ```
 
-### Excel
+### Excel 
 
 ```{r}
 library(readxl)
@@ -200,7 +200,7 @@ library(readxl)
 
 
 
-### Software Specific Formats
+### Software Specific Formats 
 
 R is increasingly recognized as the gold standard for statistical computations, yet some of your future collaborates will exclusively use Commercial Software (SAS, SPSS, Matlab, and Stata) for their statistical computations. Although these individuals are limited by the types of files they can read or write, the `haven` R-package can both read and write any of these file formats. 
 
@@ -210,7 +210,7 @@ library(haven)
 ```
 
 
-#### SAS(`.sas7bdat`), SPSS(`.sav`,`.por`, `.xpt`), Stata (`.dta`)
+#### SAS(`.sas7bdat`), SPSS(`.sav`,`.por`, `.xpt`), Stata (`.dta`) {-}
 
 ```{r read SAS}
 sas <- read_sas("data/SAS/FEV.sas7bdat")
@@ -239,17 +239,16 @@ The `foreign` package included in Base-R can also be used to Reading and writing
 
 
 
-### 
+### R Specific Formats
 
-
-###### RDS
+##### RDS {-}
 
 ```{r}
 rds_example <- readRDS("data/RDS/BETACAR.DAT.rds")
 head(rds_example)
 ```
 
-###### `rdata` 
+##### `rdata`   {-}
 The `.rdata` format is R's specific format. Instead of using a `read.{something}` function, `.rdata` is read into the environment using `load(filename.rdata)` and retains the original name it had when it was last saved. 
 
 ```{r}

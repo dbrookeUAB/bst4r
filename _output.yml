@@ -10,7 +10,6 @@ bookdown::gitbook:
         <li><a href="./">Biostatistics Using R</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-        toc:
     toolbar:
       position: fixed
     edit : null
@@ -20,12 +19,10 @@ bookdown::gitbook:
       family: sans
       size: 2
     sharing:
-      facebook: yes
-      twitter: yes
+      facebook: no
+      twitter: no
       google: no
       linkedin: no
       weibo: no
       instapper: no
       vk: no
-      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
-    download: ["pdf", "epub"]
